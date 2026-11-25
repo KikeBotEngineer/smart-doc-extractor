@@ -5,7 +5,7 @@
     "email": "felix16@gmail.com",
     "phone": "594.078.1618",
     "location": "San Rosario los altos, San Luis Potosí",
-    "summary": "Especie muy guerra junto otros. Señaló tampoco grupos período sea. Situación público obstante haciendo color partido.",
+    "summary": "Diseñador UX con 4 años de experiencia. Especialista en SQL, Inglés avanzado y Docker.",
     "experience": [
       {
         "company": "Proyectos Aguayo, Crespo y Pichardo",
@@ -33,11 +33,10 @@
       }
     ],
     "skills": [
-      "Liderazgo",
-      "Java",
-      "Kubernetes",
-      "Git",
-      "Docker"
+      "SQL",
+      "Inglés avanzado",
+      "Docker",
+      "Liderazgo"
     ]
   }
 }

@@ -169,6 +169,7 @@ def fake_resume(fake: Faker, rng: random.Random) -> Resume:
         if current:
             break
         start = end + timedelta(days=rng.randint(15, 120))
+    years = max(1, (LATEST if current else end).year - first_year)
     experience.reverse()  # los CVs listan lo más reciente primero
     education = [
         Education(
@@ -178,15 +179,31 @@ def fake_resume(fake: Faker, rng: random.Random) -> Resume:
         )
         for degree in rng.sample(DEGREES, rng.randint(1, 2))
     ]
+    skills = rng.sample(SKILLS, rng.randint(3, 8))
     return Resume(
         name=fake.name(),
         email=fake.free_email(),
         phone=fake.phone_number() if rng.random() > 0.2 else None,
         location=f"{fake.city()}, {fake.state()}" if rng.random() > 0.2 else None,
-        summary=fake.paragraph(nb_sentences=3) if rng.random() > 0.3 else None,
+        summary=fake_summary(experience[0], years, skills, rng) if rng.random() > 0.3 else None,
         experience=experience,
         education=education,
-        skills=rng.sample(SKILLS, rng.randint(3, 8)),
+        skills=skills,
+    )
+
+
+def fake_summary(latest: Experience, years: int, skills: list[str], rng: random.Random) -> str:
+    """Resumen coherente con el CV: puesto más reciente, años de experiencia y habilidades."""
+    span = f"{years} año" if years == 1 else f"{years} años"
+    top = f"{', '.join(skills[:2])} y {skills[2]}"
+    return rng.choice(
+        [
+            f"{latest.title} con {span} de experiencia. Especialista en {top}.",
+            f"Profesional con {span} de trayectoria; último puesto: {latest.title} "
+            f"en {latest.company}, con dominio de {top}.",
+            f"{latest.title} enfocado en resultados, con {span} de experiencia "
+            f"y conocimientos sólidos de {top}.",
+        ]
     )
 
 
