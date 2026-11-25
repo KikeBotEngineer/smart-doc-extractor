@@ -273,8 +273,8 @@ smart-doc-extractor/
 
 | Día | Commits |
 |---|---|
-| 1 | `chore: project skeleton` · `feat: invoice and resume models` · `feat: synthetic dataset generator` |
-| 2 | `feat: text layer and page profile` · `feat: gemini structured extraction (fast route)` · `feat: recorded llm client` |
-| 3 | `feat: evidence verification` · `feat: business rules` · `feat: /extract endpoint and limits` |
-| 4 | `feat: ocr and visual route` · `feat: targeted recovery` · `feat: classification` |
-| 5 | `feat: eval harness and report` · `ci: lint, tests and eval` · `docs: readme with eval results` |
+| 1 | `chore: esqueleto del proyecto` · `feat: modelos de factura y CV` · `feat: generador de dataset sintético` |
+| 2 | `feat: capa de texto y perfil de página` · `feat: extracción estructurada con Gemini (ruta fast)` · `feat: cliente LLM grabado` |
+| 3 | `feat: verificación de evidencia` · `feat: reglas de negocio` · `feat: endpoint /extract y límites` |
+| 4 | `feat: OCR y ruta visual` · `feat: recuperación dirigida` · `feat: clasificación` |
+| 5 | `feat: arnés de evaluación y reporte` · `ci: lint, pruebas y evaluación` · `docs: README con resultados de evaluación` |
