@@ -11,7 +11,10 @@ from app.llm.client import LLMError, LLMResponse
 
 class GeminiLLM:
     def __init__(self, api_key: str, model: str, client: genai.Client | None = None):
-        self._client = client or genai.Client(api_key=api_key)
+        # google-genai 3.x usa v1 por defecto, que no soporta salida estructurada
+        self._client = client or genai.Client(
+            api_key=api_key, http_options=types.HttpOptions(api_version="v1beta")
+        )
         self._model = model
 
     def generate(
