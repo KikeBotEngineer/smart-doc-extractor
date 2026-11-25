@@ -1,22 +1,34 @@
 """Orquestación del pipeline."""
 
+import json
+import re
 import time
 from collections.abc import Callable, Iterable
 from dataclasses import asdict
 from io import BytesIO
 from pathlib import Path
+from types import ModuleType
+from typing import Any
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field, ValidationError
 from pypdf import PasswordType, PdfReader
 
 from app.config import Settings
 from app.doc_types import DOC_TYPES
-from app.evidence import PageText, verify_fields
-from app.llm.client import LLMClient, Usage, generate_structured
+from app.evidence import PageText, verify_fields, verify_value
+from app.llm.client import LLMClient, LLMError, Usage, generate_structured
 from app.pdf.ocr import ocr_image, render_pages, to_jpeg
 from app.pdf.profile import PageProfile, profile_pages
 from app.pdf.text_layer import page_texts
-from app.schemas import DocTypeResult, ExtractResponse, PageInfo, UsageReport, Validation
+from app.schemas import (
+    DocTypeResult,
+    ExtractResponse,
+    FieldResult,
+    PageInfo,
+    Source,
+    UsageReport,
+    Validation,
+)
 
 PROMPTS = Path(__file__).resolve().parent.parent / "prompts"
 OCR_MIN_SCORE = 0.9  # por debajo, la evidencia OCR de la página cuenta como parcial
@@ -90,10 +102,104 @@ def extract(
 ) -> BaseModel:
     """Ruta fast: Gemini sobre la capa de texto. Ruta visual: además, OCR e imágenes."""
     kind = DOC_TYPES[doc_type]
-    text = prompt("extract.md").format(label=kind.LABEL, document=render_document(pages))
+    text = build_prompt("extract.md", kind, pages, images)
+    return generate_structured(llm, text, kind.MODEL, usage, [jpeg for _, jpeg in images])
+
+
+def build_prompt(
+    template: str, kind: ModuleType, pages: list[PageText], images: list, **values: str
+) -> str:
+    text = prompt(template).format(label=kind.LABEL, document=render_document(pages), **values)
     if images:
         text += "\n\n" + prompt("visual.md").format(pages=", ".join(str(n) for n, _ in images))
-    return generate_structured(llm, text, kind.MODEL, usage, [jpeg for _, jpeg in images])
+    return text
+
+
+class RecoveredField(BaseModel):
+    field: str = Field(description="Nombre del campo, tal como se pidió")
+    value: str | None = Field(description="Valor tal como aparece en el documento, o null")
+
+
+class Recovery(BaseModel):
+    fields: list[RecoveredField]
+
+
+def recover(
+    llm: LLMClient,
+    kind: ModuleType,
+    doc: BaseModel,
+    fields: dict[str, FieldResult],
+    pages: list[PageText],
+    images: list[tuple[int, bytes]],
+    fallback: Source,
+    usage: Usage,
+) -> tuple[BaseModel, dict[str, FieldResult]]:
+    """Etapa 7: una sola llamada más, solo con los campos sin evidencia.
+
+    Valor nuevo con evidencia: se acepta. null: `insufficient_evidence`. Otro valor sin
+    evidencia: `conflicting_candidates`. El mismo valor: sigue `low`. Si la llamada falla,
+    se queda el resultado de la primera pasada."""
+    pending = {path: f.value for path, f in fields.items() if f.confidence == "low"}
+    if not pending:
+        return doc, fields
+    # ponytail: el contexto es el documento completo; acotarlo a la página del campo si el
+    # costo en documentos largos lo pide.
+    listing = "\n".join(
+        f"- {path}: {json.dumps(value, ensure_ascii=False, default=str)}"
+        for path, value in pending.items()
+    )
+    text = build_prompt("recover.md", kind, pages, images, fields=listing)
+    try:
+        response = llm.generate(text, Recovery, [jpeg for _, jpeg in images])
+        usage.add(response)
+        answers = Recovery.model_validate_json(response.text).fields
+    except (LLMError, ValidationError):
+        return doc, fields
+    fields = dict(fields)
+    for answer in answers:
+        if answer.field not in pending:
+            continue
+        path = answer.field
+        if answer.value is None:
+            doc = with_field(kind.MODEL, doc, path, None) or doc
+            fields[path] = FieldResult(missing_reason="insufficient_evidence")
+            continue
+        candidate = with_field(kind.MODEL, doc, path, answer.value)
+        if candidate is None:  # el valor no tiene el tipo del campo
+            continue
+        value = get_field(candidate.model_dump(), path)
+        result = verify_value(path, value, pages, fallback, kind.IDENTIFIERS)
+        if result.confidence != "low":
+            doc, fields[path] = candidate, result
+        elif value != pending[path]:
+            doc = with_field(kind.MODEL, doc, path, None) or doc
+            fields[path] = FieldResult(missing_reason="conflicting_candidates")
+    return doc, fields
+
+
+def _keys(path: str) -> list[str | int]:
+    """'line_items[1].amount' → ['line_items', 1, 'amount']"""
+    return [int(k) if k.isdigit() else k for k in re.findall(r"[^.\[\]]+", path)]
+
+
+def get_field(data: Any, path: str) -> Any:
+    for key in _keys(path):
+        data = data[key]
+    return data
+
+
+def with_field[M: BaseModel](model: type[M], doc: BaseModel, path: str, value: Any) -> M | None:
+    """Copia de `doc` con el campo cambiado, o None si el valor no es válido para el modelo."""
+    data = doc.model_dump()
+    *parents, last = _keys(path)
+    target = data
+    for key in parents:
+        target = target[key]
+    target[last] = value
+    try:
+        return model.model_validate(data)
+    except ValidationError:
+        return None
 
 
 def run_rules(rules: Iterable[Callable], doc: BaseModel) -> list[Validation]:
@@ -119,12 +225,15 @@ def run(data: bytes, doc_type: str | None, llm: LLMClient, settings: Settings) -
     kind = DOC_TYPES[doc_type]
     usage = Usage()
     doc = extract(llm, doc_type, pages, images, usage)
+    # sin evidencia, el valor viene de lo que el LLM leyó: el texto o la imagen
+    fallback: Source = "vision" if images else "text_layer"
+    fields = verify_fields(doc, pages, fallback, kind.IDENTIFIERS)
+    doc, fields = recover(llm, kind, doc, fields, pages, images, fallback, usage)
     return ExtractResponse(
         doc_type=DocTypeResult(value=doc_type, method="forced", confidence="high"),
         route="visual" if images else "fast",
         pages=[PageInfo(page=n, profile=p) for n, p in enumerate(profiles, 1)],
-        # sin evidencia, el valor viene de lo que el LLM leyó: el texto o la imagen
-        fields=verify_fields(doc, pages, "vision" if images else "text_layer", kind.IDENTIFIERS),
+        fields=fields,
         validations=run_rules(kind.RULES, doc),
         usage=UsageReport(
             **asdict(usage), latency_ms=round((time.perf_counter() - started) * 1000)

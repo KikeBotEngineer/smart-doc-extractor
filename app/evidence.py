@@ -169,28 +169,32 @@ def flatten(data: dict[str, Any]) -> dict[str, Any]:
     return out
 
 
+def verify_value(
+    path: str, value: Any, pages: list[PageText], fallback_source: Source, identifiers: set[str]
+) -> FieldResult:
+    """Sin evidencia, el valor queda con confianza baja y `fallback_source` (de dónde lo
+    leyó el LLM)."""
+    if value is None:
+        return FieldResult(missing_reason="not_present")
+    leaf = re.sub(r"\[\d+\]$", "", path.rsplit(".", 1)[-1])
+    found = find_evidence(value, leaf in identifiers, [" ".join(p.text.split()) for p in pages])
+    if found is None:
+        return FieldResult(value=value, confidence="low", source=fallback_source)
+    n, text, literal = found
+    page = pages[n - 1]
+    return FieldResult(
+        value=value,
+        confidence="high" if literal and page.reliable else "medium",
+        source=page.source,
+        evidence=Evidence(page=n, snippet=text),
+    )
+
+
 def verify_fields(
     doc: BaseModel, pages: list[PageText], fallback_source: Source, identifiers: set[str]
 ) -> dict[str, FieldResult]:
-    """Un FieldResult por campo hoja. Sin evidencia: el valor queda con confianza baja y
-    `fallback_source` (de dónde lo leyó el LLM)."""
-    texts = [" ".join(p.text.split()) for p in pages]
-    results = {}
-    for path, value in flatten(doc.model_dump()).items():
-        if value is None:
-            results[path] = FieldResult(missing_reason="not_present")
-            continue
-        leaf = re.sub(r"\[\d+\]$", "", path.rsplit(".", 1)[-1])
-        found = find_evidence(value, leaf in identifiers, texts)
-        if found is None:
-            results[path] = FieldResult(value=value, confidence="low", source=fallback_source)
-            continue
-        n, text, literal = found
-        page = pages[n - 1]
-        results[path] = FieldResult(
-            value=value,
-            confidence="high" if literal and page.reliable else "medium",
-            source=page.source,
-            evidence=Evidence(page=n, snippet=text),
-        )
-    return results
+    """Un FieldResult por campo hoja."""
+    return {
+        path: verify_value(path, value, pages, fallback_source, identifiers)
+        for path, value in flatten(doc.model_dump()).items()
+    }
