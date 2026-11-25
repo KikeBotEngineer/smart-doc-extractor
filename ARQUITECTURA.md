@@ -105,6 +105,8 @@ Gemini se usa con **salida estructurada**: `response_schema` generado del modelo
 | `source` | `text_layer`, `ocr`, `vision`, `rule` |
 | `missing_reason` | `not_present`, `illegible`, `insufficient_evidence`, `conflicting_candidates` |
 
+Los campos de listas se aplanan con su índice: `line_items[0].amount`, `skills[2]`. Una lista vacía aparece una sola vez con su nombre (`education`) y `missing_reason`.
+
 Un campo derivado por regla (por ejemplo, `subtotal` calculado de las partidas) lleva `source: "rule"`, `evidence: null` y el nombre de la regla.
 
 **Errores**

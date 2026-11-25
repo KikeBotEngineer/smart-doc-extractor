@@ -12,3 +12,5 @@ class Settings(BaseSettings):
     # live: Gemini · recorded: solo grabaciones · record: Gemini y graba lo que falte
     llm_mode: Literal["live", "recorded", "record"] = "live"
     recordings_dir: Path = Path("eval/recordings")
+    max_file_mb: int = 10
+    max_pages: int = 20
