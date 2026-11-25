@@ -5,6 +5,8 @@ description = "API que extrae datos estructurados y auditables de PDFs"
 requires-python = ">=3.12"
 dependencies = [
     "fastapi>=0.115",
+    "pypdf>=5.1",
+    "pypdfium2>=5.0",
     "pydantic>=2.9",
     "uvicorn>=0.32",
 ]
@@ -14,7 +16,6 @@ dev = [
     "faker>=30",
     "httpx2>=2.16",
     "pillow>=11",
-    "pypdfium2>=4.30",
     "pytest>=8.3",
     "reportlab>=4.2",
     "ruff>=0.8",
