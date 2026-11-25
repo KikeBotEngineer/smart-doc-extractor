@@ -1,0 +1,54 @@
+{
+  "doc_type": "invoice",
+  "fields": {
+    "issuer_name": "Laureano S.A.",
+    "issuer_tax_id": "EXD410411Y5R",
+    "receiver_name": "Anguiano A.C.",
+    "receiver_tax_id": "HQT4008271ZC",
+    "invoice_number": "F-77336",
+    "issue_date": "2023-06-22",
+    "due_date": null,
+    "currency": "MXN",
+    "line_items": [
+      {
+        "description": "Capacitación en sitio",
+        "quantity": 2.0,
+        "unit_price": 173.8,
+        "amount": 347.6
+      },
+      {
+        "description": "Licencia de software anual",
+        "quantity": 4.0,
+        "unit_price": 1154.89,
+        "amount": 4619.56
+      },
+      {
+        "description": "Mantenimiento preventivo",
+        "quantity": 9.0,
+        "unit_price": 480.35,
+        "amount": 4323.15
+      },
+      {
+        "description": "Desarrollo de módulo",
+        "quantity": 1.0,
+        "unit_price": 197.5,
+        "amount": 197.5
+      },
+      {
+        "description": "Servicio de consultoría",
+        "quantity": 4.0,
+        "unit_price": 2551.51,
+        "amount": 10206.04
+      },
+      {
+        "description": "Diseño de interfaz",
+        "quantity": 9.0,
+        "unit_price": 1034.25,
+        "amount": 9308.25
+      }
+    ],
+    "subtotal": 29002.1,
+    "tax": 4640.34,
+    "total": 33642.44
+  }
+}
