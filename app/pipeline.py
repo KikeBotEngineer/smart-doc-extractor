@@ -13,6 +13,7 @@ from typing import Any
 from pydantic import BaseModel, Field, ValidationError
 from pypdf import PasswordType, PdfReader
 
+from app.classify import classify
 from app.config import Settings
 from app.doc_types import DOC_TYPES
 from app.evidence import PageText, verify_fields, verify_value
@@ -215,22 +216,25 @@ def run_rules(rules: Iterable[Callable], doc: BaseModel) -> list[Validation]:
 def run(data: bytes, doc_type: str | None, llm: LLMClient, settings: Settings) -> ExtractResponse:
     started = time.perf_counter()
     validate_input(data, settings)
-    if doc_type is None:  # temporal: la clasificación llega en la etapa 4
-        raise RejectedInput(422, "doc_type es requerido por ahora")
     texts = page_texts(data)
     profiles = profile_pages(data, texts)
     if all(p == "empty" for p in profiles):
         raise RejectedInput(422, "el PDF no tiene contenido")
     pages, images = read_pages(data, texts, profiles)
-    kind = DOC_TYPES[doc_type]
     usage = Usage()
-    doc = extract(llm, doc_type, pages, images, usage)
+    # se clasifica después de leer las páginas: un escaneo solo tiene texto vía OCR
+    if doc_type:
+        detected = DocTypeResult(value=doc_type, method="forced", confidence="high")
+    elif (detected := classify(llm, pages, usage)) is None:
+        raise RejectedInput(422, "el documento no es de ningún tipo soportado")
+    kind = DOC_TYPES[detected.value]
+    doc = extract(llm, detected.value, pages, images, usage)
     # sin evidencia, el valor viene de lo que el LLM leyó: el texto o la imagen
     fallback: Source = "vision" if images else "text_layer"
     fields = verify_fields(doc, pages, fallback, kind.IDENTIFIERS)
     doc, fields = recover(llm, kind, doc, fields, pages, images, fallback, usage)
     return ExtractResponse(
-        doc_type=DocTypeResult(value=doc_type, method="forced", confidence="high"),
+        doc_type=detected,
         route="visual" if images else "fast",
         pages=[PageInfo(page=n, profile=p) for n, p in enumerate(profiles, 1)],
         fields=fields,

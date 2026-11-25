@@ -89,7 +89,6 @@ def test_not_a_pdf_is_415(client):
         (blank_pdf(password="secreta"), "invoice", "contraseña"),
         (b"%PDF-1.7 basura", "invoice", "dañado"),
         (blank_pdf(), "invoice", "no tiene contenido"),
-        (blank_pdf(), None, "doc_type"),
     ],
 )
 def test_invalid_input_is_422(client, data, doc_type, detail):
@@ -105,3 +104,10 @@ def test_llm_failure_is_502(client):
     app.dependency_overrides[get_llm] = FailingLLM
     r = post(client, (SAMPLE / "invoice_000" / "clean.pdf").read_bytes())
     assert r.status_code == 502 and "Gemini" in r.json()["detail"]
+
+
+def test_extract_without_doc_type_classifies_by_keywords(client):
+    r = post(client, (SAMPLE / "invoice_000" / "clean.pdf").read_bytes(), doc_type=None)
+    assert r.status_code == 200, r.text
+    assert r.json()["doc_type"] == {"value": "invoice", "method": "keywords", "confidence": "high"}
+    assert r.json()["usage"]["llm_calls"] == 1  # sin llamada de clasificación

@@ -43,7 +43,7 @@ flowchart TD
 | 1 | Validación de entrada | ≤ 10 MB, ≤ 20 páginas, PDF real (firma `%PDF`), sin contraseña. Si no se cumple, `4xx` |
 | 2 | Capa de texto | Texto por página con `pypdf`. Es exacto y gratuito |
 | 3 | Perfil de calidad | Por página: `digital`, `scanned` o `empty`, según caracteres extraídos por área y la proporción de imagen |
-| 4 | Clasificación | Palabras clave por tipo. Si ninguna puntúa claro, una llamada corta a Gemini con un enum. Se puede forzar con `doc_type` |
+| 4 | Clasificación | Palabras clave por tipo, sobre la capa de texto o el OCR (por eso se clasifica después de leer las páginas). Si ninguna puntúa claro, una llamada corta a Gemini con un enum que incluye `other`. Se puede forzar con `doc_type` |
 | 5 | Ruta | `fast` si todas las páginas útiles son `digital`. Si no, `visual`: OCR (RapidOCR) más la imagen de la página como entrada multimodal |
 | 6 | Verificación de evidencia | Cada valor se busca en el texto u OCR (ver §5). Asigna `confidence` |
 | 7 | Recuperación dirigida | **Máximo una** segunda llamada, solo con los campos sin evidencia y el contexto de su zona |
@@ -115,7 +115,7 @@ Un campo derivado por regla (por ejemplo, `subtotal` calculado de las partidas) 
 |---|---|
 | `413` | Más de 10 MB |
 | `415` | No es PDF |
-| `422` | Más de 20 páginas, PDF cifrado o `doc_type` desconocido |
+| `422` | Más de 20 páginas, PDF cifrado, dañado o sin contenido, `doc_type` desconocido o documento de un tipo no soportado |
 | `502` | Gemini falló después del reintento |
 
 ### Otros
