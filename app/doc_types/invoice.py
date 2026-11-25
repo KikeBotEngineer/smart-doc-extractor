@@ -29,4 +29,5 @@ class Invoice(BaseModel):
 
 LABEL = "factura"
 MODEL = Invoice
+IDENTIFIERS = {"issuer_tax_id", "receiver_tax_id", "invoice_number", "currency"}
 KEYWORDS = ("factura", "invoice", "folio", "rfc", "subtotal", "iva", "importe", "cfdi")

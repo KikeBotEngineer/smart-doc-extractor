@@ -35,6 +35,7 @@ class Resume(BaseModel):
 
 LABEL = "CV (currículum)"
 MODEL = Resume
+IDENTIFIERS = {"email", "phone"}
 KEYWORDS = (
     "curriculum",
     "experiencia",

@@ -6,6 +6,7 @@ requires-python = ">=3.12"
 dependencies = [
     "fastapi>=0.115",
     "google-genai>=1.30",
+    "rapidfuzz>=3.10",
     "pypdf>=5.1",
     "pypdfium2>=5.0",
     "pydantic>=2.9",
