@@ -3,9 +3,10 @@
 La búsqueda solo confirma o descarta un valor propuesto; nunca genera valores.
 """
 
+import math
 import re
 import unicodedata
-from collections.abc import Callable
+from collections.abc import Callable, Iterator
 from dataclasses import dataclass
 from datetime import date
 from typing import Any
@@ -17,8 +18,10 @@ from app.schemas import Evidence, FieldResult, Source
 
 FUZZY_MIN = 80  # cobertura mínima para texto libre
 SNIPPET_PAD = 40  # caracteres de contexto a cada lado
+NEAR = 80  # distancia máxima, en caracteres, entre campos de un mismo renglón
 
 Span = tuple[int, int]
+Match = tuple[int, Span, bool]  # (página, posición, literal)
 
 
 @dataclass(frozen=True)
@@ -84,39 +87,34 @@ def parse_number(token: str) -> float | None:
     return None
 
 
-def _find_patterns(patterns: Patterns, target: tuple, page: str) -> Span | None:
+def _find_patterns(patterns: Patterns, target: tuple, page: str) -> Iterator[Span]:
     for regex, readings in patterns:
         for m in regex.finditer(page):
             if target in readings(m.groups()):
-                return m.span()
-    return None
+                yield m.span()
 
 
-def find_number(value: float, page: str) -> Span | None:
-    # ponytail: un número corto (cantidad 2) coincide con cualquier "2" de la página;
-    # acotar a la zona del campo si la calibración lo pide.
+def find_number(value: float, page: str) -> Iterator[Span]:
     for m in NUMBER.finditer(page):
         n = parse_number(m.group())
         if n is not None and abs(n - value) < 0.005:
-            return m.span()
-    return None
+            yield m.span()
 
 
-def find_date(value: date, page: str) -> Span | None:
+def find_date(value: date, page: str) -> Iterator[Span]:
     return _find_patterns(DATE_PATTERNS, (value.year, value.month, value.day), page)
 
 
-def find_year_month(value: str, page: str) -> Span | None:
+def find_year_month(value: str, page: str) -> Iterator[Span]:
     year, month = value.split("-")
     return _find_patterns(YEAR_MONTH_PATTERNS, (int(year), int(month)), page)
 
 
-def find_literal(value: str, page: str) -> Span | None:
+def find_literal(value: str, page: str) -> Iterator[Span]:
     """Coincidencia literal sin importar mayúsculas ni espacios: el OCR suele perderlos
     ("Licencia desoftware anual") sin cambiar el contenido."""
     needle = r"\s*".join(re.escape(c) for c in value if not c.isspace())
-    m = re.search(rf"(?<!\w){needle}(?!\w)", page, re.I)
-    return m.span() if m else None
+    return (m.span() for m in re.finditer(rf"(?<!\w){needle}(?!\w)", page, re.I))
 
 
 def fold(text: str) -> str:
@@ -131,8 +129,9 @@ def snippet(page: str, start: int, end: int) -> str:
     return page[a : len(page) if b == -1 else b]
 
 
-def find_evidence(value: Any, identifier: bool, pages: list[str]) -> tuple[int, str, bool] | None:
-    """(página, snippet, literal) de la primera coincidencia, o None."""
+def find_matches(value: Any, identifier: bool, pages: list[str]) -> list[Match]:
+    """Todas las coincidencias literales, en orden. Si no hay y es texto libre, la mejor
+    coincidencia difusa."""
     if isinstance(value, int | float):
         finder = find_number
     elif isinstance(value, date):
@@ -141,15 +140,23 @@ def find_evidence(value: Any, identifier: bool, pages: list[str]) -> tuple[int, 
         finder = find_year_month
     else:
         finder = find_literal
-    for n, page in enumerate(pages, 1):
-        if span := finder(value, page):
-            return n, snippet(page, *span), True
+    found = sorted({(n, span) for n, page in enumerate(pages, 1) for span in finder(value, page)})
+    if found:
+        return [(n, span, True) for n, span in found]
     if finder is find_literal and not identifier:  # texto libre: cobertura difusa
         for n, page in enumerate(pages, 1):
             hit = fuzz.partial_ratio_alignment(fold(value), fold(page), score_cutoff=FUZZY_MIN)
             if hit:
-                return n, snippet(page, hit.dest_start, hit.dest_end), False
-    return None
+                return [(n, (hit.dest_start, hit.dest_end), False)]
+    return []
+
+
+def find_evidence(value: Any, identifier: bool, pages: list[str]) -> tuple[int, str, bool] | None:
+    """(página, snippet, literal) de la primera coincidencia, o None."""
+    if not (found := find_matches(value, identifier, pages)):
+        return None
+    n, span, literal = found[0]
+    return n, snippet(pages[n - 1], *span), literal
 
 
 def flatten(data: dict[str, Any]) -> dict[str, Any]:
@@ -169,32 +176,80 @@ def flatten(data: dict[str, Any]) -> dict[str, Any]:
     return out
 
 
-def verify_value(
-    path: str, value: Any, pages: list[PageText], fallback_source: Source, identifiers: set[str]
-) -> FieldResult:
-    """Sin evidencia, el valor queda con confianza baja y `fallback_source` (de dónde lo
-    leyó el LLM)."""
-    if value is None:
-        return FieldResult(missing_reason="not_present")
+def _collapse(pages: list[PageText]) -> list[str]:
+    return [" ".join(p.text.split()) for p in pages]
+
+
+def _matches(path: str, value: Any, texts: list[str], identifiers: set[str]) -> list[Match]:
     leaf = re.sub(r"\[\d+\]$", "", path.rsplit(".", 1)[-1])
-    found = find_evidence(value, leaf in identifiers, [" ".join(p.text.split()) for p in pages])
-    if found is None:
-        return FieldResult(value=value, confidence="low", source=fallback_source)
-    n, text, literal = found
+    return find_matches(value, leaf in identifiers, texts)
+
+
+def _result(
+    value: Any, match: Match, pages: list[PageText], texts: list[str], certain: bool = True
+) -> FieldResult:
+    n, span, literal = match
     page = pages[n - 1]
     return FieldResult(
         value=value,
-        confidence="high" if literal and page.reliable else "medium",
+        confidence="high" if literal and page.reliable and certain else "medium",
         source=page.source,
-        evidence=Evidence(page=n, snippet=text),
+        evidence=Evidence(page=n, snippet=snippet(texts[n - 1], *span)),
     )
+
+
+def verify_value(
+    path: str, value: Any, pages: list[PageText], fallback_source: Source, identifiers: set[str]
+) -> FieldResult:
+    """Un solo campo, sin el contexto de su partida. Sin evidencia, el valor queda con
+    confianza baja y `fallback_source` (de dónde lo leyó el LLM)."""
+    if value is None:
+        return FieldResult(missing_reason="not_present")
+    texts = _collapse(pages)
+    if not (found := _matches(path, value, texts, identifiers)):
+        return FieldResult(value=value, confidence="low", source=fallback_source)
+    return _result(value, found[0], pages, texts)
+
+
+def _nearest(matches: list[Match], anchors: list[Match]) -> tuple[Match, float]:
+    """La coincidencia más cercana a un ancla de la misma página, y su distancia."""
+    options = [(abs(m[1][0] - a[1][0]), m) for m in matches for a in anchors if m[0] == a[0]]
+    if not options:
+        return matches[0], math.inf
+    distance, match = min(options, key=lambda o: o[0])
+    return match, distance
 
 
 def verify_fields(
     doc: BaseModel, pages: list[PageText], fallback_source: Source, identifiers: set[str]
 ) -> dict[str, FieldResult]:
-    """Un FieldResult por campo hoja."""
-    return {
-        path: verify_value(path, value, pages, fallback_source, identifiers)
-        for path, value in flatten(doc.model_dump()).items()
-    }
+    """Un FieldResult por campo hoja.
+
+    Un valor que aparece varias veces (la cantidad 4 en dos partidas) toma la evidencia
+    más cercana a las anclas de su partida: los campos que aparecen una sola vez. Sin
+    anclas cerca, la evidencia es parcial."""
+    texts = _collapse(pages)
+    flat = flatten(doc.model_dump())
+    found = {p: _matches(p, v, texts, identifiers) for p, v in flat.items() if v is not None}
+    results = {}
+    for path, value in flat.items():
+        if value is None:
+            results[path] = FieldResult(missing_reason="not_present")
+            continue
+        matches = found[path]
+        if not matches:
+            results[path] = FieldResult(value=value, confidence="low", source=fallback_source)
+            continue
+        item = path.rsplit(".", 1)[0] if "." in path else None  # "line_items[4]"
+        if len(matches) == 1 or item is None:
+            results[path] = _result(value, matches[0], pages, texts)
+            continue
+        anchors = [
+            m
+            for other, ms in found.items()
+            if other != path and other.startswith(f"{item}.") and len(ms) == 1
+            for m in ms
+        ]
+        match, distance = _nearest(matches, anchors)
+        results[path] = _result(value, match, pages, texts, certain=distance <= NEAR)
+    return results

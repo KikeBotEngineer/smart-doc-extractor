@@ -61,6 +61,33 @@ def test_free_text_falls_back_to_fuzzy_as_partial_evidence():
     assert find_evidence("Hosting administrado", False, [page]) is None
 
 
+ROWS = (  # OCR real de la factura escaneada de la muestra
+    "Licencia desoftware anual 4 $1,154.89 $4,619.56\n"
+    "Mantenimientopreventivo 9 $480.35 $4,323.15\n"
+    "Servicio de consultoria 4 $2,551.51 $10,206.04"
+)
+
+
+def test_repeated_number_takes_the_evidence_from_its_own_row():
+    inv = Invoice(
+        line_items=[
+            LineItem(description="Licencia de software anual", quantity=4, amount=4619.56),
+            LineItem(description="Mantenimiento preventivo", quantity=9, amount=4323.15),
+            LineItem(description="Servicio de consultoría", quantity=4, amount=10206.04),
+        ]
+    )
+    fields = verify_fields(inv, [PageText(ROWS, "ocr")], "vision", IDENTIFIERS)
+    first, last = fields["line_items[0].quantity"], fields["line_items[2].quantity"]
+    assert first.confidence == "high" and "anual 4 $1,154.89" in first.evidence.snippet
+    assert last.confidence == "high" and "consultoria 4 $2,551.51" in last.evidence.snippet
+
+
+def test_repeated_number_without_anchors_is_partial():
+    inv = Invoice(line_items=[LineItem(quantity=4)])
+    fields = verify_fields(inv, [PageText(ROWS)], "text_layer", IDENTIFIERS)
+    assert fields["line_items[0].quantity"].confidence == "medium"
+
+
 def test_flatten():
     data = {"a": 1, "items": [{"x": 1}, {"x": 2}], "tags": ["p"], "empty": []}
     expected = {"a": 1, "items[0].x": 1, "items[1].x": 2, "tags[0]": "p", "empty": None}
