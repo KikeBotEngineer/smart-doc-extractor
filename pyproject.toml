@@ -12,7 +12,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "faker>=30",
-    "httpx>=0.28",
+    "httpx2>=2.16",
     "pillow>=11",
     "pypdfium2>=4.30",
     "pytest>=8.3",
