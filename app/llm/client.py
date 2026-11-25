@@ -22,7 +22,9 @@ class LLMClient(Protocol):
     def generate(
         self, prompt: str, schema: type[BaseModel], images: Sequence[bytes] = ()
     ) -> LLMResponse:
-        """Devuelve JSON que debería cumplir `schema`. Lanza LLMError si la llamada falla."""
+        """Devuelve JSON que debería cumplir `schema`; `images` van en JPEG.
+
+        Lanza LLMError si la llamada falla."""
         ...
 
 

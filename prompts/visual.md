@@ -1,0 +1,1 @@
+Las páginas marcadas con (OCR) vienen de un escaneo: su texto puede tener errores, como acentos o espacios perdidos y letras confundidas. Las imágenes adjuntas son esas páginas, en este orden: {pages}. Si el texto OCR y la imagen no coinciden, copia el valor tal como se ve en la imagen, con sus acentos.

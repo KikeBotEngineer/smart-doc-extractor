@@ -20,7 +20,8 @@ class GeminiLLM:
     def generate(
         self, prompt: str, schema: type[BaseModel], images: Sequence[bytes] = ()
     ) -> LLMResponse:
-        contents = [prompt, *(types.Part.from_bytes(data=i, mime_type="image/png") for i in images)]
+        parts = [types.Part.from_bytes(data=jpeg, mime_type="image/jpeg") for jpeg in images]
+        contents = [prompt, *parts]
         config = types.GenerateContentConfig(
             temperature=0,
             response_mime_type="application/json",

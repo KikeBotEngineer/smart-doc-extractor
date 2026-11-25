@@ -3,7 +3,7 @@ from datetime import date
 import pytest
 
 from app.doc_types.invoice import IDENTIFIERS, Invoice, LineItem
-from app.evidence import find_evidence, flatten, parse_number, verify_fields
+from app.evidence import PageText, find_evidence, flatten, parse_number, verify_fields
 
 
 @pytest.mark.parametrize(
@@ -50,6 +50,11 @@ def test_identifier_is_literal_with_word_boundaries():
     assert find_evidence("A-1O42", True, ["Factura No. A-1042"]) is None  # sin difuso
 
 
+def test_literal_ignores_spaces_lost_by_ocr():
+    found = find_evidence("Licencia de software anual", False, ["Licencia desoftware anual 4"])
+    assert found[2] is True and "desoftware" in found[1]
+
+
 def test_free_text_falls_back_to_fuzzy_as_partial_evidence():
     page = "Servicio de consultoria en sitio"
     assert find_evidence("Servicio de consultoría", False, [page])[2] is False
@@ -70,7 +75,7 @@ def test_verify_fields_assigns_confidence():
         line_items=[LineItem(amount=1000.0)],
     )
     text = "Factura No. A-1042\nImporte $1,000.00\nTOTAL $1,160.00"
-    fields = verify_fields(inv, [text], "text_layer", IDENTIFIERS)
+    fields = verify_fields(inv, [PageText(text)], "text_layer", IDENTIFIERS)
     assert fields["invoice_number"].confidence == "high"
     assert fields["invoice_number"].evidence.page == 1
     assert fields["line_items[0].amount"].confidence == "high"

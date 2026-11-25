@@ -4,7 +4,9 @@ La búsqueda solo confirma o descarta un valor propuesto; nunca genera valores.
 """
 
 import re
+import unicodedata
 from collections.abc import Callable
+from dataclasses import dataclass
 from datetime import date
 from typing import Any
 
@@ -17,6 +19,17 @@ FUZZY_MIN = 80  # cobertura mínima para texto libre
 SNIPPET_PAD = 40  # caracteres de contexto a cada lado
 
 Span = tuple[int, int]
+
+
+@dataclass(frozen=True)
+class PageText:
+    """Texto de una página y de dónde salió. `reliable=False`: OCR con baja confianza."""
+
+    text: str
+    source: Source = "text_layer"
+    reliable: bool = True
+
+
 Patterns = list[tuple[re.Pattern, Callable[[tuple], set]]]
 
 NUMBER = re.compile(r"\d[\d.,]*\d|\d")
@@ -40,7 +53,7 @@ DATE_PATTERNS: Patterns = [
         lambda g: {(int(g[2]), int(g[1]), int(g[0])), (int(g[2]), int(g[0]), int(g[1]))},
     ),
     (  # 22 de junio de 2023, 22 jun 2023
-        re.compile(rf"(\d{{1,2}})\s+(?:de\s+)?{MONTH}\s+(?:del?\s+)?(\d{{4}})", re.I),
+        re.compile(rf"(\d{{1,2}})\s*(?:de\s*)?{MONTH}\s*(?:del?\s*)?(\d{{4}})", re.I),
         lambda g: {(int(g[2]), _month(g[1]), int(g[0]))},
     ),
     (  # June 22, 2023
@@ -51,7 +64,7 @@ DATE_PATTERNS: Patterns = [
 YEAR_MONTH_PATTERNS: Patterns = [
     (re.compile(r"(\d{4})-(\d{1,2})\b"), lambda g: {(int(g[0]), int(g[1]))}),
     (re.compile(r"\b(\d{1,2})[/.-](\d{4})"), lambda g: {(int(g[1]), int(g[0]))}),
-    (re.compile(rf"{MONTH}\s+(?:del?\s+)?(\d{{4}})", re.I), lambda g: {(int(g[1]), _month(g[0]))}),
+    (re.compile(rf"{MONTH}\s*(?:del?\s*)?(\d{{4}})", re.I), lambda g: {(int(g[1]), _month(g[0]))}),
 ]
 
 
@@ -99,9 +112,16 @@ def find_year_month(value: str, page: str) -> Span | None:
 
 
 def find_literal(value: str, page: str) -> Span | None:
-    needle = re.escape(" ".join(value.split()))
+    """Coincidencia literal sin importar mayúsculas ni espacios: el OCR suele perderlos
+    ("Licencia desoftware anual") sin cambiar el contenido."""
+    needle = r"\s*".join(re.escape(c) for c in value if not c.isspace())
     m = re.search(rf"(?<!\w){needle}(?!\w)", page, re.I)
     return m.span() if m else None
+
+
+def fold(text: str) -> str:
+    """Minúsculas y sin acentos, carácter por carácter: conserva las posiciones."""
+    return "".join(unicodedata.normalize("NFD", c)[0].lower()[0] for c in text)
 
 
 def snippet(page: str, start: int, end: int) -> str:
@@ -126,7 +146,7 @@ def find_evidence(value: Any, identifier: bool, pages: list[str]) -> tuple[int, 
             return n, snippet(page, *span), True
     if finder is find_literal and not identifier:  # texto libre: cobertura difusa
         for n, page in enumerate(pages, 1):
-            hit = fuzz.partial_ratio_alignment(value.lower(), page.lower(), score_cutoff=FUZZY_MIN)
+            hit = fuzz.partial_ratio_alignment(fold(value), fold(page), score_cutoff=FUZZY_MIN)
             if hit:
                 return n, snippet(page, hit.dest_start, hit.dest_end), False
     return None
@@ -150,25 +170,27 @@ def flatten(data: dict[str, Any]) -> dict[str, Any]:
 
 
 def verify_fields(
-    doc: BaseModel, texts: list[str], source: Source, identifiers: set[str]
+    doc: BaseModel, pages: list[PageText], fallback_source: Source, identifiers: set[str]
 ) -> dict[str, FieldResult]:
-    """Un FieldResult por campo hoja. Sin evidencia: el valor queda con confianza baja."""
-    pages = [" ".join(t.split()) for t in texts]
+    """Un FieldResult por campo hoja. Sin evidencia: el valor queda con confianza baja y
+    `fallback_source` (de dónde lo leyó el LLM)."""
+    texts = [" ".join(p.text.split()) for p in pages]
     results = {}
     for path, value in flatten(doc.model_dump()).items():
         if value is None:
             results[path] = FieldResult(missing_reason="not_present")
             continue
         leaf = re.sub(r"\[\d+\]$", "", path.rsplit(".", 1)[-1])
-        found = find_evidence(value, leaf in identifiers, pages)
+        found = find_evidence(value, leaf in identifiers, texts)
         if found is None:
-            results[path] = FieldResult(value=value, confidence="low", source=source)
+            results[path] = FieldResult(value=value, confidence="low", source=fallback_source)
             continue
-        page, text, literal = found
+        n, text, literal = found
+        page = pages[n - 1]
         results[path] = FieldResult(
             value=value,
-            confidence="high" if literal else "medium",
-            source=source,
-            evidence=Evidence(page=page, snippet=text),
+            confidence="high" if literal and page.reliable else "medium",
+            source=page.source,
+            evidence=Evidence(page=n, snippet=text),
         )
     return results

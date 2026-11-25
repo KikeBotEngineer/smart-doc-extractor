@@ -101,10 +101,6 @@ def test_unknown_doc_type_is_422(client):
     assert post(client, blank_pdf(), "contrato").status_code == 422
 
 
-def test_scanned_is_501_until_visual_route(client):
-    assert post(client, (SAMPLE / "invoice_000" / "scanned.pdf").read_bytes()).status_code == 501
-
-
 def test_llm_failure_is_502(client):
     app.dependency_overrides[get_llm] = FailingLLM
     r = post(client, (SAMPLE / "invoice_000" / "clean.pdf").read_bytes())
