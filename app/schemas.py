@@ -22,3 +22,9 @@ class FieldResult(BaseModel):
     source: Source | None = None
     evidence: Evidence | None = None
     missing_reason: MissingReason | None = None
+
+
+class Validation(BaseModel):
+    rule: str
+    passed: bool
+    detail: str | None = None

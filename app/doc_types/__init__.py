@@ -1,4 +1,7 @@
-"""Registro de tipos de documento. Cada módulo expone LABEL, MODEL, IDENTIFIERS y KEYWORDS."""
+"""Registro de tipos de documento.
+
+Cada módulo expone LABEL, MODEL, IDENTIFIERS, KEYWORDS y RULES.
+"""
 
 from types import ModuleType
 

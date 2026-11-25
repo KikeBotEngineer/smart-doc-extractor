@@ -1,5 +1,7 @@
-"""CV: modelo de extracción y palabras clave de clasificación."""
+"""CV: modelo de extracción, palabras clave de clasificación y reglas."""
 
+import re
+from datetime import date
 from typing import Annotated
 
 from pydantic import BaseModel, Field
@@ -46,3 +48,47 @@ KEYWORDS = (
     "education",
     "skills",
 )
+
+
+# Reglas: devuelven (passed, detail) o None si faltan los datos para evaluarlas.
+Result = tuple[bool, str | None] | None
+EMAIL = re.compile(r"[^@\s]+@[^@\s]+\.[^@\s]+")
+
+
+def email_format(cv: Resume) -> Result:
+    if cv.email is None:
+        return None
+    ok = EMAIL.fullmatch(cv.email.strip()) is not None
+    return ok, None if ok else cv.email
+
+
+def experience_dates_ordered(cv: Resume) -> Result:
+    pairs = [(n, e) for n, e in enumerate(cv.experience) if e.start_date and e.end_date]
+    if not pairs:
+        return None
+    bad = [f"experience[{n}]" for n, e in pairs if e.start_date > e.end_date]  # AAAA-MM ordena
+    return not bad, ", ".join(bad) or None
+
+
+def no_future_dates(cv: Resume, today: date | None = None) -> Result:
+    today = today or date.today()
+    month = f"{today:%Y-%m}"
+    dates = {
+        f"experience[{n}].{k}": v
+        for n, e in enumerate(cv.experience)
+        for k, v in (("start_date", e.start_date), ("end_date", e.end_date))
+        if v
+    }
+    years = {
+        f"education[{n}].graduation_year": e.graduation_year
+        for n, e in enumerate(cv.education)
+        if e.graduation_year is not None
+    }
+    if not dates and not years:
+        return None
+    bad = [k for k, v in dates.items() if v > month]
+    bad += [k for k, v in years.items() if v > today.year]
+    return not bad, ", ".join(bad) or None
+
+
+RULES = (email_format, experience_dates_ordered, no_future_dates)
