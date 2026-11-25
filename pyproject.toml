@@ -5,9 +5,11 @@ description = "API que extrae datos estructurados y auditables de PDFs"
 requires-python = ">=3.12"
 dependencies = [
     "fastapi>=0.115",
+    "google-genai>=1.30",
     "pypdf>=5.1",
     "pypdfium2>=5.0",
     "pydantic>=2.9",
+    "pydantic-settings>=2.6",
     "uvicorn>=0.32",
 ]
 

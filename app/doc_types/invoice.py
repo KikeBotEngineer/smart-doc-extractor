@@ -27,4 +27,6 @@ class Invoice(BaseModel):
     total: float | None = Field(None, description="Total a pagar")
 
 
+LABEL = "factura"
+MODEL = Invoice
 KEYWORDS = ("factura", "invoice", "folio", "rfc", "subtotal", "iva", "importe", "cfdi")

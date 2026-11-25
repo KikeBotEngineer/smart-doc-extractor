@@ -33,6 +33,8 @@ class Resume(BaseModel):
     skills: list[str] = Field(default_factory=list, description="Habilidades")
 
 
+LABEL = "CV (currículum)"
+MODEL = Resume
 KEYWORDS = (
     "curriculum",
     "experiencia",
