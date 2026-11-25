@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import Literal
 
 from pydantic_settings import BaseSettings
@@ -6,4 +7,6 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     gemini_api_key: str | None = None
     gemini_model: str = "gemini-2.5-flash"
-    llm_mode: Literal["live", "recorded"] = "live"
+    # live: Gemini · recorded: solo grabaciones · record: Gemini y graba lo que falte
+    llm_mode: Literal["live", "recorded", "record"] = "live"
+    recordings_dir: Path = Path("eval/recordings")
