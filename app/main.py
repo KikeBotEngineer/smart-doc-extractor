@@ -1,3 +1,4 @@
+import logging
 import secrets
 import threading
 from collections.abc import Iterator
@@ -15,6 +16,8 @@ from app.pipeline import RejectedInput, run
 from app.schemas import ExtractResponse
 
 app = FastAPI(title="smart-doc-extractor")
+
+logger = logging.getLogger(__name__)
 
 DocTypeName = Literal[tuple(DOC_TYPES)]  # FastAPI responde 422 a un tipo desconocido
 
@@ -64,7 +67,11 @@ def rejected_input(_: Request, exc: RejectedInput) -> JSONResponse:
 
 @app.exception_handler(LLMError)
 def llm_failed(_: Request, exc: LLMError) -> JSONResponse:
-    return JSONResponse(status_code=502, content={"detail": str(exc)})
+    # el detalle (respuesta de Gemini, rutas de grabaciones) va al log, no al cliente
+    logger.error("falló el LLM: %s", exc, exc_info=exc)
+    return JSONResponse(
+        status_code=502, content={"detail": "el LLM no respondió; reintenta más tarde"}
+    )
 
 
 @app.get("/health")

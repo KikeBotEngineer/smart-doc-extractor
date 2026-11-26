@@ -22,7 +22,7 @@ RECORDINGS = Path("eval/recordings/invoice_000/clean")
 
 class FailingLLM:
     def generate(self, prompt, schema, images=()):
-        raise LLMError("Gemini no responde")
+        raise LLMError("sin grabación C:/srv/eval/recordings/x.json")
 
 
 @pytest.fixture
@@ -146,7 +146,8 @@ def test_busy_is_503(client):
 def test_llm_failure_is_502(client):
     app.dependency_overrides[get_llm] = FailingLLM
     r = post(client, (SAMPLE / "invoice_000" / "clean.pdf").read_bytes())
-    assert r.status_code == 502 and "Gemini" in r.json()["detail"]
+    assert r.status_code == 502
+    assert r.json()["detail"] == "el LLM no respondió; reintenta más tarde"  # sin rutas internas
 
 
 def test_extract_without_doc_type_classifies_by_keywords(client):
