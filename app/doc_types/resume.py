@@ -38,6 +38,7 @@ class Resume(BaseModel):
 LABEL = "CV (currículum)"
 MODEL = Resume
 IDENTIFIERS = {"email", "phone"}
+LABELS: dict[str, tuple[str, ...]] = {}  # sin montos ni fechas de nivel superior
 KEYWORDS = (
     "curriculum",
     "experiencia",

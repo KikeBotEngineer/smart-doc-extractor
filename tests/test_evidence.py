@@ -2,7 +2,7 @@ from datetime import date
 
 import pytest
 
-from app.doc_types.invoice import IDENTIFIERS, Invoice, LineItem
+from app.doc_types.invoice import IDENTIFIERS, LABELS, Invoice, LineItem
 from app.evidence import PageText, find_evidence, flatten, parse_number, verify_fields
 
 
@@ -135,3 +135,42 @@ def test_blank_string_is_not_present():
     for path in ("invoice_number", "issuer_name"):
         assert fields[path].value is None
         assert fields[path].missing_reason == "not_present"
+
+
+LABELED = (
+    "Fecha de emisión: 22/06/2023\nFecha de vencimiento: 22/07/2023\n"
+    "Subtotal $100.00\nIVA 16% $16.00\nTOTAL $116.00"
+)
+
+
+def verify_labeled(**values) -> dict:
+    return verify_fields(Invoice(**values), [PageText(LABELED)], "text_layer", IDENTIFIERS, LABELS)
+
+
+def test_amounts_and_dates_next_to_their_label_are_high():
+    fields = verify_labeled(
+        issue_date=date(2023, 6, 22), due_date=date(2023, 7, 22), subtotal=100, tax=16, total=116
+    )
+    for path in ("issue_date", "due_date", "subtotal", "tax", "total"):
+        assert fields[path].confidence == "high", path
+    assert "IVA" in fields["tax"].evidence.snippet
+
+
+def test_number_under_another_label_is_partial():
+    # "IVA 16%" y "$100.00" del subtotal existen, pero no junto a "Total"
+    assert verify_labeled(total=16)["total"].confidence == "medium"
+    assert verify_labeled(total=100)["total"].confidence == "medium"
+
+
+def test_swapped_dates_are_partial():
+    fields = verify_labeled(issue_date=date(2023, 7, 22), due_date=date(2023, 6, 22))
+    assert fields["issue_date"].confidence == "medium"
+    assert fields["due_date"].confidence == "medium"
+
+
+def test_ocr_label_without_spaces_still_counts():
+    text = "Fecha deemision:22/06/2023"
+    fields = verify_fields(
+        Invoice(issue_date=date(2023, 6, 22)), [PageText(text)], "text_layer", IDENTIFIERS, LABELS
+    )
+    assert fields["issue_date"].confidence == "high"

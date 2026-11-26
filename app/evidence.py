@@ -19,6 +19,7 @@ from app.schemas import Evidence, FieldResult, Source
 FUZZY_MIN = 80  # cobertura mínima para texto libre
 SNIPPET_PAD = 40  # caracteres de contexto a cada lado
 ROW_SLACK = 10  # caracteres alrededor de las anclas de una partida que aún son su renglón
+LABEL_WINDOW = 30  # caracteres antes de un valor donde se busca su etiqueta
 
 Span = tuple[int, int]
 Match = tuple[int, Span, bool]  # (página, posición, literal)
@@ -229,15 +230,46 @@ def _place(matches: list[Match], anchors: list[Match]) -> tuple[Match, bool]:
     return best, gap(best) == 0
 
 
+def _labeled(
+    matches: list[Match], path: str, labels: dict[str, tuple[str, ...]], texts: list[str]
+) -> tuple[Match, bool]:
+    """La coincidencia cuya etiqueta más cercana, justo antes, es la del campo: "Total: 16"
+    confirma total = 16; "IVA 16%" no. Sin ninguna así, la primera y como parcial.
+
+    Sin límites de palabra, porque el OCR pierde espacios ("deemision"); ante dos etiquetas
+    que terminan igual gana la más larga ("subtotal" sobre "total")."""
+    # ponytail: no distingue tasa de importe bajo la misma etiqueta ("IVA 16% $160.00");
+    # la regla subtotal + impuesto = total lo marca.
+    for match in matches:
+        n, (start, _), _ = match
+        window = fold(texts[n - 1][max(0, start - LABEL_WINDOW) : start])
+        hits = [
+            (window.rfind(label) + len(label), len(label), field)
+            for field, names in labels.items()
+            for label in map(fold, names)
+            if label in window
+        ]
+        if hits and max(hits)[2] == path:
+            return match, True
+    return matches[0], False
+
+
 def verify_fields(
-    doc: BaseModel, pages: list[PageText], fallback_source: Source, identifiers: set[str]
+    doc: BaseModel,
+    pages: list[PageText],
+    fallback_source: Source,
+    identifiers: set[str],
+    labels: dict[str, tuple[str, ...]] | None = None,
 ) -> dict[str, FieldResult]:
     """Un FieldResult por campo hoja.
 
     En una partida, la evidencia de cada campo debe caer en el tramo de texto que cubren
     sus anclas: los otros campos de la partida que aparecen una sola vez. Así la cantidad 4
     de la partida 5 no toma como evidencia el 4 de la partida 2. Fuera de ese tramo, la
-    evidencia es parcial."""
+    evidencia es parcial.
+
+    Un campo de nivel superior con etiquetas en `labels` (montos y fechas, donde un mismo
+    número puede ser de otro campo) solo es evidencia completa junto a su etiqueta."""
     texts = _collapse(pages)
     # "" o "  " del LLM es ausencia, no un valor: el regex vacío coincide en todas partes
     flat = {
@@ -256,7 +288,11 @@ def verify_fields(
             continue
         item = path.rsplit(".", 1)[0] if "." in path else None  # "line_items[4]"
         if item is None:
-            results[path] = _result(value, matches[0], pages, texts)
+            if labels and path in labels:
+                match, certain = _labeled(matches, path, labels, texts)
+            else:
+                match, certain = matches[0], True
+            results[path] = _result(value, match, pages, texts, certain)
             continue
         anchors = [
             m

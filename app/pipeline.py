@@ -171,7 +171,7 @@ def recover(
             continue
         value = get_field(candidate.model_dump(), path)
         # con las anclas de su partida: un "2" de otro renglón no cuenta
-        result = verify_fields(candidate, pages, fallback, kind.IDENTIFIERS)[path]
+        result = verify_fields(candidate, pages, fallback, kind.IDENTIFIERS, kind.LABELS)[path]
         # un número o fecha en "medium" puede venir de otro renglón: no basta
         trusted = result.confidence == "high" or (
             result.confidence == "medium" and isinstance(value, str)
@@ -250,7 +250,7 @@ def run(data: bytes, doc_type: str | None, llm: LLMClient, settings: Settings) -
     doc = extract(llm, detected.value, pages, images, usage)
     # sin evidencia, el valor viene de lo que el LLM leyó: el texto o la imagen
     fallback: Source = "vision" if images else "text_layer"
-    fields = verify_fields(doc, pages, fallback, kind.IDENTIFIERS)
+    fields = verify_fields(doc, pages, fallback, kind.IDENTIFIERS, kind.LABELS)
     doc, fields = recover(llm, kind, doc, fields, pages, images, fallback, usage)
     return ExtractResponse(
         doc_type=detected,

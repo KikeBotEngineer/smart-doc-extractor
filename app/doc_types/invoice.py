@@ -32,6 +32,15 @@ LABEL = "factura"
 MODEL = Invoice
 IDENTIFIERS = {"issuer_tax_id", "receiver_tax_id", "invoice_number", "currency"}
 KEYWORDS = ("factura", "invoice", "folio", "rfc", "subtotal", "iva", "importe", "cfdi")
+# Etiquetas que preceden a montos y fechas: sin la suya justo antes, la evidencia es parcial
+# (un total = 16 no se confirma con "IVA 16%", ni una fecha de emisión con el vencimiento)
+LABELS = {
+    "subtotal": ("subtotal",),
+    "tax": ("iva", "impuesto", "tax"),
+    "total": ("total",),
+    "issue_date": ("fecha", "emisión", "expedición", "issue date", "invoice date"),
+    "due_date": ("vencimiento", "vence", "límite", "due"),
+}
 
 
 # Reglas: devuelven (passed, detail) o None si faltan los datos para evaluarlas.
