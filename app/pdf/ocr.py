@@ -10,17 +10,23 @@ from rapidocr_onnxruntime import RapidOCR
 from app.pdf import PDFIUM_LOCK
 
 DPI = 150  # el escaneo típico; más resolución casi duplica el tiempo de OCR
+# Tope por página: A0 a 150 dpi (~17.5 MP) cabe; una página gigante de un PDF hostil
+# (14400 pt por lado → 30,000 px, 2.7 GB) se renderiza a menor resolución.
+MAX_PIXELS = 20_000_000
 
 # Caja de RapidOCR: 4 esquinas [x, y]
 Box = list[list[float]]
 
 
-def render_pages(data: bytes, indexes: list[int]) -> dict[int, Image.Image]:
-    """Imagen RGB de cada página pedida (índices base 0)."""
+def render_page(data: bytes, index: int) -> Image.Image:
+    """Imagen RGB de una página (índice base 0), a DPI o menos si pasa de MAX_PIXELS."""
     with PDFIUM_LOCK:
         pdf = pdfium.PdfDocument(data)
         try:
-            return {i: pdf[i].render(scale=DPI / 72).to_pil().convert("RGB") for i in indexes}
+            page = pdf[index]
+            width, height = page.get_size()
+            scale = min(DPI / 72, (MAX_PIXELS / max(width * height, 1)) ** 0.5)
+            return page.render(scale=scale).to_pil().convert("RGB")
         finally:
             pdf.close()
 

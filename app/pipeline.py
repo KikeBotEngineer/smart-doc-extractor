@@ -18,7 +18,7 @@ from app.config import Settings
 from app.doc_types import DOC_TYPES
 from app.evidence import PageText, verify_fields
 from app.llm.client import LLMClient, LLMError, Usage, generate_structured
-from app.pdf.ocr import ocr_image, render_pages, to_jpeg
+from app.pdf.ocr import ocr_image, render_page, to_jpeg
 from app.pdf.profile import PageProfile, profile_pages
 from app.pdf.text_layer import page_texts
 from app.schemas import (
@@ -72,17 +72,18 @@ def read_pages(
 ) -> tuple[list[PageText], list[tuple[int, bytes]]]:
     """Etapa 5. Páginas digitales: capa de texto. Escaneadas: OCR, y su imagen para el LLM.
 
-    Devuelve el texto de cada página y las imágenes como (número de página, JPEG)."""
-    scanned = [i for i, p in enumerate(profiles) if p == "scanned"]
-    rendered = render_pages(data, scanned)
-    pages = []
-    for i, text in enumerate(texts):
-        if i in rendered:
-            ocr_text, score = ocr_image(rendered[i])
-            pages.append(PageText(ocr_text, "ocr", reliable=score >= OCR_MIN_SCORE))
-        else:
+    Devuelve el texto de cada página y las imágenes como (número de página, JPEG).
+    Una página renderizada a la vez: en memoria solo queda su JPEG."""
+    pages, images = [], []
+    for i, (text, profile) in enumerate(zip(texts, profiles, strict=True)):
+        if profile != "scanned":
             pages.append(PageText(text))
-    return pages, [(i + 1, to_jpeg(rendered[i])) for i in scanned]
+            continue
+        image = render_page(data, i)
+        ocr_text, score = ocr_image(image)
+        pages.append(PageText(ocr_text, "ocr", reliable=score >= OCR_MIN_SCORE))
+        images.append((i + 1, to_jpeg(image)))
+    return pages, images
 
 
 def render_document(pages: list[PageText]) -> str:
