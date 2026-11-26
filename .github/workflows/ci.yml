@@ -12,8 +12,8 @@ jobs:
     env:
       LLM_MODE: recorded # sin red ni API key: respuestas grabadas
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
           cache: pip
@@ -33,7 +33,7 @@ jobs:
         run: python eval/run_eval.py --min-clean-accuracy 0.99 --out eval/report-ci.md
       - name: Reporte
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: eval-report
           path: eval/report-ci.md
@@ -42,6 +42,6 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Imagen
         run: docker build -t smart-doc-extractor .
