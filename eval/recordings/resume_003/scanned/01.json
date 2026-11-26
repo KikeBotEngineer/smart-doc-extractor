@@ -1,0 +1,6 @@
+{
+  "text": "{\"fields\": [{\"field\": \"education[0].institution\", \"value\": \"Universidad de Guadalajara\"}, {\"field\": \"education[0].degree\", \"value\": \"Licenciatura en Administración\"}, {\"field\": \"education[0].graduation_year\", \"value\": \"2013\"}]}",
+  "input_tokens": 810,
+  "output_tokens": 503,
+  "fingerprint": "e1ce5c76f4d3baff"
+}

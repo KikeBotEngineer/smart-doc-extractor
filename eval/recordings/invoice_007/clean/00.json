@@ -1,6 +1,6 @@
 {
-  "text": "{\n  \"issuer_name\": \"Nava y Curiel S.A. de C.V.\",\n  \"issuer_tax_id\": \"FAH881213P21\",\n  \"receiver_name\": \"Fuentes-Jaramillo e Hijos\",\n  \"receiver_tax_id\": null,\n  \"invoice_number\": \"F-57174\",\n  \"issue_date\": \"2024-03-07\",\n  \"due_date\": \"2024-04-21\",\n  \"currency\": \"USD\",\n  \"line_items\": [\n    {\n      \"description\": \"Diseño de interfaz\",\n      \"quantity\": 7,\n      \"unit_price\": 2215.78,\n      \"amount\": 15510.46\n    }\n  ],\n  \"subtotal\": 15510.46,\n  \"tax\": 2481.67,\n  \"total\": 17992.13\n}",
-  "input_tokens": 326,
-  "output_tokens": 679,
+  "text": "{\"issuer_name\":\"Estrada-Mena\",\"issuer_tax_id\":\"BVK160626B9G\",\"receiver_name\":\"Grupo Arellano y Polanco\",\"receiver_tax_id\":null,\"invoice_number\":\"F-14247\",\"issue_date\":\"2023-08-29\",\"due_date\":\"2023-10-13\",\"currency\":\"USD\",\"line_items\":[{\"description\":\"Desarrollo de módulo\",\"quantity\":4,\"unit_price\":3801.85,\"amount\":15207.40}],\"subtotal\":15207.40,\"tax\":2433.18,\"total\":17640.58}",
+  "input_tokens": 317,
+  "output_tokens": 684,
   "fingerprint": "6885825e0d325341"
 }

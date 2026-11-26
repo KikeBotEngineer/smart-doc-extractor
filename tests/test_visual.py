@@ -60,9 +60,12 @@ def test_ocr_evidence(scanned_invoice):
     number = fields["invoice_number"]
     assert (number.confidence, number.source, number.evidence.page) == ("high", "ocr", 1)
     assert fields["total"].confidence == "high"
-    # el OCR pierde el acento de "Capacitación": evidencia parcial
-    description = fields["line_items[0].description"]
-    assert (description.confidence, description.source) == ("medium", "ocr")
+    # el OCR incluido pierde los acentos: con acento, la evidencia es parcial
+    descriptions = [f for path, f in fields.items() if path.endswith(".description")]
+    assert descriptions
+    for f in descriptions:
+        expected = "high" if f.value.isascii() else "medium"
+        assert (f.confidence, f.source) == (expected, "ocr"), f
 
 
 def test_value_seen_only_by_the_llm_is_low_vision(scanned_invoice):

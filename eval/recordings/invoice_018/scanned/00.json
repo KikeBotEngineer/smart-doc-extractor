@@ -1,6 +1,6 @@
 {
-  "text": "{\n  \"issuer_name\": \"Ruelas-Barrientos\",\n  \"issuer_tax_id\": \"MP0641224YYU\",\n  \"receiver_name\": \"Grupo Roldán-Ulloa\",\n  \"receiver_tax_id\": \"HYE170213N47\",\n  \"invoice_number\": \"B-39512\",\n  \"issue_date\": \"2023-05-03\",\n  \"due_date\": \"2023-06-02\",\n  \"currency\": \"MXN\",\n  \"line_items\": [\n    {\n      \"description\": \"Capacitación en sitio\",\n      \"quantity\": 8,\n      \"unit_price\": 3804.62,\n      \"amount\": 30436.96\n    },\n    {\n      \"description\": \"Soporte técnico mensual\",\n      \"quantity\": 1,\n      \"unit_price\": 515.21,\n      \"amount\": 515.21\n    },\n    {\n      \"description\": \"Soporte técnico mensual\",\n      \"quantity\": 4,\n      \"unit_price\": 2674.44,\n      \"amount\": 10697.76\n    },\n    {\n      \"description\": \"Soporte técnico mensual\",\n      \"quantity\": 2,\n      \"unit_price\": 446.72,\n      \"amount\": 893.44\n    }\n  ],\n  \"subtotal\": 42543.37,\n  \"tax\": 6806.94,\n  \"total\": 49350.31\n}",
-  "input_tokens": 740,
-  "output_tokens": 2052,
+  "text": "{\"issuer_name\":\"Carrión y Asociados\",\"issuer_tax_id\":\"BE070060716E\",\"receiver_name\":\"Zedillo y Meraz S. R. L. de C.V.\",\"receiver_tax_id\":\"IVS98022729F\",\"invoice_number\":\"C-39586\",\"issue_date\":\"2024-07-21\",\"due_date\":\"2024-08-20\",\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Hosting administrado\",\"quantity\":2,\"unit_price\":4098.49,\"amount\":8196.98}],\"subtotal\":8196.98,\"tax\":1311.52,\"total\":9508.50}",
+  "input_tokens": 671,
+  "output_tokens": 1224,
   "fingerprint": "6885825e0d325341"
 }

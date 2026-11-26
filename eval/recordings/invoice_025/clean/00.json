@@ -1,6 +1,6 @@
 {
-  "text": "{\n  \"issuer_name\": \"Cardona-Guzmán S.A.\",\n  \"issuer_tax_id\": \"KMI6306283HW\",\n  \"receiver_name\": \"Industrias Rangel y Cintrón\",\n  \"receiver_tax_id\": \"DLJ131101QVC\",\n  \"invoice_number\": \"F-23643\",\n  \"issue_date\": \"2024-09-17\",\n  \"due_date\": null,\n  \"currency\": \"MXN\",\n  \"line_items\": [\n    {\n      \"description\": \"Mantenimiento preventivo\",\n      \"quantity\": 2,\n      \"unit_price\": 1787.96,\n      \"amount\": 3575.92\n    }\n  ],\n  \"subtotal\": 3575.92,\n  \"tax\": 572.15,\n  \"total\": 4148.07\n}",
-  "input_tokens": 314,
-  "output_tokens": 644,
+  "text": "{\n  \"issuer_name\": \"Olvera y Loera S.C.\",\n  \"issuer_tax_id\": \"PAF7303198FN\",\n  \"receiver_name\": \"Alonzo, Rangel y Navarrete\",\n  \"receiver_tax_id\": \"JOL711203ZEZ\",\n  \"invoice_number\": \"A-71184\",\n  \"issue_date\": \"2024-01-10\",\n  \"due_date\": null,\n  \"currency\": \"USD\",\n  \"line_items\": [\n    {\n      \"description\": \"Diseño de interfaz\",\n      \"quantity\": 7,\n      \"unit_price\": 1472.33,\n      \"amount\": 10306.31\n    },\n    {\n      \"description\": \"Auditoría de seguridad\",\n      \"quantity\": 9,\n      \"unit_price\": 2199.52,\n      \"amount\": 19795.68\n    },\n    {\n      \"description\": \"Mantenimiento preventivo\",\n      \"quantity\": 6,\n      \"unit_price\": 2419.77,\n      \"amount\": 14518.62\n    },\n    {\n      \"description\": \"Mantenimiento preventivo\",\n      \"quantity\": 2,\n      \"unit_price\": 1060.47,\n      \"amount\": 2120.94\n    }\n  ],\n  \"subtotal\": 46741.55,\n  \"tax\": 7478.65,\n  \"total\": 54220.20\n}",
+  "input_tokens": 395,
+  "output_tokens": 1161,
   "fingerprint": "6885825e0d325341"
 }

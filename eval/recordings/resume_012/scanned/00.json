@@ -1,6 +1,6 @@
 {
-  "text": "{\"name\":\"Karla Yolanda Farías\",\"email\":\"villarrealrosario@gmail.com\",\"phone\":null,\"location\":\"Vieja Timor-Leste, Chihuahua\",\"summary\":\"Profesional con 12 años de trayectoria; último puesto: Analista de Datos en Marrero S. R.L. de C.V., con dominio de Kubernetes, Liderazgo y Git.\",\"experience\":[{\"company\":\"Marrero S. R.L. de C.V.\",\"title\":\"Analista de Datos\",\"start_date\":\"2015-04\",\"end_date\":null},{\"company\":\"Corporacin Cardenas-Véliz\",\"title\":\"Contador Senior\",\"start_date\":\"2013-06\",\"end_date\":\"2015-03\"}],\"education\":[{\"institution\":\"Tecnológico de Monterrey\",\"degree\":\"Licenciatura en Administración\",\"graduation_year\":2011}],\"skills\":[\"Kubernetes\",\"Liderazgo\",\"Git\",\"Python\",\"Negociación\",\"Java\",\"Docker\"]}",
-  "input_tokens": 678,
-  "output_tokens": 1158,
+  "text": "{\"name\":\"Marisol Salma Gaitán Velásquez\",\"email\":\"hurtadofelipe@gmail.com\",\"phone\":\"541-413-7956\",\"location\":\"Nueva Rwanda, Sonora\",\"summary\":\"Analista de Datos enfocado en resultados, con 5 años de experiencia y conocimientos sólidos de SQL, Power BI y Liderazgo.\",\"experience\":[{\"company\":\"Proyectos Blanco-Estrada\",\"title\":\"Analista de Datos\",\"start_date\":\"2009-12\",\"end_date\":\"2013-08\"},{\"company\":\"Piña S. R. L. de C.V.\",\"title\":\"Contador Senior\",\"start_date\":\"2008-07\",\"end_date\":\"2009-10\"}],\"education\":[{\"institution\":\"Universidad de Guadalajara\",\"degree\":\"Licenciatura en Informática\",\"graduation_year\":2007},{\"institution\":\"Universidad de Guadalajara\",\"degree\":\"Ingeniería en Sistemas\",\"graduation_year\":2008}],\"skills\":[\"SQL\",\"Power BI\",\"Liderazgo\",\"Java\",\"Kubernetes\"]}",
+  "input_tokens": 689,
+  "output_tokens": 1592,
   "fingerprint": "b4392b978a6e5576"
 }

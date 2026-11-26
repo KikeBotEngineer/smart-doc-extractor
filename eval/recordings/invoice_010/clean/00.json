@@ -1,6 +1,6 @@
 {
-  "text": "{\n  \"issuer_name\": \"Galarza-Valverde\",\n  \"issuer_tax_id\": \"KEK781015GBH\",\n  \"receiver_name\": \"Galindo-Sanabria S.C.\",\n  \"receiver_tax_id\": \"BWH980118J6G\",\n  \"invoice_number\": \"A-41274\",\n  \"issue_date\": \"2024-02-20\",\n  \"due_date\": \"2024-04-05\",\n  \"currency\": \"MXN\",\n  \"line_items\": [\n    {\n      \"description\": \"Mantenimiento preventivo\",\n      \"quantity\": 10,\n      \"unit_price\": 2017.10,\n      \"amount\": 20171.00\n    },\n    {\n      \"description\": \"Capacitación en sitio\",\n      \"quantity\": 2,\n      \"unit_price\": 3392.23,\n      \"amount\": 6784.46\n    },\n    {\n      \"description\": \"Licencia de software anual\",\n      \"quantity\": 7,\n      \"unit_price\": 3183.01,\n      \"amount\": 22281.07\n    }\n  ],\n  \"subtotal\": 49236.53,\n  \"tax\": 7877.84,\n  \"total\": 57114.37\n}",
-  "input_tokens": 388,
-  "output_tokens": 1088,
+  "text": "{\"issuer_name\":\"Pizarro-Pedraza\",\"issuer_tax_id\":\"ZBL970909JAM\",\"receiver_name\":\"Corporacin Peres, Báez y Nájera\",\"receiver_tax_id\":null,\"invoice_number\":\"A-32226\",\"issue_date\":\"2025-03-25\",\"due_date\":\"2025-04-09\",\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Hosting administrado\",\"quantity\":7,\"unit_price\":2096.87,\"amount\":14678.09}],\"subtotal\":14678.09,\"tax\":2348.49,\"total\":17026.58}",
+  "input_tokens": 317,
+  "output_tokens": 964,
   "fingerprint": "6885825e0d325341"
 }

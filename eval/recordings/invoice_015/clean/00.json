@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Club Acosta-Irizarry\",\"issuer_tax_id\":\"RWG951016AQ7\",\"receiver_name\":\"Industrias Caraballo-Lugo\",\"receiver_tax_id\":\"BJU690712S81\",\"invoice_number\":\"F-66087\",\"issue_date\":\"2024-11-06\",\"due_date\":\"2024-11-21\",\"currency\":\"USD\",\"line_items\":[{\"description\":\"Mantenimiento preventivo\",\"quantity\":10,\"unit_price\":2716.96,\"amount\":27169.60},{\"description\":\"Hosting administrado\",\"quantity\":3,\"unit_price\":3857.05,\"amount\":11571.15},{\"description\":\"Auditoría de seguridad\",\"quantity\":2,\"unit_price\":4149.86,\"amount\":8299.72},{\"description\":\"Soporte técnico mensual\",\"quantity\":8,\"unit_price\":3879.17,\"amount\":31033.36}],\"subtotal\":78073.83,\"tax\":12491.81,\"total\":90565.64}",
-  "input_tokens": 410,
-  "output_tokens": 816,
+  "text": "{\"issuer_name\":\"Segura-Candelaria\",\"issuer_tax_id\":\"DWC6806226YE\",\"receiver_name\":\"Laboratorios Raya-Concepción\",\"receiver_tax_id\":null,\"invoice_number\":\"B-2443\",\"issue_date\":\"2024-05-07\",\"due_date\":\"2024-06-21\",\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Soporte técnico mensual\",\"quantity\":2,\"unit_price\":2582.39,\"amount\":5164.78},{\"description\":\"Hosting administrado\",\"quantity\":8,\"unit_price\":4750.91,\"amount\":38007.28},{\"description\":\"Desarrollo de módulo\",\"quantity\":2,\"unit_price\":1510.76,\"amount\":3021.52},{\"description\":\"Capacitación en sitio\",\"quantity\":4,\"unit_price\":362.65,\"amount\":1450.6},{\"description\":\"Diseño de interfaz\",\"quantity\":9,\"unit_price\":2527.99,\"amount\":22751.91},{\"description\":\"Desarrollo de módulo\",\"quantity\":3,\"unit_price\":2161.59,\"amount\":6484.77}],\"subtotal\":76880.86,\"tax\":12300.94,\"total\":89181.8}",
+  "input_tokens": 443,
+  "output_tokens": 934,
   "fingerprint": "6885825e0d325341"
 }

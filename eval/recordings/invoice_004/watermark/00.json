@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Calderón, Muñoz y Montañez\",\"issuer_tax_id\":\"ICD900908SAV\",\"receiver_name\":\"Proyectos Armas, Rico y Terán\",\"receiver_tax_id\":\"SZT900507HSD\",\"invoice_number\":\"A-40140\",\"issue_date\":\"2023-05-25\",\"due_date\":\"2023-06-24\",\"currency\":\"USD\",\"line_items\":[{\"description\":\"Soporte técnico mensual\",\"quantity\":1,\"unit_price\":286.48,\"amount\":286.48},{\"description\":\"Licencia de software anual\",\"quantity\":9,\"unit_price\":363.49,\"amount\":3271.41}],\"subtotal\":3557.89,\"tax\":569.26,\"total\":4127.15}",
-  "input_tokens": 687,
-  "output_tokens": 1252,
+  "text": "{\"issuer_name\":\"Arteaga e Hijos\",\"issuer_tax_id\":\"SWN610525W7R\",\"receiver_name\":\"Manzanares-Galvan\",\"receiver_tax_id\":\"LMM740106AVU\",\"invoice_number\":\"F-87388\",\"issue_date\":\"2023-08-09\",\"due_date\":\"2023-08-24\",\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Capacitacion en sitio\",\"quantity\":1,\"unit_price\":3524.00,\"amount\":3524.00}],\"subtotal\":3524.00,\"tax\":563.84,\"total\":4087.84}",
+  "input_tokens": 658,
+  "output_tokens": 1000,
   "fingerprint": "6885825e0d325341"
 }

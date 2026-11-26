@@ -1,6 +1,6 @@
 {
-  "text": "{\"name\":\"Ing. Tomás Gaitán\",\"email\":\"lucas48@yahoo.com\",\"phone\":null,\"location\":\"San Camilo de la Montaña, Tamaulipas\",\"summary\":\"Contador Senior con 1 año de experiencia. Especialista en Python, Power BI y Scrum.\",\"experience\":[{\"company\":\"Uribe-Cortés\",\"title\":\"Contador Senior\",\"start_date\":\"2010-09\",\"end_date\":\"2011-09\"}],\"education\":[{\"institution\":\"Tecnológico de Monterrey\",\"degree\":\"Licenciatura en Contaduría\",\"graduation_year\":2008},{\"institution\":\"Universidad Autónoma de Nuevo León\",\"degree\":\"Ingeniería Industrial\",\"graduation_year\":2009}],\"skills\":[\"Python\",\"Power BI\",\"Scrum\",\"Figma\",\"AWS\",\"SQL\"]}",
-  "input_tokens": 300,
-  "output_tokens": 736,
+  "text": "{\"name\":\"Gabino Martín Quintana\",\"email\":\"guzmangerardo@gmail.com\",\"phone\":\"052.810.6373x682\",\"location\":\"San Gregorio los altos, Sonora\",\"summary\":null,\"experience\":[{\"company\":\"Concepción y Osorio A.C.\",\"title\":\"Analista de Datos\",\"start_date\":\"2021-08\",\"end_date\":null},{\"company\":\"Avilés y Asociados\",\"title\":\"Administrador de Sistemas\",\"start_date\":\"2020-04\",\"end_date\":\"2021-05\"},{\"company\":\"Grupo González y Miramontes\",\"title\":\"Ingeniero de Software\",\"start_date\":\"2018-01\",\"end_date\":\"2020-03\"},{\"company\":\"Luevano y Posada S.A. de C.V.\",\"title\":\"Contador Senior\",\"start_date\":\"2015-05\",\"end_date\":\"2017-12\"}],\"education\":[{\"institution\":\"Tecnológico de Monterrey\",\"degree\":\"Maestría en Ciencia de Datos\",\"graduation_year\":2015}],\"skills\":[\"Power BI\",\"Negociación\",\"SQL\",\"AWS\",\"Liderazgo\",\"Python\",\"Kubernetes\",\"Figma\"]}",
+  "input_tokens": 370,
+  "output_tokens": 1286,
   "fingerprint": "b4392b978a6e5576"
 }

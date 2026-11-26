@@ -10,18 +10,18 @@ El LLM (Gemini) lee y propone valores. Python decide: busca cada valor en el tex
 
 | Variante | Clasificación | Exactitud | Alucinación | Calibración `high` | high / medium / low | Llamadas LLM | Latencia |
 |---|---:|---:|---:|---:|---|---:|---:|
-| `clean`: PDF digital | 100% | 100% | 0% | 100% | 99.3 / 0.7 / 0.0% | 1 | 4.6 s |
-| `scanned`: 150 dpi, ruido, rotación | 100% | 99.2% | 0% | 99.3% | 78.8 / 19.8 / 1.5% | 1 | 10.6 s |
-| `watermark`: escaneo con marca de agua | 100% | 98.9% | 0% | 99.2% | 74.4 / 20.2 / 5.5% | 2 | 21.2 s |
+| `clean`: PDF digital | 100% | 100% | 0% | 100% | 99.2 / 0.8 / 0.0% | 1 | 4.4 s |
+| `scanned`: 150 dpi, ruido, rotación | 100% | 99.1% | 0% | 99.2% | 80.1 / 18.4 / 1.6% | 1 | 10.5 s |
+| `watermark`: escaneo con marca de agua | 100% | 98.3% | 0% | 98.6% | 74.9 / 19.3 / 5.8% | 2 | 12.2 s |
 
 - **Exactitud:** valor normalizado igual al esperado. **Alucinación:** valor publicado donde el documento no lo tiene. **Calibración:** exactitud de los valores marcados `high`.
-- Tokens promedio por documento: 835 de entrada y 1,275 de salida (incluye el razonamiento de 2.5-flash).
+- Tokens promedio por documento: 841 de entrada y 1,296 de salida (incluye el razonamiento de 2.5-flash).
 
 Qué muestran los errores:
 
-- **El OCR y el LLM coinciden en el mismo error.** Casi todos los `high` incorrectos son confusiones del OCR (`O`/`0`, `I`/`1`, acentos perdidos) que Gemini copió en vez de leer la imagen. Como la evidencia se busca en ese mismo texto, la confirma. La regla `tax_id_format` marca 3 de los 7 RFC mal leídos; en los otros 4 la confusión cae en la homoclave, donde letras y dígitos son válidos.
-- **Los `medium` de las variantes escaneadas son sobre todo acentos**: el modelo de OCR incluido (chino/inglés) no los reconoce. Un modelo de OCR latino los reduciría.
-- **Gemini corrige la ortografía al leer imágenes** (`Hernádez` → `Hernández`) aunque el prompt lo prohíbe. Esos valores quedan en `medium` porque no coinciden con el OCR.
+- **El OCR y el LLM coinciden en el mismo error.** Los 19 `high` incorrectos son errores del OCR que Gemini copió en vez de leer la imagen: acentos perdidos (10), espacios en `S. R.L.` (6) y `O`/`0` o `I`/`1` en RFC (3). Como la evidencia se busca en ese mismo texto, la confirma. La regla `tax_id_format` marca los 3 RFC.
+- **Los `medium` de las variantes escaneadas son sobre todo acentos**: el modelo de OCR incluido (chino/inglés) no los reconoce. Un modelo de OCR latino reduciría esto y el punto anterior.
+- **Gemini corrige la ortografía al leer imágenes** (`Corporacin` → `Corporación`, una errata de los datos de Faker) aunque el prompt lo prohíbe. Esos valores quedan en `medium` porque no coinciden con el OCR.
 
 ## Uso
 

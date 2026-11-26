@@ -1,6 +1,6 @@
 {
-  "text": "{\"name\":\"Rodolfo Augusto Cortez Acevedo\",\"email\":\"sraya@hotmail.com\",\"phone\":\"403.447.1349x361\",\"location\":\"Nueva Granada, Durango\",\"summary\":null,\"experience\":[{\"company\":\"Laboratorios Bonilla, Cortez y Grijalva\",\"title\":\"Ingeniero de Software\",\"start_date\":\"2016-09\",\"end_date\":null}],\"education\":[{\"institution\":\"Instituto Politécnico Nacional\",\"degree\":\"Ingeniería en Sistemas\",\"graduation_year\":2014}],\"skills\":[\"Git\",\"Excel avanzado\",\"Power BI\"]}",
-  "input_tokens": 264,
-  "output_tokens": 634,
+  "text": "{\"name\":\"Micaela Susana Mora\",\"email\":\"veronicagarza@yahoo.com\",\"phone\":\"1-455-898-6517x210\",\"location\":\"San Germán los bajos, Nuevo León\",\"summary\":\"Profesional con 9 años de trayectoria; último puesto: Ingeniero de Software en Industrias Carrera, Leiva y Curiel, con dominio de Docker, Kubernetes y AWS.\",\"experience\":[{\"company\":\"Industrias Carrera, Leiva y Curiel\",\"title\":\"Ingeniero de Software\",\"start_date\":\"2016-05\",\"end_date\":null}],\"education\":[{\"institution\":\"Instituto Politécnico Nacional\",\"degree\":\"Ingeniería Industrial\",\"graduation_year\":2015}],\"skills\":[\"Docker\",\"Kubernetes\",\"AWS\",\"Inglés avanzado\",\"Java\",\"Figma\"]}",
+  "input_tokens": 314,
+  "output_tokens": 734,
   "fingerprint": "b4392b978a6e5576"
 }

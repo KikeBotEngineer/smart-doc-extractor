@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Badillo-Girón y Asociados\",\"issuer_tax_id\":\"XCZ790426TK8\",\"receiver_name\":\"Mata S.C.\",\"receiver_tax_id\":null,\"invoice_number\":\"B-24862\",\"issue_date\":\"2023-12-08\",\"due_date\":null,\"currency\":\"USD\",\"line_items\":[{\"description\":\"Mantenimiento preventivo\",\"quantity\":4,\"unit_price\":2713.49,\"amount\":10853.96},{\"description\":\"Hosting administrado\",\"quantity\":10,\"unit_price\":3183.57,\"amount\":31835.70}],\"subtotal\":42689.66,\"tax\":6830.35,\"total\":49520.01}",
-  "input_tokens": 663,
-  "output_tokens": 1299,
+  "text": "{\"issuer_name\":\"Club Iglesias y Manzanares\",\"issuer_tax_id\":\"BNO151106XYX\",\"receiver_name\":\"Aparicio S.R.L. de C.V.\",\"receiver_tax_id\":\"GSM7902223D6\",\"invoice_number\":\"A-81419\",\"issue_date\":\"2023-12-18\",\"due_date\":null,\"currency\":\"USD\",\"line_items\":[{\"description\":\"Capacitación en sitio\",\"quantity\":8,\"unit_price\":4717.82,\"amount\":37742.56},{\"description\":\"Diseño de interfaz\",\"quantity\":1,\"unit_price\":209.36,\"amount\":209.36}],\"subtotal\":37951.92,\"tax\":6072.31,\"total\":44024.23}",
+  "input_tokens": 680,
+  "output_tokens": 934,
   "fingerprint": "6885825e0d325341"
 }

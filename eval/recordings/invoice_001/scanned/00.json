@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Aparicio, Anguiano y Cabán\",\"issuer_tax_id\":\"LPE111130BFM\",\"receiver_name\":\"Grupo Santiago y Zarate\",\"receiver_tax_id\":\"SXT941212PIX\",\"invoice_number\":\"A-19407\",\"issue_date\":\"2023-05-16\",\"due_date\":\"2023-05-31\",\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Diseño de interfaz\",\"quantity\":4,\"unit_price\":544.18,\"amount\":2176.72},{\"description\":\"Hosting administrado\",\"quantity\":5,\"unit_price\":2436.85,\"amount\":12184.25},{\"description\":\"Hosting administrado\",\"quantity\":8,\"unit_price\":1448.03,\"amount\":11584.24},{\"description\":\"Auditoría de seguridad\",\"quantity\":2,\"unit_price\":1173.40,\"amount\":2346.80},{\"description\":\"Mantenimiento preventivo\",\"quantity\":3,\"unit_price\":923.64,\"amount\":2770.92}],\"subtotal\":31062.93,\"tax\":4970.07,\"total\":36033.00}",
-  "input_tokens": 762,
-  "output_tokens": 1180,
+  "text": "{\"issuer_name\":\"Páez, Varela y Galindo\",\"issuer_tax_id\":\"BIC010720CU5\",\"receiver_name\":\"Industrias Téllez-Domínguez\",\"receiver_tax_id\":\"WMZ151221QDF\",\"invoice_number\":\"A-71475\",\"issue_date\":\"2023-06-13\",\"due_date\":\"2023-06-28\",\"currency\":\"USD\",\"line_items\":[{\"description\":\"Soporte técnico mensual\",\"quantity\":7,\"unit_price\":2868.10,\"amount\":20076.70},{\"description\":\"Desarrollo de módulo\",\"quantity\":10,\"unit_price\":2697.02,\"amount\":26970.20},{\"description\":\"Servicio de consultoría\",\"quantity\":10,\"unit_price\":4180.68,\"amount\":41806.80},{\"description\":\"Soporte técnico mensual\",\"quantity\":8,\"unit_price\":866.13,\"amount\":6929.04}],\"subtotal\":95782.74,\"tax\":15325.24,\"total\":111107.98}",
+  "input_tokens": 751,
+  "output_tokens": 1259,
   "fingerprint": "6885825e0d325341"
 }

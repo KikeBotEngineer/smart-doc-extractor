@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Club Ruelas-Rosales\",\"issuer_tax_id\":\"DQP720229YMU\",\"receiver_name\":\"Proyectos Pacheco y Bahena\",\"receiver_tax_id\":\"TJS800827TBP\",\"invoice_number\":\"C-8559\",\"issue_date\":\"2024-01-03\",\"due_date\":\"2024-02-02\",\"currency\":\"USD\",\"line_items\":[{\"description\":\"Soporte técnico mensual\",\"quantity\":9,\"unit_price\":1414.33,\"amount\":12728.97}],\"subtotal\":12728.97,\"tax\":2036.64,\"total\":14765.61}",
-  "input_tokens": 661,
-  "output_tokens": 806,
+  "text": "{\n  \"issuer_name\": \"Laboratorios Reséndez y Solano\",\n  \"issuer_tax_id\": \"TDC960918WE3\",\n  \"receiver_name\": \"Club Guardado y Griego\",\n  \"receiver_tax_id\": \"SYN060305QA6\",\n  \"invoice_number\": \"A-29597\",\n  \"issue_date\": \"2025-03-16\",\n  \"due_date\": \"2025-04-30\",\n  \"currency\": \"MXN\",\n  \"line_items\": [\n    {\n      \"description\": \"Diseño de interfaz\",\n      \"quantity\": 4,\n      \"unit_price\": 3202.47,\n      \"amount\": 12809.88\n    },\n    {\n      \"description\": \"Desarrollo de módulo\",\n      \"quantity\": 4,\n      \"unit_price\": 4721.29,\n      \"amount\": 18885.16\n    },\n    {\n      \"description\": \"Mantenimiento preventivo\",\n      \"quantity\": 4,\n      \"unit_price\": 3128.68,\n      \"amount\": 12514.72\n    },\n    {\n      \"description\": \"Desarrollo de módulo\",\n      \"quantity\": 6,\n      \"unit_price\": 604.85,\n      \"amount\": 3629.10\n    },\n    {\n      \"description\": \"Capacitación en sitio\",\n      \"quantity\": 3,\n      \"unit_price\": 3673.65,\n      \"amount\": 11020.95\n    },\n    {\n      \"description\": \"Licencia de software anual\",\n      \"quantity\": 6,\n      \"unit_price\": 4105.55,\n      \"amount\": 24633.30\n    }\n  ],\n  \"subtotal\": 83493.11,\n  \"tax\": 13358.90,\n  \"total\": 96852.01\n}",
+  "input_tokens": 799,
+  "output_tokens": 1678,
   "fingerprint": "6885825e0d325341"
 }

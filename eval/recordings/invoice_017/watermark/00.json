@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Carrasco S.A. de C.V.\",\"issuer_tax_id\":\"BIM731129JOK\",\"receiver_name\":\"Grupo Baeza, Guajardo y Valverde\",\"receiver_tax_id\":null,\"invoice_number\":\"B-55216\",\"issue_date\":\"2025-01-29\",\"due_date\":\"2025-02-13\",\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Diseño de interfaz\",\"quantity\":10,\"unit_price\":3419.85,\"amount\":34198.50}],\"subtotal\":34198.50,\"tax\":5471.76,\"total\":39670.26}",
-  "input_tokens": 663,
-  "output_tokens": 897,
+  "text": "{\n  \"issuer_name\": \"Fierro, Pelayo y García\",\n  \"issuer_tax_id\": \"CEJ971007H6P\",\n  \"receiver_name\": \"de Jesús y Armendáriz A.C.\",\n  \"receiver_tax_id\": \"QHR1204040X1\",\n  \"invoice_number\": \"F-22516\",\n  \"issue_date\": \"2025-03-01\",\n  \"due_date\": \"2025-03-31\",\n  \"currency\": \"MXN\",\n  \"line_items\": [\n    {\n      \"description\": \"Auditoría de seguridad\",\n      \"quantity\": 4,\n      \"unit_price\": 2105.37,\n      \"amount\": 8421.48\n    },\n    {\n      \"description\": \"Servicio de consultoría\",\n      \"quantity\": 3,\n      \"unit_price\": 4052.41,\n      \"amount\": 12157.23\n    },\n    {\n      \"description\": \"Mantenimiento preventivo\",\n      \"quantity\": 1,\n      \"unit_price\": 4320.94,\n      \"amount\": 4320.94\n    },\n    {\n      \"description\": \"Soporte técnico mensual\",\n      \"quantity\": 6,\n      \"unit_price\": 1427.98,\n      \"amount\": 8567.88\n    }\n  ],\n  \"subtotal\": 33467.53,\n  \"tax\": 5354.80,\n  \"total\": 38822.33\n}",
+  "input_tokens": 749,
+  "output_tokens": 1548,
   "fingerprint": "6885825e0d325341"
 }

@@ -1,6 +1,6 @@
 {
-  "text": "{\"name\":\"Camila Rosalia Tejeda Amador\",\"email\":\"kvillarreal@hotmail.com\",\"phone\":\"+16(2)7204653755\",\"location\":\"San Rodrigo los bajos, Morelos\",\"summary\":\"Ejecutivo de Ventas enfocado en resultados, con 16 años de experiencia y conocimientos sólidos de Scrum, Python y Inglés avanzado.\",\"experience\":[{\"company\":\"Palacios-de Jesús y Asociados\",\"title\":\"Ejecutivo de Ventas\",\"start_date\":\"2009-07\",\"end_date\":null}],\"education\":[{\"institution\":\"Tecnológico de Monterrey\",\"degree\":\"Licenciatura en Informática\",\"graduation_year\":2008},{\"institution\":\"Universidad de Guadalajara\",\"degree\":\"Maestría en Ciencia de Datos\",\"graduation_year\":2007}],\"skills\":[\"Scrum\",\"Python\",\"Inglés avanzado\"]}",
-  "input_tokens": 634,
-  "output_tokens": 832,
+  "text": "{\"name\":\"Luis Manuel Cardenas Ornelas\",\"email\":\"zgaray@yahoo.com\",\"phone\":\"(839)222-3344x202\",\"location\":\"San Raquel de la Montaña, Guerrero\",\"summary\":null,\"experience\":[{\"company\":\"Laboratorios Cruz-Puga\",\"title\":\"Analista de Datos\",\"start_date\":\"2017-02\",\"end_date\":\"2020-04\"},{\"company\":\"Lomeli y Sarabia S. R.L. de C.V.\",\"title\":\"Ejecutivo de Ventas\",\"start_date\":\"2015-05\",\"end_date\":\"2017-01\"}],\"education\":[{\"institution\":\"Tecnológico de Monterrey\",\"degree\":\"Ingeniería en Sistemas\",\"graduation_year\":2013},{\"institution\":\"Instituto Politécnico Nacional\",\"degree\":\"Licenciatura en Contaduría\",\"graduation_year\":2013}],\"skills\":[\"Excel avanzado\",\"Git\",\"Power BI\",\"Figma\"]}",
+  "input_tokens": 670,
+  "output_tokens": 1375,
   "fingerprint": "b4392b978a6e5576"
 }

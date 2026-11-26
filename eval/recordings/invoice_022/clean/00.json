@@ -1,6 +1,6 @@
 {
-  "text": "{\n  \"issuer_name\": \"Menéndez A.C.\",\n  \"issuer_tax_id\": \"AOK160805SED\",\n  \"receiver_name\": \"Corporacin Ruelas y Gallegos\",\n  \"receiver_tax_id\": \"KXQ840125QDV\",\n  \"invoice_number\": \"F-39792\",\n  \"issue_date\": \"2023-04-15\",\n  \"due_date\": null,\n  \"currency\": \"USD\",\n  \"line_items\": [\n    {\n      \"description\": \"Soporte técnico mensual\",\n      \"quantity\": 4,\n      \"unit_price\": 65.42,\n      \"amount\": 261.68\n    }\n  ],\n  \"subtotal\": 261.68,\n  \"tax\": 41.87,\n  \"total\": 303.55\n}",
-  "input_tokens": 299,
-  "output_tokens": 507,
+  "text": "{\n  \"issuer_name\": \"Cano S.A. de C.V.\",\n  \"issuer_tax_id\": \"ZFY1210268G9\",\n  \"receiver_name\": \"Osorio y Carrero S. R.L. de C.V.\",\n  \"receiver_tax_id\": \"VIE130919XZM\",\n  \"invoice_number\": \"B-27941\",\n  \"issue_date\": \"2023-04-28\",\n  \"due_date\": \"2023-05-28\",\n  \"currency\": \"MXN\",\n  \"line_items\": [\n    {\n      \"description\": \"Mantenimiento preventivo\",\n      \"quantity\": 2,\n      \"unit_price\": 1900.16,\n      \"amount\": 3800.32\n    }\n  ],\n  \"subtotal\": 3800.32,\n  \"tax\": 608.05,\n  \"total\": 4408.37\n}",
+  "input_tokens": 341,
+  "output_tokens": 699,
   "fingerprint": "6885825e0d325341"
 }

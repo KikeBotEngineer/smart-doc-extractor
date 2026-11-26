@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Industrias Garay y Aguilar\",\"issuer_tax_id\":\"WNA6007219WF\",\"receiver_name\":\"Bahena-Girón\",\"receiver_tax_id\":null,\"invoice_number\":\"F-77979\",\"issue_date\":\"2023-02-02\",\"due_date\":\"2023-03-19\",\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Licencia de software anual\",\"quantity\":4,\"unit_price\":2237.34,\"amount\":8949.36},{\"description\":\"Servicio de consultoría\",\"quantity\":1,\"unit_price\":299.15,\"amount\":299.15},{\"description\":\"Auditoría de seguridad\",\"quantity\":10,\"unit_price\":3282.17,\"amount\":32821.70},{\"description\":\"Mantenimiento preventivo\",\"quantity\":3,\"unit_price\":3478.02,\"amount\":10434.06}],\"subtotal\":52504.27,\"tax\":8400.68,\"total\":60904.95}",
-  "input_tokens": 727,
-  "output_tokens": 939,
+  "text": "{\n  \"issuer_name\": \"Gaona-Mojica\",\n  \"issuer_tax_id\": \"GSA1809281BX\",\n  \"receiver_name\": \"Fierro, Granados y Ruiz\",\n  \"receiver_tax_id\": \"CYZ131227YYE\",\n  \"invoice_number\": \"C-25568\",\n  \"issue_date\": \"2023-07-27\",\n  \"due_date\": \"2023-08-11\",\n  \"currency\": \"USD\",\n  \"line_items\": [\n    {\n      \"description\": \"Mantenimiento preventivo\",\n      \"quantity\": 4,\n      \"unit_price\": 3425.12,\n      \"amount\": 13700.48\n    }\n  ],\n  \"subtotal\": 13700.48,\n  \"tax\": 2192.08,\n  \"total\": 15892.56\n}",
+  "input_tokens": 664,
+  "output_tokens": 1219,
   "fingerprint": "6885825e0d325341"
 }

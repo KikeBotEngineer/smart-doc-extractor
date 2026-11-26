@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Ruelas-Barrientos\",\"issuer_tax_id\":\"MPO641224YYU\",\"receiver_name\":\"Grupo Roldán-Ulloa\",\"receiver_tax_id\":\"HYE170213N47\",\"invoice_number\":\"B-39512\",\"issue_date\":\"2023-05-03\",\"due_date\":\"2023-06-02\",\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Capacitación en sitio\",\"quantity\":8,\"unit_price\":3804.62,\"amount\":30436.96},{\"description\":\"Soporte técnico mensual\",\"quantity\":1,\"unit_price\":515.21,\"amount\":515.21},{\"description\":\"Soporte técnico mensual\",\"quantity\":4,\"unit_price\":2674.44,\"amount\":10697.76},{\"description\":\"Soporte técnico mensual\",\"quantity\":2,\"unit_price\":446.72,\"amount\":893.44}],\"subtotal\":42543.37,\"tax\":6806.94,\"total\":49350.31}",
-  "input_tokens": 403,
-  "output_tokens": 1250,
+  "text": "{\n  \"issuer_name\": \"Carrión y Asociados\",\n  \"issuer_tax_id\": \"BEO700607I6E\",\n  \"receiver_name\": \"Zedillo y Meraz S. R.L. de C.V.\",\n  \"receiver_tax_id\": \"IVS98022729F\",\n  \"invoice_number\": \"C-39586\",\n  \"issue_date\": \"2024-07-21\",\n  \"due_date\": \"2024-08-20\",\n  \"currency\": \"MXN\",\n  \"line_items\": [\n    {\n      \"description\": \"Hosting administrado\",\n      \"quantity\": 2,\n      \"unit_price\": 4098.49,\n      \"amount\": 8196.98\n    }\n  ],\n  \"subtotal\": 8196.98,\n  \"tax\": 1311.52,\n  \"total\": 9508.50\n}",
+  "input_tokens": 337,
+  "output_tokens": 737,
   "fingerprint": "6885825e0d325341"
 }

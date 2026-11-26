@@ -1,6 +1,6 @@
 {
-  "text": "{\"name\":\"Santiago Guillermo Arellano Cardona\",\"email\":\"umontano@yahoo.com\",\"phone\":\"(981)693-4060x883\",\"location\":\"San Eloisa de la Montaña, Querétaro\",\"summary\":\"Profesional con 9 años de trayectoria; último puesto: Ejecutivo de Ventas en Amaya-Carrillo S.A. de C.V., con dominio de Python, Docker y Git.\",\"experience\":[{\"company\":\"Amaya-Carrillo S.A. de C.V.\",\"title\":\"Ejecutivo de Ventas\",\"start_date\":\"2023-10\",\"end_date\":null},{\"company\":\"Corporacin Saucedo, Pabón y Terán\",\"title\":\"Desarrollador Backend\",\"start_date\":\"2021-06\",\"end_date\":\"2023-08\"},{\"company\":\"Méndez, Leiva y Barrios\",\"title\":\"Contador Senior\",\"start_date\":\"2017-04\",\"end_date\":\"2021-04\"},{\"company\":\"Grupo Alva y Espinoza\",\"title\":\"Diseñador UX\",\"start_date\":\"2016-02\",\"end_date\":\"2017-01\"}],\"education\":[{\"institution\":\"Instituto Politécnico Nacional\",\"degree\":\"Licenciatura en Contaduría\",\"graduation_year\":2016},{\"institution\":\"Universidad de Guadalajara\",\"degree\":\"Licenciatura en Administración\",\"graduation_year\":2015}],\"skills\":[\"Python\",\"Docker\",\"Git\",\"Power BI\",\"Negociación\",\"Java\",\"Inglés avanzado\"]}",
-  "input_tokens": 745,
-  "output_tokens": 1604,
+  "text": "{\"name\":\"Carlota Elvia Ibarra\",\"email\":\"lomeliminerva@yahoo.com\",\"phone\":\"057-166-3052x46887\",\"location\":\"Vieja Polonia, Yucatán\",\"summary\":null,\"experience\":[{\"company\":\"Despacho Borrego y Orozco\",\"title\":\"Gerente de Proyectos\",\"start_date\":\"2017-03\",\"end_date\":null},{\"company\":\"Ayala y Collazo e Hijos\",\"title\":\"Desarrollador Backend\",\"start_date\":\"2015-01\",\"end_date\":\"2017-02\"}],\"education\":[{\"institution\":\"Universidad de Guadalajara\",\"degree\":\"Ingeniería Industrial\",\"graduation_year\":2013}],\"skills\":[\"AWS\",\"Docker\",\"Java\"]}",
+  "input_tokens": 629,
+  "output_tokens": 1413,
   "fingerprint": "b4392b978a6e5576"
 }

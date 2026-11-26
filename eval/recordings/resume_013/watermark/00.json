@@ -1,6 +1,0 @@
-{
-  "text": "{\"name\":\"Adriana Peres Saiz\",\"email\":\"prietoariadna@hotmail.com\",\"phone\":\"1-262-849-8776x945\",\"location\":\"Nueva Guinea, Tlaxcala\",\"summary\":null,\"experience\":[{\"company\":\"Nevárez, Barrientos y Santillán\",\"title\":\"Ingeniero de Software\",\"start_date\":\"2014-12\",\"end_date\":\"2016-08\"},{\"company\":\"Montenegro S. R.L. de C.V.\",\"title\":\"Diseñador UX\",\"start_date\":\"2011-12\",\"end_date\":\"2014-10\"}],\"education\":[{\"institution\":\"Tecnológico de Monterrey\",\"degree\":\"Licenciatura en Contaduría\",\"graduation_year\":2010}],\"skills\":[\"Docker\",\"AWS\",\"Kubernetes\",\"Figma\",\"Power BI\",\"Liderazgo\",\"Negociación\",\"Java\"]}",
-  "input_tokens": 659,
-  "output_tokens": 709,
-  "fingerprint": "b4392b978a6e5576"
-}

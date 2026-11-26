@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Laureano S.A.\",\"issuer_tax_id\":\"FPV970820A3Z\",\"receiver_name\":\"Grupo Canales y Trejo\",\"receiver_tax_id\":\"FTC731212NMM\",\"invoice_number\":\"C-5795\",\"issue_date\":\"2023-06-22\",\"due_date\":\"2023-08-06\",\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Capacitación en sitio\",\"quantity\":2,\"unit_price\":173.80,\"amount\":347.60},{\"description\":\"Licencia de software anual\",\"quantity\":4,\"unit_price\":1154.89,\"amount\":4619.56},{\"description\":\"Mantenimiento preventivo\",\"quantity\":9,\"unit_price\":480.35,\"amount\":4323.15},{\"description\":\"Desarrollo de módulo\",\"quantity\":1,\"unit_price\":197.50,\"amount\":197.50},{\"description\":\"Servicio de consultoría\",\"quantity\":4,\"unit_price\":2551.51,\"amount\":10206.04},{\"description\":\"Diseño de interfaz\",\"quantity\":9,\"unit_price\":1034.25,\"amount\":9308.25}],\"subtotal\":29002.10,\"tax\":4640.34,\"total\":33642.44}",
-  "input_tokens": 779,
-  "output_tokens": 1388,
+  "text": "{\"issuer_name\":\"Despacho Reynoso-Arce\",\"issuer_tax_id\":\"YDT890504B2A\",\"receiver_name\":\"Peña-Trujillo S.A. de C.V.\",\"receiver_tax_id\":\"KLR130928B8T\",\"invoice_number\":\"F-53987\",\"issue_date\":\"2024-07-23\",\"due_date\":null,\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Hosting administrado\",\"quantity\":2,\"unit_price\":2317.74,\"amount\":4635.48},{\"description\":\"Licencia de software anual\",\"quantity\":7,\"unit_price\":2757.86,\"amount\":19305.02}],\"subtotal\":23940.50,\"tax\":3830.48,\"total\":27770.98}",
+  "input_tokens": 685,
+  "output_tokens": 858,
   "fingerprint": "6885825e0d325341"
 }

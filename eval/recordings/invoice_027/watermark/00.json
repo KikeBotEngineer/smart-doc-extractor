@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Toledo y Asociados\",\"issuer_tax_id\":\"AOZ960917WR6\",\"receiver_name\":\"Cabán y Asociados\",\"receiver_tax_id\":null,\"invoice_number\":\"A-78181\",\"issue_date\":\"2023-06-02\",\"due_date\":\"2023-06-17\",\"currency\":\"USD\",\"line_items\":[{\"description\":\"Mantenimiento preventivo\",\"quantity\":6,\"unit_price\":257.74,\"amount\":1546.44},{\"description\":\"Servicio de consultoría\",\"quantity\":3,\"unit_price\":3162.33,\"amount\":9486.99},{\"description\":\"Hosting administrado\",\"quantity\":8,\"unit_price\":201.94,\"amount\":1615.52},{\"description\":\"Mantenimiento preventivo\",\"quantity\":1,\"unit_price\":480.11,\"amount\":480.11}],\"subtotal\":13129.06,\"tax\":2100.65,\"total\":15229.71}",
-  "input_tokens": 713,
-  "output_tokens": 1194,
+  "text": "{\n  \"issuer_name\": \"Corporacin Arreola y Sanches\",\n  \"issuer_tax_id\": \"KBH0203179BU\",\n  \"receiver_name\": \"Proyectos Ávila y Salas\",\n  \"receiver_tax_id\": \"WKA691129AEN\",\n  \"invoice_number\": \"A-31061\",\n  \"issue_date\": \"2024-09-04\",\n  \"due_date\": \"2024-09-19\",\n  \"currency\": \"USD\",\n  \"line_items\": [\n    {\n      \"description\": \"Desarrollo de módulo\",\n      \"quantity\": 6,\n      \"unit_price\": 286.26,\n      \"amount\": 1717.56\n    },\n    {\n      \"description\": \"Hosting administrado\",\n      \"quantity\": 1,\n      \"unit_price\": 2480.59,\n      \"amount\": 2480.59\n    }\n  ],\n  \"subtotal\": 4198.15,\n  \"tax\": 671.70,\n  \"total\": 4869.85\n}",
+  "input_tokens": 681,
+  "output_tokens": 1639,
   "fingerprint": "6885825e0d325341"
 }

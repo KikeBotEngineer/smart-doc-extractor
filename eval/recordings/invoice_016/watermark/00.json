@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Grupo Niño y Cuellar\",\"issuer_tax_id\":\"PLH740223BM1\",\"receiver_name\":\"Zamudio S.A. de C.V.\",\"receiver_tax_id\":\"KNO0409209N5\",\"invoice_number\":\"C-87058\",\"issue_date\":\"2025-02-27\",\"due_date\":\"2025-04-13\",\"currency\":\"USD\",\"line_items\":[{\"description\":\"Licencia de software anual\",\"quantity\":4,\"unit_price\":3731.27,\"amount\":14925.08}],\"subtotal\":14925.08,\"tax\":2388.01,\"total\":17313.09}",
-  "input_tokens": 670,
-  "output_tokens": 1166,
+  "text": "{\n  \"issuer_name\": \"Valentín-Rivera S.C.\",\n  \"issuer_tax_id\": \"WPJ7109052L9\",\n  \"receiver_name\": \"Corporacin Bustamante, del Río y Gómez\",\n  \"receiver_tax_id\": null,\n  \"invoice_number\": \"A-7870\",\n  \"issue_date\": \"2024-02-20\",\n  \"due_date\": null,\n  \"currency\": \"USD\",\n  \"line_items\": [\n    {\n      \"description\": \"Auditoria de seguridad\",\n      \"quantity\": 9,\n      \"unit_price\": 4779.80,\n      \"amount\": 43018.20\n    },\n    {\n      \"description\": \"Soporte técnico mensual\",\n      \"quantity\": 5,\n      \"unit_price\": 1744.28,\n      \"amount\": 8721.40\n    },\n    {\n      \"description\": \"Soporte técnico mensual\",\n      \"quantity\": 4,\n      \"unit_price\": 1892.98,\n      \"amount\": 7571.92\n    }\n  ],\n  \"subtotal\": 59311.52,\n  \"tax\": 9489.84,\n  \"total\": 68801.36\n}",
+  "input_tokens": 698,
+  "output_tokens": 1461,
   "fingerprint": "6885825e0d325341"
 }

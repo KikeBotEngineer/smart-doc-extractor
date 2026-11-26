@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Industrias Guevara-Dávila\",\"issuer_tax_id\":\"ROL80071760F\",\"receiver_name\":\"Ojeda y Jiménez e Hijos\",\"receiver_tax_id\":\"QNM940428CYI\",\"invoice_number\":\"A-97810\",\"issue_date\":\"2023-04-21\",\"due_date\":\"2023-05-21\",\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Capacitación en sitio\",\"quantity\":8,\"unit_price\":170.91,\"amount\":1367.28},{\"description\":\"Licencia de software anual\",\"quantity\":3,\"unit_price\":687.48,\"amount\":2062.44},{\"description\":\"Mantenimiento preventivo\",\"quantity\":7,\"unit_price\":4502.07,\"amount\":31514.49},{\"description\":\"Mantenimiento preventivo\",\"quantity\":2,\"unit_price\":2672.73,\"amount\":5345.46}],\"subtotal\":40289.67,\"tax\":6446.35,\"total\":46736.02}",
-  "input_tokens": 742,
-  "output_tokens": 1261,
+  "text": "{\n  \"issuer_name\": \"Almonte-Aponte\",\n  \"issuer_tax_id\": \"TBY151122MRI\",\n  \"receiver_name\": \"Camacho-Castañeda\",\n  \"receiver_tax_id\": \"HFK09012493D\",\n  \"invoice_number\": \"C-70187\",\n  \"issue_date\": \"2023-04-12\",\n  \"due_date\": \"2023-04-27\",\n  \"currency\": \"MXN\",\n  \"line_items\": [\n    {\n      \"description\": \"Licencia de software anual\",\n      \"quantity\": 1,\n      \"unit_price\": 4182.21,\n      \"amount\": 4182.21\n    }\n  ],\n  \"subtotal\": 4182.21,\n  \"tax\": 669.15,\n  \"total\": 4851.36\n}",
+  "input_tokens": 662,
+  "output_tokens": 1107,
   "fingerprint": "6885825e0d325341"
 }

@@ -1,39 +1,47 @@
 {
   "doc_type": "resume",
   "fields": {
-    "name": "Aldo Cabán Gamez",
-    "email": "juanazarate@gmail.com",
-    "phone": "(386)379-4026x5423",
-    "location": "San Felix de la Montaña, Sinaloa",
-    "summary": null,
+    "name": "Claudia Arcelia Villalobos Valverde",
+    "email": "reynaldomota@hotmail.com",
+    "phone": "473.221.5487",
+    "location": "San Alicia los altos, Yucatán",
+    "summary": "Gerente de Proyectos enfocado en resultados, con 14 años de experiencia y conocimientos sólidos de Excel avanzado, SQL y Kubernetes.",
     "experience": [
       {
-        "company": "Villanueva-Pichardo",
+        "company": "Véliz y Jaramillo S.A.",
+        "title": "Gerente de Proyectos",
+        "start_date": "2016-09",
+        "end_date": null
+      },
+      {
+        "company": "Jaramillo y Villa e Hijos",
         "title": "Diseñador UX",
-        "start_date": "2016-04",
-        "end_date": "2020-01"
+        "start_date": "2013-02",
+        "end_date": "2016-07"
+      },
+      {
+        "company": "Despacho Henríquez y Fajardo",
+        "title": "Administrador de Sistemas",
+        "start_date": "2011-02",
+        "end_date": "2013-01"
       }
     ],
     "education": [
       {
-        "institution": "Tecnológico de Monterrey",
-        "degree": "Maestría en Ciencia de Datos",
-        "graduation_year": 2015
+        "institution": "Instituto Politécnico Nacional",
+        "degree": "Licenciatura en Contaduría",
+        "graduation_year": 2010
       },
       {
-        "institution": "Universidad Nacional Autónoma de México",
-        "degree": "Licenciatura en Contaduría",
-        "graduation_year": 2016
+        "institution": "Tecnológico de Monterrey",
+        "degree": "Licenciatura en Administración",
+        "graduation_year": 2011
       }
     ],
     "skills": [
-      "Negociación",
-      "AWS",
-      "Liderazgo",
       "Excel avanzado",
-      "Figma",
-      "Power BI",
-      "Scrum",
+      "SQL",
+      "Kubernetes",
       "Docker"
     ]
   }

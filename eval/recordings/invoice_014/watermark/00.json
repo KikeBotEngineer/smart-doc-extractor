@@ -1,6 +1,6 @@
 {
-  "text": "{\n  \"issuer_name\": \"Industrias Alba, Carrero y Terán\",\n  \"issuer_tax_id\": \"VMG7510046YO\",\n  \"receiver_name\": \"Proyectos Molina, Carrasco y Lozada\",\n  \"receiver_tax_id\": \"WGJ6106294PZ\",\n  \"invoice_number\": \"A-26920\",\n  \"issue_date\": \"2024-12-28\",\n  \"due_date\": null,\n  \"currency\": \"USD\",\n  \"line_items\": [\n    {\n      \"description\": \"Licencia de software anual\",\n      \"quantity\": 3,\n      \"unit_price\": 1387.87,\n      \"amount\": 4163.61\n    },\n    {\n      \"description\": \"Soporte técnico mensual\",\n      \"quantity\": 10,\n      \"unit_price\": 3272.82,\n      \"amount\": 32728.20\n    },\n    {\n      \"description\": \"Capacitación en sitio\",\n      \"quantity\": 5,\n      \"unit_price\": 4368.17,\n      \"amount\": 21840.85\n    },\n    {\n      \"description\": \"Diseño de interfaz\",\n      \"quantity\": 7,\n      \"unit_price\": 4276.31,\n      \"amount\": 29934.17\n    }\n  ],\n  \"subtotal\": 88666.83,\n  \"tax\": 14186.69,\n  \"total\": 102853.52\n}",
-  "input_tokens": 740,
-  "output_tokens": 1454,
+  "text": "{\n  \"issuer_name\": \"Laboratorios Santana-Pérez\",\n  \"issuer_tax_id\": \"VBA940131Q5Z\",\n  \"receiver_name\": \"Laboratorios Chacón-Torres\",\n  \"receiver_tax_id\": \"BRS9005150JG\",\n  \"invoice_number\": \"C-94463\",\n  \"issue_date\": \"2024-02-01\",\n  \"due_date\": \"2024-02-16\",\n  \"currency\": \"USD\",\n  \"line_items\": [\n    {\n      \"description\": \"Soporte técnico mensual\",\n      \"quantity\": 9,\n      \"unit_price\": 2137.73,\n      \"amount\": 19239.57\n    },\n    {\n      \"description\": \"Soporte técnico mensual\",\n      \"quantity\": 9,\n      \"unit_price\": 2061.14,\n      \"amount\": 18550.26\n    }\n  ],\n  \"subtotal\": 37789.83,\n  \"tax\": 6046.37,\n  \"total\": 43836.20\n}",
+  "input_tokens": 690,
+  "output_tokens": 1151,
   "fingerprint": "6885825e0d325341"
 }

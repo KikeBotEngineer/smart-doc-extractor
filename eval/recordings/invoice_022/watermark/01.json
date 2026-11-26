@@ -1,6 +1,6 @@
 {
-  "text": "{\"fields\": [{\"field\": \"issuer_tax_id\", \"value\": \"AOK160805SED\"}]}",
-  "input_tokens": 693,
-  "output_tokens": 221,
+  "text": "{\"fields\": [{\"field\": \"line_items[0].quantity\", \"value\": \"2\"}]}",
+  "input_tokens": 774,
+  "output_tokens": 225,
   "fingerprint": "e1ce5c76f4d3baff"
 }

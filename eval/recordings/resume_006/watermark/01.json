@@ -1,6 +1,0 @@
-{
-  "text": "{\"fields\": [{\"field\": \"skills[1]\", \"value\": \"AWS\"}, {\"field\": \"skills[3]\", \"value\": \"SQL\"}, {\"field\": \"skills[4]\", \"value\": \"Scrum\"}, {\"field\": \"skills[6]\", \"value\": \"Java\"}]}",
-  "input_tokens": 812,
-  "output_tokens": 283,
-  "fingerprint": "e1ce5c76f4d3baff"
-}

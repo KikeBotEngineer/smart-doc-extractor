@@ -1,6 +1,6 @@
 {
-  "text": "{\n  \"issuer_name\": \"Corporacin Chávez-Gurule\",\n  \"issuer_tax_id\": \"UGR090704CHW\",\n  \"receiver_name\": \"Laboratorios Viera, Porras y Vergara\",\n  \"receiver_tax_id\": \"KKO181120O1J\",\n  \"invoice_number\": \"F-30029\",\n  \"issue_date\": \"2024-12-13\",\n  \"due_date\": \"2025-01-12\",\n  \"currency\": \"MXN\",\n  \"line_items\": [\n    {\n      \"description\": \"Diseño de interfaz\",\n      \"quantity\": 4,\n      \"unit_price\": 456.03,\n      \"amount\": 1824.12\n    },\n    {\n      \"description\": \"Licencia de software anual\",\n      \"quantity\": 8,\n      \"unit_price\": 181.62,\n      \"amount\": 1452.96\n    }\n  ],\n  \"subtotal\": 3277.08,\n  \"tax\": 524.33,\n  \"total\": 3801.41\n}",
-  "input_tokens": 351,
-  "output_tokens": 1356,
+  "text": "{\"issuer_name\":\"Collazo y Lomeli S.A.\",\"issuer_tax_id\":\"MDJ9311026DF\",\"receiver_name\":\"Lucero-Raya\",\"receiver_tax_id\":\"GUJ870905W87\",\"invoice_number\":\"B-31758\",\"issue_date\":\"2024-07-15\",\"due_date\":\"2024-08-29\",\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Licencia de software anual\",\"quantity\":3,\"unit_price\":1480.31,\"amount\":4440.93},{\"description\":\"Desarrollo de módulo\",\"quantity\":5,\"unit_price\":2281.63,\"amount\":11408.15},{\"description\":\"Servicio de consultoría\",\"quantity\":9,\"unit_price\":129.30,\"amount\":1163.70},{\"description\":\"Auditoría de seguridad\",\"quantity\":4,\"unit_price\":2679.69,\"amount\":10718.76}],\"subtotal\":27731.54,\"tax\":4437.05,\"total\":32168.59}",
+  "input_tokens": 410,
+  "output_tokens": 813,
   "fingerprint": "6885825e0d325341"
 }

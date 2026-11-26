@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Menéndez A.C.\",\"issuer_tax_id\":\"AOK160805SED\",\"receiver_name\":\"Corporación Ruelas y Gallegos\",\"receiver_tax_id\":\"KXQ840125QDV\",\"invoice_number\":\"F-39792\",\"issue_date\":\"2023-04-15\",\"due_date\":null,\"currency\":\"USD\",\"line_items\":[{\"description\":\"Soporte técnico mensual\",\"quantity\":4,\"unit_price\":65.42,\"amount\":261.68}],\"subtotal\":261.68,\"tax\":41.87,\"total\":303.55}",
-  "input_tokens": 634,
-  "output_tokens": 813,
+  "text": "{\"issuer_name\":\"Cano S.A. de C.V.\",\"issuer_tax_id\":\"ZFY1210268G9\",\"receiver_name\":\"Osorio y Carrero S.R.L. de C.V.\",\"receiver_tax_id\":\"VIE130919XZM\",\"invoice_number\":\"B-27941\",\"issue_date\":\"2023-04-28\",\"due_date\":\"2023-05-28\",\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Mantenimiento preventivo\",\"quantity\":2,\"unit_price\":1900.16,\"amount\":3800.32}],\"subtotal\":3800.32,\"tax\":608.05,\"total\":4408.37}",
+  "input_tokens": 679,
+  "output_tokens": 1014,
   "fingerprint": "6885825e0d325341"
 }

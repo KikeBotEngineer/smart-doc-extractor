@@ -1,6 +1,6 @@
 {
-  "text": "{\"fields\": [{\"field\": \"skills[5]\", \"value\": \"SQL\"}]}",
-  "input_tokens": 688,
-  "output_tokens": 234,
+  "text": "{\"fields\": [{\"field\": \"skills[1]\", \"value\": \"Negociación\"}, {\"field\": \"skills[2]\", \"value\": \"SQL\"}, {\"field\": \"skills[3]\", \"value\": \"AWS\"}, {\"field\": \"skills[4]\", \"value\": \"Liderazgo\"}, {\"field\": \"skills[6]\", \"value\": \"Kubernetes\"}]}",
+  "input_tokens": 798,
+  "output_tokens": 347,
   "fingerprint": "e1ce5c76f4d3baff"
 }

@@ -1,6 +1,6 @@
 {
-  "text": "{\n  \"issuer_name\": \"Laboratorios Trejo y Perea\",\n  \"issuer_tax_id\": \"KSH180917YS2\",\n  \"receiver_name\": \"Club Villalpando y Ledesma\",\n  \"receiver_tax_id\": \"YTU1809240Q3\",\n  \"invoice_number\": \"A-57553\",\n  \"issue_date\": \"2023-02-11\",\n  \"due_date\": \"2023-03-13\",\n  \"currency\": \"MXN\",\n  \"line_items\": [\n    {\n      \"description\": \"Hosting administrado\",\n      \"quantity\": 8,\n      \"unit_price\": 4202.21,\n      \"amount\": 33617.68\n    },\n    {\n      \"description\": \"Capacitación en sitio\",\n      \"quantity\": 8,\n      \"unit_price\": 1947.29,\n      \"amount\": 15578.32\n    },\n    {\n      \"description\": \"Auditoría de seguridad\",\n      \"quantity\": 8,\n      \"unit_price\": 2417.75,\n      \"amount\": 19342.00\n    },\n    {\n      \"description\": \"Soporte técnico mensual\",\n      \"quantity\": 7,\n      \"unit_price\": 855.51,\n      \"amount\": 5988.57\n    }\n  ],\n  \"subtotal\": 74526.57,\n  \"tax\": 11924.25,\n  \"total\": 86450.82\n}",
-  "input_tokens": 411,
-  "output_tokens": 1360,
+  "text": "{\n  \"issuer_name\": \"Guerra S.A.\",\n  \"issuer_tax_id\": \"LTB84011476W\",\n  \"receiver_name\": \"Grupo Jasso y Ramón\",\n  \"receiver_tax_id\": null,\n  \"invoice_number\": \"F-58433\",\n  \"issue_date\": \"2023-08-18\",\n  \"due_date\": \"2023-09-17\",\n  \"currency\": \"USD\",\n  \"line_items\": [\n    {\n      \"description\": \"Desarrollo de módulo\",\n      \"quantity\": 4,\n      \"unit_price\": 4789.59,\n      \"amount\": 19158.36\n    }\n  ],\n  \"subtotal\": 19158.36,\n  \"tax\": 3065.34,\n  \"total\": 22223.70\n}",
+  "input_tokens": 316,
+  "output_tokens": 720,
   "fingerprint": "6885825e0d325341"
 }

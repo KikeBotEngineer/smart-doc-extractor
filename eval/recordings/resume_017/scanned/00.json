@@ -1,6 +1,6 @@
 {
-  "text": "{\"name\":\"Dra. Antonia Guzmán\",\"email\":\"valdezdelia@hotmail.com\",\"phone\":\"938.677.4964x9909\",\"location\":\"Nueva Serbia, Jalisco\",\"summary\":\"Administrador de Sistemas con 1 año de experiencia. Especialista en Kubernetes, Git y Java.\",\"experience\":[{\"company\":\"Coronado S.A.\",\"title\":\"Administrador de Sistemas\",\"start_date\":\"2010-07\",\"end_date\":\"2011-12\"}],\"education\":[{\"institution\":\"Instituto Politécnico Nacional\",\"degree\":\"Ingeniería en Sistemas\",\"graduation_year\":2008}],\"skills\":[\"Kubernetes\",\"Git\",\"Java\",\"Inglés avanzado\",\"Docker\",\"Figma\",\"SQL\"]}",
-  "input_tokens": 642,
-  "output_tokens": 719,
+  "text": "{\"name\":\"José Eduardo Flavio Gaitán Zedillo\",\"email\":\"mariana71@yahoo.com\",\"phone\":\"1-521-654-9125\",\"location\":\"Vieja Filipinas, Baja California\",\"summary\":null,\"experience\":[{\"company\":\"Grupo Barrera y Manzanares\",\"title\":\"Contador Senior\",\"start_date\":\"2016-04\",\"end_date\":null},{\"company\":\"Méndez e Hijos\",\"title\":\"Gerente de Proyectos\",\"start_date\":\"2014-03\",\"end_date\":\"2016-04\"},{\"company\":\"Bueno-Valadez S.A. de C.V.\",\"title\":\"Ingeniero de Software\",\"start_date\":\"2013-02\",\"end_date\":\"2013-12\"}],\"education\":[{\"institution\":\"Universidad Autónoma de Nuevo León\",\"degree\":\"Ingeniería Industrial\",\"graduation_year\":2012}],\"skills\":[\"Liderazgo\",\"SQL\",\"Docker\",\"Power BI\",\"Kubernetes\",\"Excel avanzado\",\"AWS\"]}",
+  "input_tokens": 673,
+  "output_tokens": 1558,
   "fingerprint": "b4392b978a6e5576"
 }

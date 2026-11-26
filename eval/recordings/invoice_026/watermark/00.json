@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Corporacin Ríos-Haro\",\"issuer_tax_id\":\"QGH1109214E1\",\"receiver_name\":\"Quintero-Urbina\",\"receiver_tax_id\":\"JXE881223GCT\",\"invoice_number\":\"F-28569\",\"issue_date\":\"2024-10-17\",\"due_date\":null,\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Mantenimiento preventivo\",\"quantity\":10,\"unit_price\":3129.47,\"amount\":31294.70}],\"subtotal\":31294.70,\"tax\":5007.15,\"total\":36301.85}",
-  "input_tokens": 654,
-  "output_tokens": 725,
+  "text": "{\"issuer_name\":\"Aguilar y Echeverría y Asociados\",\"issuer_tax_id\":\"HAU600211148\",\"receiver_name\":\"Ponce, Muro y Ocampo\",\"receiver_tax_id\":\"IGV121005XW2\",\"invoice_number\":\"B-74130\",\"issue_date\":\"2024-12-22\",\"due_date\":null,\"currency\":\"USD\",\"line_items\":[{\"description\":\"Mantenimiento preventivo\",\"quantity\":8,\"unit_price\":83.95,\"amount\":671.60},{\"description\":\"Desarrollo de módulo\",\"quantity\":7,\"unit_price\":1837.48,\"amount\":12862.36},{\"description\":\"Capacitación en sitio\",\"quantity\":5,\"unit_price\":1105.73,\"amount\":5528.65},{\"description\":\"Servicio de consultoría\",\"quantity\":8,\"unit_price\":4385.37,\"amount\":35082.96},{\"description\":\"Diseño de interfaz\",\"quantity\":4,\"unit_price\":2377.16,\"amount\":9508.64}],\"subtotal\":63654.21,\"tax\":10184.67,\"total\":73838.88}",
+  "input_tokens": 758,
+  "output_tokens": 1198,
   "fingerprint": "6885825e0d325341"
 }

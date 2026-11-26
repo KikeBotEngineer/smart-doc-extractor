@@ -1,6 +1,6 @@
 {
-  "text": "{\"fields\":[{\"field\":\"issuer_tax_id\",\"value\":\"GAI770110Q79\"},{\"field\":\"line_items[1].quantity\",\"value\":\"3\"}]}",
-  "input_tokens": 905,
-  "output_tokens": 829,
+  "text": "{\"fields\":[{\"field\":\"line_items[3].quantity\",\"value\":\"4\"},{\"field\":\"line_items[4].quantity\",\"value\":\"7\"}]}",
+  "input_tokens": 930,
+  "output_tokens": 624,
   "fingerprint": "e1ce5c76f4d3baff"
 }

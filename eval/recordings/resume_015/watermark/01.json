@@ -1,0 +1,6 @@
+{
+  "text": "{\"fields\":[{\"field\":\"email\",\"value\":\"ngrijalva@gmail.com\"},{\"field\":\"summary\",\"value\":\"Analista de Datos con 6 años de experiencia. Especialista en Python, AWS y Negociación.\"},{\"field\":\"skills[3]\",\"value\":\"SQL\"}]}",
+  "input_tokens": 747,
+  "output_tokens": 580,
+  "fingerprint": "e1ce5c76f4d3baff"
+}

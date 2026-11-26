@@ -1,0 +1,6 @@
+{
+  "text": "{\"name\":\"Alta Gracia Cervantes Arevalo\",\"email\":\"nmontero@hotmail.com\",\"phone\":\"+94(9)7749100140\",\"location\":\"Vieja Líbano, Tabasco\",\"summary\":null,\"experience\":[{\"company\":\"Corporacin Carreón-Rodarte\",\"title\":\"Desarrollador Backend\",\"start_date\":\"2010-06\",\"end_date\":\"2013-11\"}],\"education\":[{\"institution\":\"Universidad de Guadalajara\",\"degree\":\"Maestría en Ciencia de Datos\",\"graduation_year\":2010}],\"skills\":[\"Python\",\"Java\",\"Docker\",\"AWS\",\"Liderazgo\",\"Figma\",\"Negociación\"]}",
+  "input_tokens": 617,
+  "output_tokens": 1055,
+  "fingerprint": "b4392b978a6e5576"
+}

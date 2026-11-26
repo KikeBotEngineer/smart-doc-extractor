@@ -1,6 +1,6 @@
 {
-  "text": "{\"fields\": [{\"field\": \"issuer_tax_id\", \"value\": \"KMI6306283HW\"}]}",
-  "input_tokens": 711,
-  "output_tokens": 182,
+  "text": "{\"fields\": [{\"field\": \"line_items[1].quantity\", \"value\": \"9\"}, {\"field\": \"line_items[3].quantity\", \"value\": \"2\"}]}",
+  "input_tokens": 879,
+  "output_tokens": 483,
   "fingerprint": "e1ce5c76f4d3baff"
 }

@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Laboratorios Trejo y Perea\",\"issuer_tax_id\":\"KSH180917YS2\",\"receiver_name\":\"Club Villalpando y Ledesma\",\"receiver_tax_id\":\"YTU1809240Q3\",\"invoice_number\":\"A-57553\",\"issue_date\":\"2023-02-11\",\"due_date\":\"2023-03-13\",\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Hosting administrado\",\"quantity\":8,\"unit_price\":4202.21,\"amount\":33617.68},{\"description\":\"Capacitación en sitio\",\"quantity\":8,\"unit_price\":1947.29,\"amount\":15578.32},{\"description\":\"Auditoría de seguridad\",\"quantity\":8,\"unit_price\":2417.75,\"amount\":19342.00},{\"description\":\"Soporte técnico mensual\",\"quantity\":7,\"unit_price\":855.51,\"amount\":5988.57}],\"subtotal\":74526.57,\"tax\":11924.25,\"total\":86450.82}",
-  "input_tokens": 748,
-  "output_tokens": 959,
+  "text": "{\"issuer_name\": \"Guerra S.A.\", \"issuer_tax_id\": \"LTB84011476W\", \"receiver_name\": \"Grupo Jasso y Ramón\", \"receiver_tax_id\": null, \"invoice_number\": \"F-58433\", \"issue_date\": \"2023-08-18\", \"due_date\": \"2023-09-17\", \"currency\": \"USD\", \"line_items\": [{\"description\": \"Desarrollo de módulo\", \"quantity\": 4, \"unit_price\": 4789.59, \"amount\": 19158.36}], \"subtotal\": 19158.36, \"tax\": 3065.34, \"total\": 22223.7}",
+  "input_tokens": 653,
+  "output_tokens": 640,
   "fingerprint": "6885825e0d325341"
 }

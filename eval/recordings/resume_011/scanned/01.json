@@ -1,6 +1,6 @@
 {
-  "text": "{\"fields\": [{\"field\": \"phone\", \"value\": \"+03(3)0923271937\"}]}",
-  "input_tokens": 668,
-  "output_tokens": 189,
+  "text": "{\"fields\": [{\"field\": \"skills[4]\", \"value\": \"AWS\"}]}",
+  "input_tokens": 700,
+  "output_tokens": 275,
   "fingerprint": "e1ce5c76f4d3baff"
 }

@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Acevedo, Orellana y Jaimes\",\"issuer_tax_id\":\"NIR791129NN1\",\"receiver_name\":\"Lira y Piña e Hijos\",\"receiver_tax_id\":\"JSE951202SUO\",\"invoice_number\":\"F-92265\",\"issue_date\":\"2023-09-13\",\"due_date\":null,\"currency\":\"USD\",\"line_items\":[{\"description\":\"Desarrollo de módulo\",\"quantity\":6,\"unit_price\":3209.34,\"amount\":19256.04},{\"description\":\"Licencia de software anual\",\"quantity\":10,\"unit_price\":2279.59,\"amount\":22795.90},{\"description\":\"Mantenimiento preventivo\",\"quantity\":4,\"unit_price\":667.90,\"amount\":2671.60}],\"subtotal\":44723.54,\"tax\":7155.77,\"total\":51879.31}",
-  "input_tokens": 705,
-  "output_tokens": 989,
+  "text": "{\"issuer_name\":\"Arias y Hernández y Asociados\",\"issuer_tax_id\":\"TNS6910158SJ\",\"receiver_name\":\"Carmona y Muñoz e Hijos\",\"receiver_tax_id\":\"FXL640111LHV\",\"invoice_number\":\"A-13370\",\"issue_date\":\"2024-09-29\",\"due_date\":null,\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Auditoría de seguridad\",\"quantity\":1,\"unit_price\":1307.71,\"amount\":1307.71},{\"description\":\"Hosting administrado\",\"quantity\":2,\"unit_price\":4124.23,\"amount\":8248.46},{\"description\":\"Desarrollo de módulo\",\"quantity\":8,\"unit_price\":819.63,\"amount\":6557.04},{\"description\":\"Capacitación en sitio\",\"quantity\":6,\"unit_price\":272.16,\"amount\":1632.96}],\"subtotal\":17746.17,\"tax\":2839.39,\"total\":20585.56}",
+  "input_tokens": 719,
+  "output_tokens": 1556,
   "fingerprint": "6885825e0d325341"
 }

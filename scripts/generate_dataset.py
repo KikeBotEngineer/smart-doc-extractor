@@ -106,7 +106,9 @@ def fake_invoice(fake: Faker, rng: random.Random) -> Invoice:
         )
     subtotal = round(sum(i.amount for i in items), 2)
     tax = round(subtotal * 0.16, 2)
-    issued = fake.date_between(date(2023, 1, 1), LATEST - timedelta(days=60))
+    # sin Faker.date_between: usa randint en Windows y uniform en Linux, y da otra fecha
+    first = date(2023, 1, 1)
+    issued = first + timedelta(days=rng.randint(0, (LATEST - timedelta(days=60) - first).days))
     return Invoice(
         issuer_name=fake.company(),
         issuer_tax_id=fake_rfc(rng),
@@ -274,11 +276,13 @@ def save_pdf(pages: list[Image.Image], path: Path) -> None:
 
 def generate(out: Path, invoices: int, resumes: int, seed: int = 42) -> None:
     fake = Faker("es_MX")
-    fake.seed_instance(seed)
-    rng = random.Random(seed)
     jobs = [("invoice", n, fake_invoice, render_invoice) for n in range(invoices)]
     jobs += [("resume", n, fake_resume, render_resume) for n in range(resumes)]
     for kind, n, make, render in jobs:
+        # cada documento con su propia semilla: no depende de cuántos se generen antes
+        key = f"{seed}-{kind}-{n}"
+        fake.seed_instance(key)
+        rng = random.Random(key)
         doc_dir = out / f"{kind}_{n:03d}"
         doc_dir.mkdir(parents=True, exist_ok=True)
         doc = make(fake, rng)

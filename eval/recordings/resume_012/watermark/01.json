@@ -1,0 +1,6 @@
+{
+  "text": "{\"fields\": [{\"field\": \"experience[1].company\", \"value\": \"Piña S. R. L. de C. V.\"}, {\"field\": \"skills[1]\", \"value\": \"Power BI\"}]}",
+  "input_tokens": 805,
+  "output_tokens": 394,
+  "fingerprint": "e1ce5c76f4d3baff"
+}

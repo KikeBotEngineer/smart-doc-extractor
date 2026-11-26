@@ -1,6 +1,6 @@
 {
-  "text": "{\"name\": \"Ana Montez\", \"email\": \"susanabarrientos@hotmail.com\", \"phone\": \"+03(3)0923271937\", \"location\": \"San Barbara de la Montaña, Chihuahua\", \"summary\": null, \"experience\": [{\"company\": \"Rodríguez-Almaraz\", \"title\": \"Diseñador UX\", \"start_date\": \"2015-07\", \"end_date\": null}], \"education\": [{\"institution\": \"Universidad Autónoma de Nuevo León\", \"degree\": \"Licenciatura en Contaduría\", \"graduation_year\": 2015}], \"skills\": [\"Docker\", \"Git\", \"Excel avanzado\", \"Liderazgo\", \"Figma\"]}",
-  "input_tokens": 608,
-  "output_tokens": 715,
+  "text": "{\"name\":\"Antonio Jacobo Ybarra\",\"email\":\"ksolorzano@yahoo.com\",\"phone\":\"01486754765\",\"location\":\"Vieja Turkmenistán, Guerrero\",\"summary\":\"Ingeniero de Software con 14 años de experiencia. Especialista en Scrum, Liderazgo y Kubernetes.\",\"experience\":[{\"company\":\"Grupo Aguilar y Trujillo\",\"title\":\"Ingeniero de Software\",\"start_date\":\"2011-03\",\"end_date\":null}],\"education\":[{\"institution\":\"Tecnológico de Monterrey\",\"degree\":\"Licenciatura en Administración\",\"graduation_year\":2011},{\"institution\":\"Universidad Nacional Autónoma de México\",\"degree\":\"Ingeniería Industrial\",\"graduation_year\":2010}],\"skills\":[\"Scrum\",\"Liderazgo\",\"Kubernetes\",\"Docker\",\"AWS\",\"Git\",\"Negociación\"]}",
+  "input_tokens": 652,
+  "output_tokens": 1349,
   "fingerprint": "b4392b978a6e5576"
 }

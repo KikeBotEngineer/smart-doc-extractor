@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Sierra y Razo A.C.\",\"issuer_tax_id\":\"VQM710730DZ4\",\"receiver_name\":\"Grupo Barela y Mireles\",\"receiver_tax_id\":\"TQM8306243YS\",\"invoice_number\":\"C-63602\",\"issue_date\":\"2024-08-03\",\"due_date\":\"2024-08-18\",\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Mantenimiento preventivo\",\"quantity\":3,\"unit_price\":4292.03,\"amount\":12876.09},{\"description\":\"Mantenimiento preventivo\",\"quantity\":9,\"unit_price\":840.40,\"amount\":7563.60},{\"description\":\"Licencia de software anual\",\"quantity\":9,\"unit_price\":267.66,\"amount\":2408.94},{\"description\":\"Capacitación en sitio\",\"quantity\":4,\"unit_price\":4471.71,\"amount\":17886.84},{\"description\":\"Diseño de interfaz\",\"quantity\":3,\"unit_price\":1280.89,\"amount\":3842.67},{\"description\":\"Auditoría de seguridad\",\"quantity\":8,\"unit_price\":708.27,\"amount\":5666.16}],\"subtotal\":50244.30,\"tax\":8039.09,\"total\":58283.39}",
-  "input_tokens": 456,
-  "output_tokens": 913,
+  "text": "{\"issuer_name\":\"Otero y Varela S. R.L. de C.V.\",\"issuer_tax_id\":\"YUF850226POT\",\"receiver_name\":\"Rojas, Archuleta y Hinojosa\",\"receiver_tax_id\":null,\"invoice_number\":\"F-24519\",\"issue_date\":\"2024-11-28\",\"due_date\":null,\"currency\":\"USD\",\"line_items\":[{\"description\":\"Mantenimiento preventivo\",\"quantity\":7,\"unit_price\":3556.19,\"amount\":24893.33},{\"description\":\"Mantenimiento preventivo\",\"quantity\":8,\"unit_price\":238.52,\"amount\":1908.16},{\"description\":\"Diseño de interfaz\",\"quantity\":5,\"unit_price\":1425.55,\"amount\":7127.75},{\"description\":\"Capacitación en sitio\",\"quantity\":2,\"unit_price\":2539.93,\"amount\":5079.86}],\"subtotal\":39009.10,\"tax\":6241.46,\"total\":45250.56}",
+  "input_tokens": 387,
+  "output_tokens": 795,
   "fingerprint": "6885825e0d325341"
 }

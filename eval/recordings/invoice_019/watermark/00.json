@@ -1,6 +1,6 @@
 {
-  "text": "{\n  \"issuer_name\": \"Industrias Zepeda, Piña y Galarza\",\n  \"issuer_tax_id\": \"YVH180419J1K\",\n  \"receiver_name\": \"Laboratorios Marrero y Ozuna\",\n  \"receiver_tax_id\": \"EER940221INJ\",\n  \"invoice_number\": \"F-2052\",\n  \"issue_date\": \"2023-09-14\",\n  \"due_date\": \"2023-09-29\",\n  \"currency\": \"MXN\",\n  \"line_items\": [\n    {\n      \"description\": \"Desarrollo de módulo\",\n      \"quantity\": 4,\n      \"unit_price\": 2530.55,\n      \"amount\": 10122.20\n    },\n    {\n      \"description\": \"Hosting administrado\",\n      \"quantity\": 2,\n      \"unit_price\": 3998.68,\n      \"amount\": 7997.36\n    },\n    {\n      \"description\": \"Licencia de software anual\",\n      \"quantity\": 4,\n      \"unit_price\": 1536.22,\n      \"amount\": 6144.88\n    }\n  ],\n  \"subtotal\": 24264.44,\n  \"tax\": 3882.31,\n  \"total\": 28146.75\n}",
-  "input_tokens": 718,
-  "output_tokens": 2234,
+  "text": "{\"issuer_name\":\"Club Rocha, Murillo y Regalado\",\"issuer_tax_id\":\"MDY8507232LS\",\"receiver_name\":\"Corporacin Soto, Huerta y Altamirano\",\"receiver_tax_id\":\"JEN840224TNG\",\"invoice_number\":\"A-7178\",\"issue_date\":\"2023-01-24\",\"due_date\":\"2023-02-23\",\"currency\":\"USD\",\"line_items\":[{\"description\":\"Hosting administrado\",\"quantity\":null,\"unit_price\":2367.61,\"amount\":18940.88},{\"description\":\"Capacitación en sitio\",\"quantity\":8,\"unit_price\":4634.36,\"amount\":37074.88},{\"description\":\"Capacitación en sitio\",\"quantity\":9,\"unit_price\":3933.58,\"amount\":35402.22}],\"subtotal\":91417.98,\"tax\":14626.88,\"total\":106044.86}",
+  "input_tokens": 723,
+  "output_tokens": 1159,
   "fingerprint": "6885825e0d325341"
 }

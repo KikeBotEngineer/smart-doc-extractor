@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Cardona-Guzmán S.A.\",\"issuer_tax_id\":\"KMI6306283HW\",\"receiver_name\":\"Industrias Rangel y Cintrón\",\"receiver_tax_id\":\"DLJ131101QVC\",\"invoice_number\":\"F-23643\",\"issue_date\":\"2024-09-17\",\"due_date\":null,\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Mantenimiento preventivo\",\"quantity\":2,\"unit_price\":1787.96,\"amount\":3575.92}],\"subtotal\":3575.92,\"tax\":572.15,\"total\":4148.07}",
-  "input_tokens": 651,
-  "output_tokens": 993,
+  "text": "{\"issuer_name\":\"Olvera y Loera S.C.\",\"issuer_tax_id\":\"PAF7303198FN\",\"receiver_name\":\"Alonzo, Rangel y Navarrete\",\"receiver_tax_id\":\"JOL711203ZEZ\",\"invoice_number\":\"A-71184\",\"issue_date\":\"2024-01-10\",\"due_date\":null,\"currency\":\"USD\",\"line_items\":[{\"description\":\"Diseño de interfaz\",\"quantity\":7,\"unit_price\":1472.33,\"amount\":10306.31},{\"description\":\"Auditoria de seguridad\",\"quantity\":9,\"unit_price\":2199.52,\"amount\":19795.68},{\"description\":\"Mantenimiento preventivo\",\"quantity\":6,\"unit_price\":2419.77,\"amount\":14518.62},{\"description\":\"Mantenimiento preventivo\",\"quantity\":2,\"unit_price\":1060.47,\"amount\":2120.94}],\"subtotal\":46741.55,\"tax\":7478.65,\"total\":54220.20}",
+  "input_tokens": 729,
+  "output_tokens": 1180,
   "fingerprint": "6885825e0d325341"
 }

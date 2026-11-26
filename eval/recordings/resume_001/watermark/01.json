@@ -1,6 +1,6 @@
 {
   "text": "{\"fields\": [{\"field\": \"skills[3]\", \"value\": \"SQL\"}]}",
-  "input_tokens": 748,
-  "output_tokens": 268,
+  "input_tokens": 741,
+  "output_tokens": 286,
   "fingerprint": "e1ce5c76f4d3baff"
 }

@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Gil y Asociados\",\"issuer_tax_id\":\"KHK730627YTX\",\"receiver_name\":\"Despacho Gonzales, Campos y Olivares\",\"receiver_tax_id\":\"CTV1703274VS\",\"invoice_number\":\"A-38429\",\"issue_date\":\"2023-04-19\",\"due_date\":\"2023-06-03\",\"currency\":\"USD\",\"line_items\":[{\"description\":\"Licencia de software anual\",\"quantity\":1,\"unit_price\":251.82,\"amount\":251.82}],\"subtotal\":251.82,\"tax\":40.29,\"total\":292.11}",
-  "input_tokens": 315,
-  "output_tokens": 918,
+  "text": "{\"issuer_name\":\"Proyectos Salgado y Mayorga\",\"issuer_tax_id\":\"YCK750421443\",\"receiver_name\":\"Díaz-Palacios S. R.L. de C.V.\",\"receiver_tax_id\":null,\"invoice_number\":\"A-15908\",\"issue_date\":\"2025-04-02\",\"due_date\":null,\"currency\":\"USD\",\"line_items\":[{\"description\":\"Auditoría de seguridad\",\"quantity\":9,\"unit_price\":1083.56,\"amount\":9752.04},{\"description\":\"Mantenimiento preventivo\",\"quantity\":6,\"unit_price\":1613.65,\"amount\":9681.90},{\"description\":\"Auditoría de seguridad\",\"quantity\":9,\"unit_price\":4606.68,\"amount\":41460.12},{\"description\":\"Auditoría de seguridad\",\"quantity\":7,\"unit_price\":3248.34,\"amount\":22738.38},{\"description\":\"Desarrollo de módulo\",\"quantity\":3,\"unit_price\":4840.65,\"amount\":14521.95}],\"subtotal\":98154.39,\"tax\":15704.70,\"total\":113859.09}",
+  "input_tokens": 419,
+  "output_tokens": 856,
   "fingerprint": "6885825e0d325341"
 }

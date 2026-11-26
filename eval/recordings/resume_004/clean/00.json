@@ -1,6 +1,6 @@
 {
-  "text": "{\"name\":\"Rosa Cecilia Granado\",\"email\":\"josepaz@gmail.com\",\"phone\":\"(563)421-6073\",\"location\":\"Vieja Japón, Oaxaca\",\"summary\":null,\"experience\":[{\"company\":\"Moreno-Valencia\",\"title\":\"Gerente de Proyectos\",\"start_date\":\"2012-01\",\"end_date\":\"2014-05\"}],\"education\":[{\"institution\":\"Universidad Autónoma de Nuevo León\",\"degree\":\"Ingeniería Industrial\",\"graduation_year\":2010},{\"institution\":\"Universidad Autónoma de Nuevo León\",\"degree\":\"Licenciatura en Informática\",\"graduation_year\":2012}],\"skills\":[\"AWS\",\"Figma\",\"Negociación\",\"Git\",\"Scrum\"]}",
+  "text": "{\"name\":\"Alta Gracia Cervantes Arevalo\",\"email\":\"nmontero@hotmail.com\",\"phone\":\"+94(9)7749100140\",\"location\":\"Vieja Líbano, Tabasco\",\"summary\":null,\"experience\":[{\"company\":\"Corporacin Carreón-Rodarte\",\"title\":\"Desarrollador Backend\",\"start_date\":\"2010-06\",\"end_date\":\"2013-11\"}],\"education\":[{\"institution\":\"Universidad de Guadalajara\",\"degree\":\"Maestría en Ciencia de Datos\",\"graduation_year\":2010}],\"skills\":[\"Python\",\"Java\",\"Docker\",\"AWS\",\"Liderazgo\",\"Figma\",\"Negociación\"]}",
   "input_tokens": 280,
-  "output_tokens": 723,
+  "output_tokens": 692,
   "fingerprint": "b4392b978a6e5576"
 }
