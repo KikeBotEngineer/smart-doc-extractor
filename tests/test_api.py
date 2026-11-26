@@ -90,12 +90,21 @@ def test_not_a_pdf_is_415(client):
     assert post(client, b"hola, no soy un PDF").status_code == 415
 
 
+def corrupt_stream() -> bytes:
+    """La factura de muestra con un byte inválido en su stream ASCII85: pypdf la abre,
+    pero falla al extraer el texto."""
+    src = (SAMPLE / "invoice_000" / "clean.pdf").read_bytes()
+    i = src.index(b"stream", src.index(b"/ASCII85Decode")) + len(b"stream\r\n") + 10
+    return src[:i] + b"v" + src[i + 1 :]  # 'v' no es un dígito ASCII85
+
+
 @pytest.mark.parametrize(
     ("data", "doc_type", "detail"),
     [
         (blank_pdf(pages=21), "invoice", "21 páginas"),
         (blank_pdf(password="secreta"), "invoice", "contraseña"),
         (b"%PDF-1.7 basura", "invoice", "dañado"),
+        (corrupt_stream(), "invoice", "dañado"),
         (blank_pdf(), "invoice", "no tiene contenido"),
     ],
 )

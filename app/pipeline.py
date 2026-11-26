@@ -33,6 +33,7 @@ from app.schemas import (
 
 PROMPTS = Path(__file__).resolve().parent.parent / "prompts"
 OCR_MIN_SCORE = 0.9  # por debajo, la evidencia OCR de la página cuenta como parcial
+DAMAGED = "el PDF está dañado o no se puede leer"
 
 
 class RejectedInput(Exception):
@@ -58,9 +59,21 @@ def validate_input(data: bytes, settings: Settings) -> None:
     except RejectedInput:
         raise
     except Exception as e:  # entrada no confiable: cualquier fallo de lectura es un PDF dañado
-        raise RejectedInput(422, "el PDF está dañado o no se puede leer") from e
+        raise RejectedInput(422, DAMAGED) from e
     if pages > settings.max_pages:
         raise RejectedInput(422, f"el PDF tiene {pages} páginas; el máximo es {settings.max_pages}")
+
+
+def read_layout(data: bytes) -> tuple[list[str], list[PageProfile]]:
+    """Etapas 2 y 3: capa de texto y perfil de cada página.
+
+    Abrir el PDF no basta: un stream corrupto falla al extraer texto en pypdf, y pdfium
+    puede rechazar lo que pypdf aceptó. También es un PDF dañado, no un error del servidor."""
+    try:
+        texts = page_texts(data)
+        return texts, profile_pages(data, texts)
+    except Exception as e:  # entrada no confiable
+        raise RejectedInput(422, DAMAGED) from e
 
 
 def prompt(name: str) -> str:
@@ -235,8 +248,7 @@ def run_rules(rules: Iterable[Callable], doc: BaseModel) -> list[Validation]:
 def run(data: bytes, doc_type: str | None, llm: LLMClient, settings: Settings) -> ExtractResponse:
     started = time.perf_counter()
     validate_input(data, settings)
-    texts = page_texts(data)
-    profiles = profile_pages(data, texts)
+    texts, profiles = read_layout(data)
     if all(p == "empty" for p in profiles):
         raise RejectedInput(422, "el PDF no tiene contenido")
     pages, images = read_pages(data, texts, profiles)
