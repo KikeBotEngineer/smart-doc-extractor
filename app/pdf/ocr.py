@@ -7,6 +7,8 @@ import pypdfium2 as pdfium
 from PIL import Image
 from rapidocr_onnxruntime import RapidOCR
 
+from app.pdf import PDFIUM_LOCK
+
 DPI = 150  # el escaneo típico; más resolución casi duplica el tiempo de OCR
 
 # Caja de RapidOCR: 4 esquinas [x, y]
@@ -15,11 +17,12 @@ Box = list[list[float]]
 
 def render_pages(data: bytes, indexes: list[int]) -> dict[int, Image.Image]:
     """Imagen RGB de cada página pedida (índices base 0)."""
-    pdf = pdfium.PdfDocument(data)
-    try:
-        return {i: pdf[i].render(scale=DPI / 72).to_pil().convert("RGB") for i in indexes}
-    finally:
-        pdf.close()
+    with PDFIUM_LOCK:
+        pdf = pdfium.PdfDocument(data)
+        try:
+            return {i: pdf[i].render(scale=DPI / 72).to_pil().convert("RGB") for i in indexes}
+        finally:
+            pdf.close()
 
 
 def to_jpeg(image: Image.Image) -> bytes:
