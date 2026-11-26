@@ -10,3 +10,6 @@ build/
 # Dataset generado: solo se versiona la muestra
 eval/dataset/*
 !eval/dataset/sample/
+
+# Reporte que genera CI
+eval/report-ci.md
