@@ -239,7 +239,11 @@ def verify_fields(
     de la partida 5 no toma como evidencia el 4 de la partida 2. Fuera de ese tramo, la
     evidencia es parcial."""
     texts = _collapse(pages)
-    flat = flatten(doc.model_dump())
+    # "" o "  " del LLM es ausencia, no un valor: el regex vacío coincide en todas partes
+    flat = {
+        p: None if isinstance(v, str) and not v.strip() else v
+        for p, v in flatten(doc.model_dump()).items()
+    }
     found = {p: _matches(p, v, texts, identifiers) for p, v in flat.items() if v is not None}
     results = {}
     for path, value in flat.items():

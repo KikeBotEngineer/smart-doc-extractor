@@ -127,3 +127,11 @@ def test_verify_fields_assigns_confidence():
     )
     assert fields["due_date"].missing_reason == "not_present"
     assert fields["due_date"].confidence is None
+
+
+def test_blank_string_is_not_present():
+    inv = Invoice(invoice_number="", issuer_name="   ")
+    fields = verify_fields(inv, [PageText("Factura F-1 Total 100.00")], "text_layer", IDENTIFIERS)
+    for path in ("invoice_number", "issuer_name"):
+        assert fields[path].value is None
+        assert fields[path].missing_reason == "not_present"
