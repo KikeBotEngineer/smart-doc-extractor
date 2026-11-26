@@ -1,6 +1,6 @@
 {
-  "text": "{\"name\":\"Sr. Miguel Ángel Loera\",\"email\":\"diegoquintanilla@yahoo.com\",\"phone\":\"1-464-743-6713x6959\",\"location\":\"San Silvano de la Montaña, Sonora\",\"summary\":\"Contador Senior enfocado en resultados, con 4 años de experiencia y conocimientos sólidos de Figma, Python y Liderazgo.\",\"experience\":[{\"company\":\"Club Hernández y Rico\",\"title\":\"Contador Senior\",\"start_date\":\"2017-01\",\"end_date\":\"2018-05\"},{\"company\":\"Club Vergara y Collazo\",\"title\":\"Desarrollador Backend\",\"start_date\":\"2014-05\",\"end_date\":\"2016-12\"}],\"education\":[{\"institution\":\"Instituto Politécnico Nacional\",\"degree\":\"Licenciatura en Administración\",\"graduation_year\":2012}],\"skills\":[\"Figma\",\"Python\",\"Liderazgo\",\"Scrum\",\"Git\"]}",
-  "input_tokens": 677,
-  "output_tokens": 1106,
+  "text": "{\"name\":\"Esperanza Molina Lemus\",\"email\":\"maria-teresa08@gmail.com\",\"phone\":null,\"location\":\"Nueva Uganda, Tabasco\",\"summary\":null,\"experience\":[{\"company\":\"Echeverría-Saavedra S.A.\",\"title\":\"Contador Senior\",\"start_date\":\"2013-11\",\"end_date\":null},{\"company\":\"Miramontes, Anaya y Saldaña\",\"title\":\"Ingeniero de Software\",\"start_date\":\"2011-06\",\"end_date\":\"2013-10\"},{\"company\":\"Proyectos Rivera y Vargas\",\"title\":\"Administrador de Sistemas\",\"start_date\":\"2008-09\",\"end_date\":\"2011-04\"}],\"education\":[{\"institution\":\"Universidad Autónoma de Nuevo León\",\"degree\":\"Licenciatura en Informática\",\"graduation_year\":2007}],\"skills\":[\"SQL\",\"Excel avanzado\",\"Power BI\",\"AWS\",\"Docker\",\"Scrum\",\"Inglés avanzado\"]}",
+  "input_tokens": 658,
+  "output_tokens": 1122,
   "fingerprint": "b4392b978a6e5576"
 }

@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Corporacin Maya, Toledo y Blanco\",\"issuer_tax_id\":\"EHM2909259D4\",\"receiver_name\":\"Pantoja, Menéndez y Torres\",\"receiver_tax_id\":\"NBG740425Q01\",\"invoice_number\":\"C-60750\",\"issue_date\":\"2023-12-31\",\"due_date\":\"2024-01-15\",\"currency\":\"USD\",\"line_items\":[{\"description\":\"Auditoria de seguridad\",\"quantity\":7,\"unit_price\":1984.66,\"amount\":13892.62},{\"description\":\"Hosting administrado\",\"quantity\":1,\"unit_price\":3653.97,\"amount\":3653.97},{\"description\":\"Hosting administrado\",\"quantity\":6,\"unit_price\":2102.97,\"amount\":12617.82},{\"description\":\"Mantenimiento preventivo\",\"quantity\":10,\"unit_price\":1844.56,\"amount\":18445.60},{\"description\":\"Capacitación en sitio\",\"quantity\":1,\"unit_price\":3520.48,\"amount\":3520.48}],\"subtotal\":52130.49,\"tax\":8340.88,\"total\":60471.37}",
-  "input_tokens": 772,
-  "output_tokens": 1772,
+  "text": "{\"issuer_name\":\"Toledo y Asociados\",\"issuer_tax_id\":\"AOZ960917WR6\",\"receiver_name\":\"Cabán y Asociados\",\"receiver_tax_id\":null,\"invoice_number\":\"A-78181\",\"issue_date\":\"2023-06-02\",\"due_date\":\"2023-06-17\",\"currency\":\"USD\",\"line_items\":[{\"description\":\"Mantenimiento preventivo\",\"quantity\":6,\"unit_price\":257.74,\"amount\":1546.44},{\"description\":\"Servicio de consultoría\",\"quantity\":3,\"unit_price\":3162.33,\"amount\":9486.99},{\"description\":\"Hosting administrado\",\"quantity\":8,\"unit_price\":201.94,\"amount\":1615.52},{\"description\":\"Mantenimiento preventivo\",\"quantity\":1,\"unit_price\":480.11,\"amount\":480.11}],\"subtotal\":13129.06,\"tax\":2100.65,\"total\":15229.71}",
+  "input_tokens": 716,
+  "output_tokens": 1140,
   "fingerprint": "6885825e0d325341"
 }

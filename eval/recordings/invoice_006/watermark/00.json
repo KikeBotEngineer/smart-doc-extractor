@@ -1,6 +1,6 @@
 {
-  "text": "{\n  \"issuer_name\": \"Industrias Salcido-Bustos\",\n  \"issuer_tax_id\": \"BDE131006AR4\",\n  \"receiver_name\": \"Olivárez, Ybarra y Rocha\",\n  \"receiver_tax_id\": \"IRA8211307YH\",\n  \"invoice_number\": \"C-59373\",\n  \"issue_date\": \"2023-12-07\",\n  \"due_date\": \"2024-01-06\",\n  \"currency\": \"USD\",\n  \"line_items\": [\n    {\n      \"description\": \"Desarrollo de módulo\",\n      \"quantity\": 1,\n      \"unit_price\": 284.74,\n      \"amount\": 284.74\n    },\n    {\n      \"description\": \"Diseño de interfaz\",\n      \"quantity\": 1,\n      \"unit_price\": 4331.51,\n      \"amount\": 4331.51\n    }\n  ],\n  \"subtotal\": 4616.25,\n  \"tax\": 738.60,\n  \"total\": 5354.85\n}",
-  "input_tokens": 681,
-  "output_tokens": 1486,
+  "text": "{\"issuer_name\":\"Gil y Asociados\",\"issuer_tax_id\":\"KHK730627YTX\",\"receiver_name\":\"Despacho Gonzales, Campos y Olivares\",\"receiver_tax_id\":\"CTV1703274VS\",\"invoice_number\":\"A-38429\",\"issue_date\":\"2023-04-19\",\"due_date\":\"2023-06-03\",\"currency\":\"USD\",\"line_items\":[{\"description\":\"Licencia de software anual\",\"quantity\":1,\"unit_price\":251.82,\"amount\":251.82}],\"subtotal\":251.82,\"tax\":40.29,\"total\":292.11}",
+  "input_tokens": 651,
+  "output_tokens": 1091,
   "fingerprint": "6885825e0d325341"
 }

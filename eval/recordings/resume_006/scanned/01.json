@@ -1,6 +1,6 @@
 {
-  "text": "{\"fields\": [{\"field\": \"summary\", \"value\": \"Desarrollador Backend enfocado en resultados, con 11 años de experiencia y conocimientos sólidos de Kubernetes, Excel avanzado y Power BI.\"}]}",
-  "input_tokens": 719,
-  "output_tokens": 191,
+  "text": "{\"fields\": [{\"field\": \"skills[0]\", \"value\": \"Power BI\"}, {\"field\": \"skills[3]\", \"value\": \"SQL\"}]}",
+  "input_tokens": 794,
+  "output_tokens": 176,
   "fingerprint": "e1ce5c76f4d3baff"
 }

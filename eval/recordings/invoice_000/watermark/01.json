@@ -1,6 +1,6 @@
 {
-  "text": "{\"fields\": [{\"field\": \"line_items[1].quantity\", \"value\": \"4\"}, {\"field\": \"line_items[2].quantity\", \"value\": \"9\"}, {\"field\": \"line_items[3].quantity\", \"value\": \"1\"}, {\"field\": \"line_items[4].quantity\", \"value\": \"4\"}, {\"field\": \"line_items[5].quantity\", \"value\": \"9\"}]}",
-  "input_tokens": 1076,
-  "output_tokens": 1470,
+  "text": "{\"fields\": [{\"field\": \"line_items[0].quantity\", \"value\": \"2\"}, {\"field\": \"line_items[1].quantity\", \"value\": \"4\"}, {\"field\": \"line_items[3].quantity\", \"value\": \"1\"}, {\"field\": \"line_items[4].quantity\", \"value\": \"4\"}]}",
+  "input_tokens": 1032,
+  "output_tokens": 1135,
   "fingerprint": "e1ce5c76f4d3baff"
 }

@@ -10,16 +10,16 @@ El LLM (Gemini) lee y propone valores. Python decide: busca cada valor en el tex
 
 | Variante | Clasificación | Exactitud | Alucinación | Calibración `high` | high / medium / low | Llamadas LLM | Latencia |
 |---|---:|---:|---:|---:|---|---:|---:|
-| `clean`: PDF digital | 100% | 100% | 0% | 100% | 97.7 / 2.3 / 0.0% | 1 | 4.6 s |
-| `scanned`: 150 dpi, ruido, rotación | 100% | 98.7% | 0% | 99.0% | 78.0 / 20.2 / 1.8% | 1 | 10.9 s |
-| `watermark`: escaneo con marca de agua | 100% | 98.5% | 0% | 98.7% | 73.3 / 20.7 / 5.9% | 2 | 14.2 s |
+| `clean`: PDF digital | 100% | 100% | 0% | 100% | 99.3 / 0.7 / 0.0% | 1 | 4.6 s |
+| `scanned`: 150 dpi, ruido, rotación | 100% | 99.2% | 0% | 99.3% | 78.8 / 19.8 / 1.5% | 1 | 10.6 s |
+| `watermark`: escaneo con marca de agua | 100% | 98.9% | 0% | 99.2% | 74.4 / 20.2 / 5.5% | 2 | 21.2 s |
 
 - **Exactitud:** valor normalizado igual al esperado. **Alucinación:** valor publicado donde el documento no lo tiene. **Calibración:** exactitud de los valores marcados `high`.
-- Tokens promedio por documento: 870 de entrada y 1,337 de salida (incluye el razonamiento de 2.5-flash).
+- Tokens promedio por documento: 835 de entrada y 1,275 de salida (incluye el razonamiento de 2.5-flash).
 
 Qué muestran los errores:
 
-- **El OCR y el LLM coinciden en el mismo error.** Casi todos los `high` incorrectos son confusiones del OCR (`O`/`0`, `I`/`1`, acentos perdidos) que Gemini copió en vez de leer la imagen. Como la evidencia se busca en ese mismo texto, la confirma. La regla `tax_id_format` marca 4 de los 7 RFC mal leídos; los otros 3 tienen la confusión en la homoclave, donde letras y dígitos son válidos.
+- **El OCR y el LLM coinciden en el mismo error.** Casi todos los `high` incorrectos son confusiones del OCR (`O`/`0`, `I`/`1`, acentos perdidos) que Gemini copió en vez de leer la imagen. Como la evidencia se busca en ese mismo texto, la confirma. La regla `tax_id_format` marca 3 de los 7 RFC mal leídos; en los otros 4 la confusión cae en la homoclave, donde letras y dígitos son válidos.
 - **Los `medium` de las variantes escaneadas son sobre todo acentos**: el modelo de OCR incluido (chino/inglés) no los reconoce. Un modelo de OCR latino los reduciría.
 - **Gemini corrige la ortografía al leer imágenes** (`Hernádez` → `Hernández`) aunque el prompt lo prohíbe. Esos valores quedan en `medium` porque no coinciden con el OCR.
 

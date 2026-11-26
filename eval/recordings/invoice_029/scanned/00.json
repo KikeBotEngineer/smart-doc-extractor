@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Orta S. R.L. de C.V.\",\"issuer_tax_id\":\"VAC870919R8T\",\"receiver_name\":\"Despacho Hurtado-Ojeda\",\"receiver_tax_id\":\"GOK550615LOH\",\"invoice_number\":\"F-46948\",\"issue_date\":\"2023-07-18\",\"due_date\":null,\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Licencia de software anual\",\"quantity\":7,\"unit_price\":4550.91,\"amount\":31856.37},{\"description\":\"Auditoria de seguridad\",\"quantity\":3,\"unit_price\":482.18,\"amount\":1446.54},{\"description\":\"Mantenimiento preventivo\",\"quantity\":8,\"unit_price\":1732.99,\"amount\":13863.92},{\"description\":\"Hosting administrado\",\"quantity\":8,\"unit_price\":4057.00,\"amount\":32456.00},{\"description\":\"Mantenimiento preventivo\",\"quantity\":9,\"unit_price\":4299.80,\"amount\":38698.20}],\"subtotal\":118321.03,\"tax\":18931.36,\"total\":137252.39}",
-  "input_tokens": 766,
-  "output_tokens": 850,
+  "text": "{\n  \"issuer_name\": \"Acevedo, Orellana y Jaimes\",\n  \"issuer_tax_id\": \"NIR791129NN1\",\n  \"receiver_name\": \"Lira y Piña e Hijos\",\n  \"receiver_tax_id\": \"JSE951202SUO\",\n  \"invoice_number\": \"F-92265\",\n  \"issue_date\": \"2023-09-13\",\n  \"due_date\": null,\n  \"currency\": \"USD\",\n  \"line_items\": [\n    {\n      \"description\": \"Desarrollo de módulo\",\n      \"quantity\": 6,\n      \"unit_price\": 3209.34,\n      \"amount\": 19256.04\n    },\n    {\n      \"description\": \"Licencia de software anual\",\n      \"quantity\": 10,\n      \"unit_price\": 2279.59,\n      \"amount\": 22795.9\n    },\n    {\n      \"description\": \"Mantenimiento preventivo\",\n      \"quantity\": 4,\n      \"unit_price\": 667.9,\n      \"amount\": 2671.6\n    }\n  ],\n  \"subtotal\": 44723.54,\n  \"tax\": 7155.77,\n  \"total\": 51879.31\n}",
+  "input_tokens": 704,
+  "output_tokens": 924,
   "fingerprint": "6885825e0d325341"
 }

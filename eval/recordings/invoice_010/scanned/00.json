@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Despacho Batista y Bahena\",\"issuer_tax_id\":\"CBK4201224WF\",\"receiver_name\":\"Laboratorios Ruelas, Gallegos y Tirado\",\"receiver_tax_id\":\"XSS281128UFU\",\"invoice_number\":\"A-89738\",\"issue_date\":\"2023-12-24\",\"due_date\":null,\"currency\":\"USD\",\"line_items\":[{\"description\":\"Diseño de interfaz\",\"quantity\":7,\"unit_price\":1233.08,\"amount\":8631.56},{\"description\":\"Capacitación en sitio\",\"quantity\":3,\"unit_price\":1040.95,\"amount\":3122.85},{\"description\":\"Auditoría de seguridad\",\"quantity\":1,\"unit_price\":3588.03,\"amount\":3588.03},{\"description\":\"Soporte técnico mensual\",\"quantity\":4,\"unit_price\":4380.73,\"amount\":17522.92}],\"subtotal\":32865.36,\"tax\":5258.46,\"total\":38123.82}",
-  "input_tokens": 732,
-  "output_tokens": 983,
+  "text": "{\"issuer_name\":\"Galarza-Valverde\",\"issuer_tax_id\":\"KEK781015GBH\",\"receiver_name\":\"Galindo-Sanabria S.C.\",\"receiver_tax_id\":\"BWH980118J6G\",\"invoice_number\":\"A-41274\",\"issue_date\":\"2024-02-20\",\"due_date\":\"2024-04-05\",\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Mantenimiento preventivo\",\"quantity\":10,\"unit_price\":2017.10,\"amount\":20171.00},{\"description\":\"Capacitación en sitio\",\"quantity\":2,\"unit_price\":3392.23,\"amount\":6784.46},{\"description\":\"Licencia de software anual\",\"quantity\":7,\"unit_price\":3183.01,\"amount\":22281.07}],\"subtotal\":49236.53,\"tax\":7877.84,\"total\":57114.37}",
+  "input_tokens": 723,
+  "output_tokens": 1094,
   "fingerprint": "6885825e0d325341"
 }

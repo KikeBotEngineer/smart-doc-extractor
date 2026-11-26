@@ -1,6 +1,6 @@
 {
-  "text": "{\"name\":\"Hilda Guillermina Cantú\",\"email\":\"aliciapatino@hotmail.com\",\"phone\":\"468.071.5451x680\",\"location\":\"San Daniela de la Montaña, Hidalgo\",\"summary\":null,\"experience\":[{\"company\":\"Rodrígez-Montero\",\"title\":\"Analista de Datos\",\"start_date\":\"2013-10\",\"end_date\":null}],\"education\":[{\"institution\":\"Universidad Autónoma de Nuevo León\",\"degree\":\"Ingeniería en Sistemas\",\"graduation_year\":2011}],\"skills\":[\"Power BI\",\"Negociación\",\"Liderazgo\",\"Figma\",\"Java\",\"Git\",\"Scrum\",\"AWS\"]}",
-  "input_tokens": 278,
-  "output_tokens": 672,
+  "text": "{\"name\":\"Lic. Luis Miguel Tijerina\",\"email\":\"inesgaona@yahoo.com\",\"phone\":null,\"location\":\"San Indira de la Montaña, Sinaloa\",\"summary\":\"Ejecutivo de Ventas con 9 años de experiencia. Especialista en Java, Excel avanzado y Inglés avanzado.\",\"experience\":[{\"company\":\"Romero, Aguayo y Mora\",\"title\":\"Ejecutivo de Ventas\",\"start_date\":\"2023-08\",\"end_date\":null},{\"company\":\"Viera, Almonte y Velásquez\",\"title\":\"Diseñador UX\",\"start_date\":\"2019-07\",\"end_date\":\"2023-07\"},{\"company\":\"Bañuelos, Fonseca y Peres\",\"title\":\"Administrador de Sistemas\",\"start_date\":\"2016-10\",\"end_date\":\"2019-04\"}],\"education\":[{\"institution\":\"Instituto Politécnico Nacional\",\"degree\":\"Maestría en Ciencia de Datos\",\"graduation_year\":2014},{\"institution\":\"Tecnológico de Monterrey\",\"degree\":\"Ingeniería en Sistemas\",\"graduation_year\":2015}],\"skills\":[\"Java\",\"Excel avanzado\",\"Inglés avanzado\",\"SQL\",\"Kubernetes\"]}",
+  "input_tokens": 360,
+  "output_tokens": 1154,
   "fingerprint": "b4392b978a6e5576"
 }

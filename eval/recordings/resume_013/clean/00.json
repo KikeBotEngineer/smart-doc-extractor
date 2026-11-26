@@ -1,6 +1,6 @@
 {
-  "text": "{\"name\":\"Dr. Bernabé Puente\",\"email\":\"camarilloesperanza@gmail.com\",\"phone\":\"1-400-504-5562x38692\",\"location\":\"Nueva Benin, Sinaloa\",\"summary\":\"Profesional con 16 años de trayectoria; último puesto: Contador Senior en Barrientos S.A., con dominio de Figma, Liderazgo y SQL.\",\"experience\":[{\"company\":\"Barrientos S.A.\",\"title\":\"Contador Senior\",\"start_date\":\"2009-09\",\"end_date\":null}],\"education\":[{\"institution\":\"Universidad Autónoma de Nuevo León\",\"degree\":\"Maestría en Ciencia de Datos\",\"graduation_year\":2009}],\"skills\":[\"Figma\",\"Liderazgo\",\"SQL\",\"AWS\",\"Git\"]}",
-  "input_tokens": 311,
-  "output_tokens": 725,
+  "text": "{\"name\":\"Adriana Peres Saiz\",\"email\":\"prietoariadna@hotmail.com\",\"phone\":\"1-262-849-8776x945\",\"location\":\"Nueva Guinea, Tlaxcala\",\"summary\":null,\"experience\":[{\"company\":\"Nevárez, Barrientos y Santillán\",\"title\":\"Ingeniero de Software\",\"start_date\":\"2014-12\",\"end_date\":\"2016-08\"},{\"company\":\"Montenegro S. R.L. de C.V.\",\"title\":\"Diseñador UX\",\"start_date\":\"2011-12\",\"end_date\":\"2014-10\"}],\"education\":[{\"institution\":\"Tecnológico de Monterrey\",\"degree\":\"Licenciatura en Contaduría\",\"graduation_year\":2010}],\"skills\":[\"Docker\",\"AWS\",\"Kubernetes\",\"Figma\",\"Power BI\",\"Liderazgo\",\"Negociación\",\"Java\"]}",
+  "input_tokens": 321,
+  "output_tokens": 1253,
   "fingerprint": "b4392b978a6e5576"
 }

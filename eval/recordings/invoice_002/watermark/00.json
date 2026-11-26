@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Calderón, Muñoz y Montañez\",\"issuer_tax_id\":\"IZB930125TY7\",\"receiver_name\":\"Berríos, Urías y Lozada\",\"receiver_tax_id\":null,\"invoice_number\":\"B-79600\",\"issue_date\":\"2023-05-25\",\"due_date\":\"2023-07-09\",\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Soporte técnico mensual\",\"quantity\":5,\"unit_price\":2849.37,\"amount\":14246.85},{\"description\":\"Diseño de interfaz\",\"quantity\":9,\"unit_price\":108.05,\"amount\":972.45},{\"description\":\"Capacitación en sitio\",\"quantity\":9,\"unit_price\":2981.29,\"amount\":26831.61},{\"description\":\"Soporte técnico mensual\",\"quantity\":4,\"unit_price\":3563.01,\"amount\":14252.04}],\"subtotal\":56302.95,\"tax\":9008.47,\"total\":65311.42}",
-  "input_tokens": 733,
-  "output_tokens": 1655,
+  "text": "{\"issuer_name\":\"Laboratorios Trejo y Perea\",\"issuer_tax_id\":\"KSH180917YS2\",\"receiver_name\":\"Club Villalpando y Ledesma\",\"receiver_tax_id\":\"YTU1809240Q3\",\"invoice_number\":\"A-57553\",\"issue_date\":\"2023-02-11\",\"due_date\":\"2023-03-13\",\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Hosting administrado\",\"quantity\":8,\"unit_price\":4202.21,\"amount\":33617.68},{\"description\":\"Capacitación en sitio\",\"quantity\":8,\"unit_price\":1947.29,\"amount\":15578.32},{\"description\":\"Auditoría de seguridad\",\"quantity\":8,\"unit_price\":2417.75,\"amount\":19342.00},{\"description\":\"Soporte técnico mensual\",\"quantity\":7,\"unit_price\":855.51,\"amount\":5988.57}],\"subtotal\":74526.57,\"tax\":11924.25,\"total\":86450.82}",
+  "input_tokens": 748,
+  "output_tokens": 959,
   "fingerprint": "6885825e0d325341"
 }

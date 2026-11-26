@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Industrias Rojas y de la O\",\"issuer_tax_id\":\"CJQ000727L5F\",\"receiver_name\":\"Grupo Farías, Contreras y Alvarado\",\"receiver_tax_id\":\"HPT1703114TQ\",\"invoice_number\":\"A-83353\",\"issue_date\":\"2024-11-17\",\"due_date\":\"2024-12-17\",\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Capacitación en sitio\",\"quantity\":7,\"unit_price\":4855.40,\"amount\":33987.80},{\"description\":\"Soporte técnico mensual\",\"quantity\":10,\"unit_price\":467.71,\"amount\":4677.10},{\"description\":\"Soporte técnico mensual\",\"quantity\":7,\"unit_price\":1908.06,\"amount\":13356.42}],\"subtotal\":52021.32,\"tax\":8323.41,\"total\":60344.73}",
-  "input_tokens": 396,
-  "output_tokens": 899,
+  "text": "{\n  \"issuer_name\": \"Piña-Partida S.C.\",\n  \"issuer_tax_id\": \"IFS030504OZL\",\n  \"receiver_name\": \"Calvillo A.C.\",\n  \"receiver_tax_id\": \"XNM020827WG6\",\n  \"invoice_number\": \"C-23303\",\n  \"issue_date\": \"2024-10-31\",\n  \"due_date\": \"2024-11-30\",\n  \"currency\": \"USD\",\n  \"line_items\": [\n    {\n      \"description\": \"Soporte técnico mensual\",\n      \"quantity\": 7,\n      \"unit_price\": 2700.78,\n      \"amount\": 18905.46\n    },\n    {\n      \"description\": \"Diseño de interfaz\",\n      \"quantity\": 8,\n      \"unit_price\": 739.90,\n      \"amount\": 5919.20\n    },\n    {\n      \"description\": \"Desarrollo de módulo\",\n      \"quantity\": 4,\n      \"unit_price\": 150.26,\n      \"amount\": 601.04\n    }\n  ],\n  \"subtotal\": 25425.70,\n  \"tax\": 4068.11,\n  \"total\": 29493.81\n}",
+  "input_tokens": 377,
+  "output_tokens": 881,
   "fingerprint": "6885825e0d325341"
 }

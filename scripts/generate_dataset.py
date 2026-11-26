@@ -9,6 +9,7 @@ y ground_truth.json. Misma semilla, mismo dataset.
 import argparse
 import json
 import random
+import string
 import time
 from datetime import date, timedelta
 from pathlib import Path
@@ -82,6 +83,15 @@ def ym(d: date) -> str:
     return f"{d.year}-{d.month:02d}"
 
 
+def fake_rfc(rng: random.Random) -> str:
+    """RFC de persona moral: 3 letras, fecha AAMMDD y homoclave. No usa `Faker.rfc`, que
+    calcula la fecha a partir de hoy y cambiaría el dataset de un día a otro."""
+    founded = date(1960, 1, 1) + timedelta(days=rng.randint(0, 365 * 60))
+    letters = "".join(rng.choices(string.ascii_uppercase, k=3))
+    homoclave = "".join(rng.choices(string.ascii_uppercase + string.digits, k=3))
+    return f"{letters}{founded:%y%m%d}{homoclave}"
+
+
 def fake_invoice(fake: Faker, rng: random.Random) -> Invoice:
     items = []
     for _ in range(rng.randint(1, 6)):
@@ -99,9 +109,9 @@ def fake_invoice(fake: Faker, rng: random.Random) -> Invoice:
     issued = fake.date_between(date(2023, 1, 1), LATEST - timedelta(days=60))
     return Invoice(
         issuer_name=fake.company(),
-        issuer_tax_id=fake.rfc(natural=False),
+        issuer_tax_id=fake_rfc(rng),
         receiver_name=fake.company(),
-        receiver_tax_id=fake.rfc(natural=False) if rng.random() > 0.2 else None,
+        receiver_tax_id=fake_rfc(rng) if rng.random() > 0.2 else None,
         invoice_number=f"{rng.choice('ABCF')}-{rng.randint(100, 99999)}",
         issue_date=issued,
         due_date=issued + timedelta(days=rng.choice([15, 30, 45])) if rng.random() > 0.3 else None,

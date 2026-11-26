@@ -1,6 +1,6 @@
 {
-  "text": "{\"name\":\"Patricia Cecilia Pedroza\",\"email\":\"saizraquel@yahoo.com\",\"phone\":\"053-773-5158\",\"location\":\"San Cornelio los bajos, Nayarit\",\"summary\":\"Ejecutivo de Ventas enfocado en resultados, con 11 años de experiencia y conocimientos sólidos de Inglés avanzado, Figma y SQL.\",\"experience\":[{\"company\":\"Rendón, Nevárez y Toledo\",\"title\":\"Ejecutivo de Ventas\",\"start_date\":\"2014-12\",\"end_date\":null}],\"education\":[{\"institution\":\"Tecnológico de Monterrey\",\"degree\":\"Licenciatura en Informática\",\"graduation_year\":2013},{\"institution\":\"Tecnológico de Monterrey\",\"degree\":\"Ingeniería en Sistemas\",\"graduation_year\":2014}],\"skills\":[\"Inglés avanzado\",\"Figma\",\"SQL\",\"AWS\",\"Negociación\"]}",
-  "input_tokens": 660,
-  "output_tokens": 836,
+  "text": "{\"name\":\"Dra. Antonia Guzmán\",\"email\":\"valdezdelia@hotmail.com\",\"phone\":\"938.677.4964x9909\",\"location\":\"Nueva Serbia, Jalisco\",\"summary\":\"Administrador de Sistemas con 1 año de experiencia. Especialista en Kubernetes, Git y Java.\",\"experience\":[{\"company\":\"Coronado S.A.\",\"title\":\"Administrador de Sistemas\",\"start_date\":\"2010-07\",\"end_date\":\"2011-12\"}],\"education\":[{\"institution\":\"Instituto Politécnico Nacional\",\"degree\":\"Ingeniería en Sistemas\",\"graduation_year\":2008}],\"skills\":[\"Kubernetes\",\"Git\",\"Java\",\"Inglés avanzado\",\"Docker\",\"Figma\",\"SQL\"]}",
+  "input_tokens": 642,
+  "output_tokens": 719,
   "fingerprint": "b4392b978a6e5576"
 }

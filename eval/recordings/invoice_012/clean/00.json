@@ -1,6 +1,6 @@
 {
-  "text": "{\n  \"issuer_name\": \"Haro y Benítez S.C.\",\n  \"issuer_tax_id\": \"RDB201115Y05\",\n  \"receiver_name\": \"Grupo Palomo y Ruelas\",\n  \"receiver_tax_id\": \"GMB760531AO0\",\n  \"invoice_number\": \"A-38902\",\n  \"issue_date\": \"2024-03-08\",\n  \"due_date\": null,\n  \"currency\": \"USD\",\n  \"line_items\": [\n    {\n      \"description\": \"Capacitación en sitio\",\n      \"quantity\": 7,\n      \"unit_price\": 4038.10,\n      \"amount\": 28266.70\n    },\n    {\n      \"description\": \"Mantenimiento preventivo\",\n      \"quantity\": 9,\n      \"unit_price\": 2865.11,\n      \"amount\": 25785.99\n    },\n    {\n      \"description\": \"Mantenimiento preventivo\",\n      \"quantity\": 10,\n      \"unit_price\": 1542.97,\n      \"amount\": 15429.70\n    }\n  ],\n  \"subtotal\": 69482.39,\n  \"tax\": 11117.18,\n  \"total\": 80599.57\n}",
-  "input_tokens": 383,
-  "output_tokens": 856,
+  "text": "{\"issuer_name\":\"Gaona-Chavarría S. R.L. de C.V.\",\"issuer_tax_id\":\"LET160115DLY\",\"receiver_name\":\"Bustos y Arreola y Asociados\",\"receiver_tax_id\":\"EZX141014L3A\",\"invoice_number\":\"C-87078\",\"issue_date\":\"2024-09-12\",\"due_date\":\"2024-10-12\",\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Mantenimiento preventivo\",\"quantity\":5,\"unit_price\":574.71,\"amount\":2873.55},{\"description\":\"Diseño de interfaz\",\"quantity\":3,\"unit_price\":456.48,\"amount\":1369.44},{\"description\":\"Mantenimiento preventivo\",\"quantity\":9,\"unit_price\":2400.84,\"amount\":21607.56},{\"description\":\"Soporte técnico mensual\",\"quantity\":2,\"unit_price\":3210.31,\"amount\":6420.62},{\"description\":\"Servicio de consultoría\",\"quantity\":6,\"unit_price\":3933.36,\"amount\":23600.16}],\"subtotal\":55871.33,\"tax\":8939.41,\"total\":64810.74}",
+  "input_tokens": 445,
+  "output_tokens": 1080,
   "fingerprint": "6885825e0d325341"
 }

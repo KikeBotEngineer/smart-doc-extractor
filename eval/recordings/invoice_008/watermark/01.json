@@ -1,6 +1,6 @@
 {
-  "text": "{\"fields\": [{\"field\": \"line_items[0].quantity\", \"value\": \"2\"}, {\"field\": \"line_items[2].quantity\", \"value\": \"7\"}, {\"field\": \"line_items[4].quantity\", \"value\": \"3\"}]}",
-  "input_tokens": 967,
-  "output_tokens": 664,
+  "text": "{\"fields\": [{\"field\": \"line_items[0].quantity\", \"value\": \"8\"}, {\"field\": \"line_items[2].quantity\", \"value\": \"7\"}, {\"field\": \"line_items[3].quantity\", \"value\": \"2\"}]}",
+  "input_tokens": 947,
+  "output_tokens": 773,
   "fingerprint": "e1ce5c76f4d3baff"
 }

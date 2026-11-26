@@ -1,6 +1,6 @@
 {
-  "text": "{\"name\":\"Cristian Sandoval Villanueva\",\"email\":\"felipe71@hotmail.com\",\"phone\":\"1-026-217-4596x158\",\"location\":\"San Abril los altos, Zacatecas\",\"summary\":null,\"experience\":[{\"company\":\"Olvera, Coronado y Saldivar\",\"title\":\"Ingeniero de Software\",\"start_date\":\"2015-09\",\"end_date\":\"2019-06\"},{\"company\":\"Armas, Matías y Rojas\",\"title\":\"Administrador de Sistemas\",\"start_date\":\"2014-04\",\"end_date\":\"2015-07\"},{\"company\":\"Industrias Olivera y González\",\"title\":\"Analista de Datos\",\"start_date\":\"2012-06\",\"end_date\":\"2014-01\"},{\"company\":\"Medina y Esparza e Hijos\",\"title\":\"Desarrollador Backend\",\"start_date\":\"2011-03\",\"end_date\":\"2012-06\"}],\"education\":[{\"institution\":\"Instituto Politécnico Nacional\",\"degree\":\"Licenciatura en Administración\",\"graduation_year\":2010}],\"skills\":[\"Docker\",\"Figma\",\"Power BI\",\"Liderazgo\",\"SQL\",\"AWS\",\"Kubernetes\"]}",
-  "input_tokens": 706,
-  "output_tokens": 1795,
+  "text": "{\"name\":\"Karla Yolanda Farías\",\"email\":\"villarrealrosario@gmail.com\",\"phone\":null,\"location\":\"Vieja Timor-Leste, Chihuahua\",\"summary\":\"Profesional con 12 años de trayectoria; último puesto: Analista de Datos en Marrero S. R.L. de C.V., con dominio de Kubernetes, Liderazgo y Git.\",\"experience\":[{\"company\":\"Marrero S. R.L. de C.V.\",\"title\":\"Analista de Datos\",\"start_date\":\"2015-04\",\"end_date\":null},{\"company\":\"Corporacin Cardenas-Véliz\",\"title\":\"Contador Senior\",\"start_date\":\"2013-06\",\"end_date\":\"2015-03\"}],\"education\":[{\"institution\":\"Tecnológico de Monterrey\",\"degree\":\"Licenciatura en Administración\",\"graduation_year\":2011}],\"skills\":[\"Kubernetes\",\"Liderazgo\",\"Git\",\"Python\",\"Negociación\",\"Java\",\"Docker\"]}",
+  "input_tokens": 678,
+  "output_tokens": 1158,
   "fingerprint": "b4392b978a6e5576"
 }

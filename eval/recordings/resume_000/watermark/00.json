@@ -1,6 +1,6 @@
 {
-  "text": "{\"name\":\"Reynaldo Ávila Montez\",\"email\":\"susanabarrientos@hotmail.com\",\"phone\":\"+03(3)0923271937\",\"location\":\"San Barbara de la Montaña, Chihuahua\",\"summary\":\"Ingeniero de Software con 15 años de experiencia. Especialista en Python, Inglés avanzado y Negociación.\",\"experience\":[{\"company\":\"Hernández, Bonilla y Rodríguez\",\"title\":\"Ingeniero de Software\",\"start_date\":\"2010-11\",\"end_date\":null}],\"education\":[{\"institution\":\"Universidad Autónoma de Nuevo León\",\"degree\":\"Maestría en Ciencia de Datos\",\"graduation_year\":2009}],\"skills\":[\"Python\",\"Inglés avanzado\",\"Negociación\",\"AWS\",\"Power BI\",\"Git\",\"Scrum\"]}",
-  "input_tokens": 652,
-  "output_tokens": 866,
+  "text": "{\"name\":\"Serafín Romero Sandoval\",\"email\":\"claudiosauceda@gmail.com\",\"phone\":\"(191)361-9399\",\"location\":\"Nueva Maldivas, Puebla\",\"summary\":\"Analista de Datos con 17 años de experiencia. Especialista en Docker, Negociación y SQL.\",\"experience\":[{\"company\":\"Martínez A.C.\",\"title\":\"Analista de Datos\",\"start_date\":\"2012-06\",\"end_date\":null},{\"company\":\"Despacho Venegas y Torres\",\"title\":\"Ejecutivo de Ventas\",\"start_date\":\"2009-08\",\"end_date\":\"2012-03\"},{\"company\":\"Correa y Espinal S.A. de C.V.\",\"title\":\"Desarrollador Backend\",\"start_date\":\"2008-02\",\"end_date\":\"2009-05\"}],\"education\":[{\"institution\":\"Universidad de Guadalajara\",\"degree\":\"Ingeniería Industrial\",\"graduation_year\":2006},{\"institution\":\"Tecnológico de Monterrey\",\"degree\":\"Maestría en Ciencia de Datos\",\"graduation_year\":2006}],\"skills\":[\"Docker\",\"Negociación\",\"SQL\",\"Excel avanzado\",\"Inglés avanzado\",\"Kubernetes\",\"AWS\",\"Python\"]}",
+  "input_tokens": 724,
+  "output_tokens": 1335,
   "fingerprint": "b4392b978a6e5576"
 }

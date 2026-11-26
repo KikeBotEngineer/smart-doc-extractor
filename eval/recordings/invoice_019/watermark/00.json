@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Despacho Manzanares-Nava\",\"issuer_tax_id\":\"BLG190403F6M\",\"receiver_name\":\"Correa, Granado y Curiel\",\"receiver_tax_id\":\"ZFN1910071BL\",\"invoice_number\":\"F-70625\",\"issue_date\":\"2024-10-29\",\"due_date\":null,\"currency\":\"USD\",\"line_items\":[{\"description\":\"Diseño de interfaz\",\"quantity\":9,\"unit_price\":2531.84,\"amount\":22786.56},{\"description\":\"Hosting administrado\",\"quantity\":7,\"unit_price\":2792.48,\"amount\":19547.36},{\"description\":\"Soporte técnico mensual\",\"quantity\":8,\"unit_price\":267.39,\"amount\":2139.12},{\"description\":\"Diseño de interfaz\",\"quantity\":5,\"unit_price\":3024.98,\"amount\":15124.90}],\"subtotal\":59597.94,\"tax\":9535.67,\"total\":69133.61}",
-  "input_tokens": 729,
-  "output_tokens": 1144,
+  "text": "{\n  \"issuer_name\": \"Industrias Zepeda, Piña y Galarza\",\n  \"issuer_tax_id\": \"YVH180419J1K\",\n  \"receiver_name\": \"Laboratorios Marrero y Ozuna\",\n  \"receiver_tax_id\": \"EER940221INJ\",\n  \"invoice_number\": \"F-2052\",\n  \"issue_date\": \"2023-09-14\",\n  \"due_date\": \"2023-09-29\",\n  \"currency\": \"MXN\",\n  \"line_items\": [\n    {\n      \"description\": \"Desarrollo de módulo\",\n      \"quantity\": 4,\n      \"unit_price\": 2530.55,\n      \"amount\": 10122.20\n    },\n    {\n      \"description\": \"Hosting administrado\",\n      \"quantity\": 2,\n      \"unit_price\": 3998.68,\n      \"amount\": 7997.36\n    },\n    {\n      \"description\": \"Licencia de software anual\",\n      \"quantity\": 4,\n      \"unit_price\": 1536.22,\n      \"amount\": 6144.88\n    }\n  ],\n  \"subtotal\": 24264.44,\n  \"tax\": 3882.31,\n  \"total\": 28146.75\n}",
+  "input_tokens": 718,
+  "output_tokens": 2234,
   "fingerprint": "6885825e0d325341"
 }

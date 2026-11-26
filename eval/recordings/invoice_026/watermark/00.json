@@ -1,6 +1,6 @@
 {
-  "text": "{\n  \"issuer_name\": \"Santana y Polanco y Asociados\",\n  \"issuer_tax_id\": \"OFX850619USG\",\n  \"receiver_name\": \"Proyectos Lebron y Soliz\",\n  \"receiver_tax_id\": \"UHI761108S41\",\n  \"invoice_number\": \"F-79947\",\n  \"issue_date\": \"2024-05-07\",\n  \"due_date\": null,\n  \"currency\": \"MXN\",\n  \"line_items\": [\n    {\n      \"description\": \"Licencia de software anual\",\n      \"quantity\": 10,\n      \"unit_price\": 2997.55,\n      \"amount\": 29975.50\n    },\n    {\n      \"description\": \"Desarrollo de módulo\",\n      \"quantity\": 2,\n      \"unit_price\": 4129.82,\n      \"amount\": 8259.64\n    },\n    {\n      \"description\": \"Hosting administrado\",\n      \"quantity\": 2,\n      \"unit_price\": 4407.90,\n      \"amount\": 8815.80\n    },\n    {\n      \"description\": \"Mantenimiento preventivo\",\n      \"quantity\": 3,\n      \"unit_price\": 1122.82,\n      \"amount\": 3368.46\n    }\n  ],\n  \"subtotal\": 50419.40,\n  \"tax\": 8067.10,\n  \"total\": 58486.50\n}",
-  "input_tokens": 731,
-  "output_tokens": 1389,
+  "text": "{\"issuer_name\":\"Corporacin Ríos-Haro\",\"issuer_tax_id\":\"QGH1109214E1\",\"receiver_name\":\"Quintero-Urbina\",\"receiver_tax_id\":\"JXE881223GCT\",\"invoice_number\":\"F-28569\",\"issue_date\":\"2024-10-17\",\"due_date\":null,\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Mantenimiento preventivo\",\"quantity\":10,\"unit_price\":3129.47,\"amount\":31294.70}],\"subtotal\":31294.70,\"tax\":5007.15,\"total\":36301.85}",
+  "input_tokens": 654,
+  "output_tokens": 725,
   "fingerprint": "6885825e0d325341"
 }

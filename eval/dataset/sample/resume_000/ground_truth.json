@@ -1,42 +1,40 @@
 {
   "doc_type": "resume",
   "fields": {
-    "name": "Eugenia Cortés Galván",
-    "email": "felix16@gmail.com",
-    "phone": "594.078.1618",
-    "location": "San Rosario los altos, San Luis Potosí",
-    "summary": "Diseñador UX con 4 años de experiencia. Especialista en SQL, Inglés avanzado y Docker.",
+    "name": "Aldo Cabán Gamez",
+    "email": "juanazarate@gmail.com",
+    "phone": "(386)379-4026x5423",
+    "location": "San Felix de la Montaña, Sinaloa",
+    "summary": null,
     "experience": [
       {
-        "company": "Proyectos Aguayo, Crespo y Pichardo",
+        "company": "Villanueva-Pichardo",
         "title": "Diseñador UX",
-        "start_date": "2010-09",
-        "end_date": "2012-06"
-      },
-      {
-        "company": "Garay, Rangel y Villalpando",
-        "title": "Analista de Datos",
-        "start_date": "2008-11",
-        "end_date": "2010-08"
+        "start_date": "2016-04",
+        "end_date": "2020-01"
       }
     ],
     "education": [
       {
         "institution": "Tecnológico de Monterrey",
-        "degree": "Licenciatura en Administración",
-        "graduation_year": 2008
+        "degree": "Maestría en Ciencia de Datos",
+        "graduation_year": 2015
       },
       {
         "institution": "Universidad Nacional Autónoma de México",
-        "degree": "Ingeniería en Sistemas",
-        "graduation_year": 2006
+        "degree": "Licenciatura en Contaduría",
+        "graduation_year": 2016
       }
     ],
     "skills": [
-      "SQL",
-      "Inglés avanzado",
-      "Docker",
-      "Liderazgo"
+      "Negociación",
+      "AWS",
+      "Liderazgo",
+      "Excel avanzado",
+      "Figma",
+      "Power BI",
+      "Scrum",
+      "Docker"
     ]
   }
 }

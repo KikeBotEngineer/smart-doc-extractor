@@ -1,6 +1,6 @@
 {
-  "text": "{\"name\":\"Caridad Loera\",\"email\":\"hrubio@gmail.com\",\"phone\":\"932-480-8613x17127\",\"location\":null,\"summary\":\"Contador Senior con 5 años de experiencia. Especialista en Python, Excel avanzado y Java.\",\"experience\":[{\"company\":\"Figueroa S.A. de C.V.\",\"title\":\"Contador Senior\",\"start_date\":\"2017-08\",\"end_date\":\"2018-09\"},{\"company\":\"Samaniego-Quintanilla y Asociados\",\"title\":\"Gerente de Proyectos\",\"start_date\":\"2013-06\",\"end_date\":\"2017-05\"}],\"education\":[{\"institution\":\"Universidad de Guadalajara\",\"degree\":\"Licenciatura en Contaduría\",\"graduation_year\":2012},{\"institution\":\"Universidad de Guadalajara\",\"degree\":\"Licenciatura en Administración\",\"graduation_year\":2013}],\"skills\":[\"Python\",\"Excel avanzado\",\"Java\",\"Liderazgo\",\"Power BI\",\"SQL\",\"AWS\"]}",
-  "input_tokens": 659,
-  "output_tokens": 962,
+  "text": "{\"name\":\"Camila Rosalia Tejeda Amador\",\"email\":\"kvillarreal@hotmail.com\",\"phone\":\"+16(2)7204653755\",\"location\":\"San Rodrigo los bajos, Morelos\",\"summary\":\"Ejecutivo de Ventas enfocado en resultados, con 16 años de experiencia y conocimientos sólidos de Scrum, Python y Inglés avanzado.\",\"experience\":[{\"company\":\"Palacios-de Jesús y Asociados\",\"title\":\"Ejecutivo de Ventas\",\"start_date\":\"2009-07\",\"end_date\":null}],\"education\":[{\"institution\":\"Tecnológico de Monterrey\",\"degree\":\"Licenciatura en Informática\",\"graduation_year\":2008},{\"institution\":\"Universidad de Guadalajara\",\"degree\":\"Maestría en Ciencia de Datos\",\"graduation_year\":2007}],\"skills\":[\"Scrum\",\"Python\",\"Inglés avanzado\"]}",
+  "input_tokens": 637,
+  "output_tokens": 1303,
   "fingerprint": "b4392b978a6e5576"
 }

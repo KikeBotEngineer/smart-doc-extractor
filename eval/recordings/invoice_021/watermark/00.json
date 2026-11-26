@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Terán, Meraz y Amaya\",\"issuer_tax_id\":\"IFS260807G26\",\"receiver_name\":\"Montaño, Martínez y Pulido\",\"receiver_tax_id\":\"QDM930528CG2\",\"invoice_number\":\"B-4636\",\"issue_date\":\"2024-06-29\",\"due_date\":\"2024-07-29\",\"currency\":\"USD\",\"line_items\":[{\"description\":\"Soporte técnico mensual\",\"quantity\":4,\"unit_price\":1545.42,\"amount\":6181.68},{\"description\":\"Licencia de software anual\",\"quantity\":6,\"unit_price\":4298.58,\"amount\":25791.48}],\"subtotal\":31973.16,\"tax\":5115.71,\"total\":37088.87}",
-  "input_tokens": 689,
-  "output_tokens": 1200,
+  "text": "{\n  \"issuer_name\": \"Industrias Garay y Aguilar\",\n  \"issuer_tax_id\": \"WNA6007219WF\",\n  \"receiver_name\": \"Bahena-Girón\",\n  \"receiver_tax_id\": null,\n  \"invoice_number\": \"F-77979\",\n  \"issue_date\": \"2023-02-02\",\n  \"due_date\": \"2023-03-19\",\n  \"currency\": \"MXN\",\n  \"line_items\": [\n    {\n      \"description\": \"Licencia de software anual\",\n      \"quantity\": 4,\n      \"unit_price\": 2237.34,\n      \"amount\": 8949.36\n    },\n    {\n      \"description\": \"Servicio de consultoría\",\n      \"quantity\": 1,\n      \"unit_price\": 299.15,\n      \"amount\": 299.15\n    },\n    {\n      \"description\": \"Auditoría de seguridad\",\n      \"quantity\": 10,\n      \"unit_price\": 3282.17,\n      \"amount\": 32821.70\n    },\n    {\n      \"description\": \"Mantenimiento preventivo\",\n      \"quantity\": 3,\n      \"unit_price\": 3478.02,\n      \"amount\": 10434.06\n    }\n  ],\n  \"subtotal\": 52504.27,\n  \"tax\": 8400.68,\n  \"total\": 60904.95\n}",
+  "input_tokens": 726,
+  "output_tokens": 1270,
   "fingerprint": "6885825e0d325341"
 }

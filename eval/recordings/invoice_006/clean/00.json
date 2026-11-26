@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Industrias Salcido-Bustos\",\"issuer_tax_id\":\"BDE131006AR4\",\"receiver_name\":\"Olivárez, Ybarra y Rocha\",\"receiver_tax_id\":\"IRA8211307YH\",\"invoice_number\":\"C-59373\",\"issue_date\":\"2023-12-07\",\"due_date\":\"2024-01-06\",\"currency\":\"USD\",\"line_items\":[{\"description\":\"Desarrollo de módulo\",\"quantity\":1,\"unit_price\":284.74,\"amount\":284.74},{\"description\":\"Diseño de interfaz\",\"quantity\":1,\"unit_price\":4331.51,\"amount\":4331.51}],\"subtotal\":4616.25,\"tax\":738.60,\"total\":5354.85}",
-  "input_tokens": 355,
-  "output_tokens": 996,
+  "text": "{\"issuer_name\":\"Gil y Asociados\",\"issuer_tax_id\":\"KHK730627YTX\",\"receiver_name\":\"Despacho Gonzales, Campos y Olivares\",\"receiver_tax_id\":\"CTV1703274VS\",\"invoice_number\":\"A-38429\",\"issue_date\":\"2023-04-19\",\"due_date\":\"2023-06-03\",\"currency\":\"USD\",\"line_items\":[{\"description\":\"Licencia de software anual\",\"quantity\":1,\"unit_price\":251.82,\"amount\":251.82}],\"subtotal\":251.82,\"tax\":40.29,\"total\":292.11}",
+  "input_tokens": 315,
+  "output_tokens": 918,
   "fingerprint": "6885825e0d325341"
 }

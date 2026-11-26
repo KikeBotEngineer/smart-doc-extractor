@@ -1,6 +1,6 @@
 {
-  "text": "{\"fields\": [{\"field\": \"receiver_tax_id\", \"value\": \"GRO3612228RB\"}, {\"field\": \"line_items[0].quantity\", \"value\": \"3\"}]}",
-  "input_tokens": 778,
-  "output_tokens": 634,
+  "text": "{\"fields\": [{\"field\": \"line_items[0].quantity\", \"value\": \"4\"}, {\"field\": \"line_items[1].quantity\", \"value\": \"8\"}]}",
+  "input_tokens": 830,
+  "output_tokens": 665,
   "fingerprint": "e1ce5c76f4d3baff"
 }

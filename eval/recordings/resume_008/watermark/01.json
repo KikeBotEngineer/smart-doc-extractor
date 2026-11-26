@@ -1,6 +1,6 @@
 {
-  "text": "{\"fields\": [{\"field\": \"summary\", \"value\": \"Analista de Datos enfocado en resultados, con 9 años de experiencia y conocimientos sólidos de Inglés avanzado, Figma y Docker.\"}]}",
-  "input_tokens": 778,
-  "output_tokens": 285,
+  "text": "{\"fields\": [{\"field\": \"summary\", \"value\": \"Profesional con 14 años de trayectoria; último puesto: Gerente de Proyectos en Proyectos Lebrón y Soliz, con dominio de SQL, Git y Figma.\"}, {\"field\": \"skills[4]\", \"value\": \"Power BI\"}]}",
+  "input_tokens": 786,
+  "output_tokens": 568,
   "fingerprint": "e1ce5c76f4d3baff"
 }

@@ -50,7 +50,9 @@ def test_scanned_pdf_goes_visual_with_ocr_and_image(scanned_invoice):
     assert result.route == "visual"
     assert [p.profile for p in result.pages] == ["scanned"]
     assert len(llm.images[0]) == 1 and llm.images[0][0][:2] == b"\xff\xd8"  # JPEG
-    assert "--- Página 1 (OCR) ---" in llm.prompts[0] and "F-77336" in llm.prompts[0]
+    number = json.loads((SAMPLE / "invoice_000" / "ground_truth.json").read_text("utf-8"))
+    assert "--- Página 1 (OCR) ---" in llm.prompts[0]
+    assert number["fields"]["invoice_number"] in llm.prompts[0]
 
 
 def test_ocr_evidence(scanned_invoice):
@@ -76,6 +78,14 @@ def test_value_seen_only_by_the_llm_is_low_vision(scanned_invoice):
 def test_watermarked_resume_dates_survive_ocr():
     result, _ = extract("resume_000", "watermark", "resume")
     fields = result.fields
-    for path in ("email", "experience[0].start_date", "experience[1].end_date"):
+    truth = json.loads((SAMPLE / "resume_000" / "ground_truth.json").read_text("utf-8"))
+    dates = [
+        f"experience[{n}].{k}"
+        for n, e in enumerate(truth["fields"]["experience"])
+        for k in ("start_date", "end_date")
+        if e[k]
+    ]
+    assert dates
+    for path in ("email", *dates):
         assert fields[path].confidence == "high", (path, fields[path])
     assert all(v.passed for v in result.validations)

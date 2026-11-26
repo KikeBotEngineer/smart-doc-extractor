@@ -1,6 +1,6 @@
 {
-  "text": "{\"name\":\"Ramiro Héctor Tijerina Roybal\",\"email\":\"upulido@hotmail.com\",\"phone\":\"531-473-7996\",\"location\":\"San Andrés los bajos, Puebla\",\"summary\":null,\"experience\":[{\"company\":\"Rico-Corral S.C.\",\"title\":\"Analista de Datos\",\"start_date\":\"2016-11\",\"end_date\":\"2019-04\"}],\"education\":[{\"institution\":\"Universidad Autónoma de Nuevo León\",\"degree\":\"Ingeniería Industrial\",\"graduation_year\":2015},{\"institution\":\"Universidad de Guadalajara\",\"degree\":\"Licenciatura en Informática\",\"graduation_year\":2015}],\"skills\":[\"SQL\",\"Docker\",\"Scrum\",\"Kubernetes\"]}",
-  "input_tokens": 632,
-  "output_tokens": 905,
+  "text": "{\"name\":\"Ing. Tomás Gaitán\",\"email\":\"lucas48@yahoo.com\",\"phone\":null,\"location\":\"San Camilo de la Montaña, Tamaulipas\",\"summary\":\"Contador Senior con 1 año de experiencia. Especialista en Python, Power BI y Scrum.\",\"experience\":[{\"company\":\"Uribe-Cortés\",\"title\":\"Contador Senior\",\"start_date\":\"2010-09\",\"end_date\":\"2011-09\"}],\"education\":[{\"institution\":\"Tecnológico de Monterrey\",\"degree\":\"Licenciatura en Contaduría\",\"graduation_year\":2008},{\"institution\":\"Universidad Autónoma de Nuevo León\",\"degree\":\"Ingeniería Industrial\",\"graduation_year\":2009}],\"skills\":[\"Python\",\"Power BI\",\"Scrum\",\"Figma\",\"AWS\",\"SQL\"]}",
+  "input_tokens": 641,
+  "output_tokens": 894,
   "fingerprint": "b4392b978a6e5576"
 }

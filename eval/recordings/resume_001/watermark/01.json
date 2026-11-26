@@ -1,6 +1,0 @@
-{
-  "text": "{\"fields\": [{\"field\": \"skills[3]\", \"value\": \"Power BI\"}, {\"field\": \"skills[6]\", \"value\": \"AWS\"}]}",
-  "input_tokens": 720,
-  "output_tokens": 200,
-  "fingerprint": "e1ce5c76f4d3baff"
-}

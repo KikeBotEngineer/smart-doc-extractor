@@ -1,6 +1,6 @@
 {
-  "text": "{\"name\":\"Srita. Lorena Carrero\",\"email\":\"soniacordova@yahoo.com\",\"phone\":null,\"location\":\"Nueva Bangladesh, Guanajuato\",\"summary\":null,\"experience\":[{\"company\":\"Batista y González S.A. de C.V.\",\"title\":\"Diseñador UX\",\"start_date\":\"2015-02\",\"end_date\":null}],\"education\":[{\"institution\":\"Universidad de Guadalajara\",\"degree\":\"Licenciatura en Informática\",\"graduation_year\":2013}],\"skills\":[\"Inglés avanzado\",\"Negociación\",\"Git\",\"Liderazgo\",\"Java\"]}",
-  "input_tokens": 600,
-  "output_tokens": 1158,
+  "text": "{\"name\":\"Elvira Carolina Adame\",\"email\":\"pizarromario@gmail.com\",\"phone\":\"1-870-831-7278x89579\",\"location\":null,\"summary\":\"Profesional con 14 años de trayectoria; último puesto: Administrador de Sistemas en Laboratorios Olivo y Saldaña, con dominio de SQL, Excel avanzado y Java.\",\"experience\":[{\"company\":\"Laboratorios Olivo y Saldaña\",\"title\":\"Administrador de Sistemas\",\"start_date\":\"2015-12\",\"end_date\":null},{\"company\":\"Beltrán y Reséndez S.C.\",\"title\":\"Ingeniero de Software\",\"start_date\":\"2013-05\",\"end_date\":\"2015-09\"},{\"company\":\"Arredondo S.A.\",\"title\":\"Desarrollador Backend\",\"start_date\":\"2011-10\",\"end_date\":\"2013-03\"}],\"education\":[{\"institution\":\"Universidad de Guadalajara\",\"degree\":\"Licenciatura en Administración\",\"graduation_year\":2009},{\"institution\":\"Universidad Autónoma de Nuevo León\",\"degree\":\"Licenciatura en Informática\",\"graduation_year\":2010}],\"skills\":[\"SQL\",\"Excel avanzado\",\"Java\",\"Figma\"]}",
+  "input_tokens": 724,
+  "output_tokens": 1101,
   "fingerprint": "b4392b978a6e5576"
 }

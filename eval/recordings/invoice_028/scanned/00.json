@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Aguayo y Mora S.A. de C.V.\",\"issuer_tax_id\":\"MNR130613YEV\",\"receiver_name\":\"Corporacin Pulido y Ruelas\",\"receiver_tax_id\":\"MKV141107PAT\",\"invoice_number\":\"B-93655\",\"issue_date\":\"2024-08-13\",\"due_date\":\"2024-08-28\",\"currency\":\"USD\",\"line_items\":[{\"description\":\"Capacitación en sitio\",\"quantity\":9,\"unit_price\":4488.14,\"amount\":40393.26}],\"subtotal\":40393.26,\"tax\":6462.92,\"total\":46856.18}",
-  "input_tokens": 672,
-  "output_tokens": 1045,
+  "text": "{\"issuer_name\":\"Club Ruelas-Rosales\",\"issuer_tax_id\":\"DQP720229YMU\",\"receiver_name\":\"Proyectos Pacheco y Bahena\",\"receiver_tax_id\":\"TJS800827TBP\",\"invoice_number\":\"C-8559\",\"issue_date\":\"2024-01-03\",\"due_date\":\"2024-02-02\",\"currency\":\"USD\",\"line_items\":[{\"description\":\"Soporte técnico mensual\",\"quantity\":9,\"unit_price\":1414.33,\"amount\":12728.97}],\"subtotal\":12728.97,\"tax\":2036.64,\"total\":14765.61}",
+  "input_tokens": 661,
+  "output_tokens": 806,
   "fingerprint": "6885825e0d325341"
 }

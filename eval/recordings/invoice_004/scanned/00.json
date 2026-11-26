@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Club Ojeda-Jiménez\",\"issuer_tax_id\":\"WRH980102K3E\",\"receiver_name\":\"Mata S.C.\",\"receiver_tax_id\":null,\"invoice_number\":\"C-13257\",\"issue_date\":\"2024-01-16\",\"due_date\":\"2024-02-15\",\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Servicio de consultoría\",\"quantity\":6,\"unit_price\":66.71,\"amount\":400.26},{\"description\":\"Mantenimiento preventivo\",\"quantity\":2,\"unit_price\":963.55,\"amount\":1927.10},{\"description\":\"Auditoría de seguridad\",\"quantity\":3,\"unit_price\":1530.54,\"amount\":4591.62},{\"description\":\"Auditoría de seguridad\",\"quantity\":1,\"unit_price\":1317.65,\"amount\":1317.65},{\"description\":\"Mantenimiento preventivo\",\"quantity\":2,\"unit_price\":2233.74,\"amount\":4467.48},{\"description\":\"Desarrollo de módulo\",\"quantity\":4,\"unit_price\":4100.79,\"amount\":16403.16}],\"subtotal\":29107.27,\"tax\":4657.16,\"total\":33764.43}",
-  "input_tokens": 775,
-  "output_tokens": 1937,
+  "text": "{\"issuer_name\":\"Calderón, Muñoz y Montañez\",\"issuer_tax_id\":\"ICD900908SAV\",\"receiver_name\":\"Proyectos Armas, Rico y Terán\",\"receiver_tax_id\":\"SZT900507HSD\",\"invoice_number\":\"A-40140\",\"issue_date\":\"2023-05-25\",\"due_date\":\"2023-06-24\",\"currency\":\"USD\",\"line_items\":[{\"description\":\"Soporte técnico mensual\",\"quantity\":1,\"unit_price\":286.48,\"amount\":286.48},{\"description\":\"Licencia de software anual\",\"quantity\":9,\"unit_price\":363.49,\"amount\":3271.41}],\"subtotal\":3557.89,\"tax\":569.26,\"total\":4127.15}",
+  "input_tokens": 684,
+  "output_tokens": 1116,
   "fingerprint": "6885825e0d325341"
 }

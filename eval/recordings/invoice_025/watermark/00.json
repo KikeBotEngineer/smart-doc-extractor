@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Saldaña, Pabón y Guerrero\",\"issuer_tax_id\":\"UWA3012266RE\",\"receiver_name\":\"Proyectos Sisneros-Rivera\",\"receiver_tax_id\":\"RHD170926T8T\",\"invoice_number\":\"C-98820\",\"issue_date\":\"2023-10-30\",\"due_date\":null,\"currency\":\"USD\",\"line_items\":[{\"description\":\"Desarrollo de módulo\",\"quantity\":8,\"unit_price\":4608.52,\"amount\":36868.16},{\"description\":\"Servicio de consultoría\",\"quantity\":2,\"unit_price\":3469.28,\"amount\":6938.56}],\"subtotal\":43806.72,\"tax\":7009.08,\"total\":50815.80}",
-  "input_tokens": 678,
-  "output_tokens": 1327,
+  "text": "{\"issuer_name\":\"Cardona-Guzmán S.A.\",\"issuer_tax_id\":\"KMI6306283HW\",\"receiver_name\":\"Industrias Rangel y Cintrón\",\"receiver_tax_id\":\"DLJ131101QVC\",\"invoice_number\":\"F-23643\",\"issue_date\":\"2024-09-17\",\"due_date\":null,\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Mantenimiento preventivo\",\"quantity\":2,\"unit_price\":1787.96,\"amount\":3575.92}],\"subtotal\":3575.92,\"tax\":572.15,\"total\":4148.07}",
+  "input_tokens": 651,
+  "output_tokens": 993,
   "fingerprint": "6885825e0d325341"
 }

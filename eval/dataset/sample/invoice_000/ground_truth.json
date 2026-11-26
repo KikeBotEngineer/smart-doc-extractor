@@ -2,12 +2,12 @@
   "doc_type": "invoice",
   "fields": {
     "issuer_name": "Laureano S.A.",
-    "issuer_tax_id": "EXD410411Y5R",
-    "receiver_name": "Anguiano A.C.",
-    "receiver_tax_id": "HQT4008271ZC",
-    "invoice_number": "F-77336",
+    "issuer_tax_id": "FPV970820A3Z",
+    "receiver_name": "Grupo Canales y Trejo",
+    "receiver_tax_id": "FTC731212NMM",
+    "invoice_number": "C-5795",
     "issue_date": "2023-06-22",
-    "due_date": null,
+    "due_date": "2023-08-06",
     "currency": "MXN",
     "line_items": [
       {

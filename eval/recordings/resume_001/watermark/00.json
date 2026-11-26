@@ -1,6 +1,6 @@
 {
-  "text": "{\"name\":\"Jacinto Velásquez Núñez\",\"email\":\"efarias@hotmail.com\",\"phone\":\"1-314-919-0586x51850\",\"location\":\"San Irene de la Montaña, Tamaulipas\",\"summary\":\"Diseñador UX con 9 años de experiencia. Especialista en Excel avanzado, Docker y Git.\",\"experience\":[{\"company\":\"Corporacin Cardenas-Véliz\",\"title\":\"Diseñador UX\",\"start_date\":\"2016-02\",\"end_date\":null}],\"education\":[{\"institution\":\"Instituto Politécnico Nacional\",\"degree\":\"Ingeniería en Sistemas\",\"graduation_year\":2015},{\"institution\":\"Tecnológico de Monterrey\",\"degree\":\"Licenciatura en Contaduría\",\"graduation_year\":2016}],\"skills\":[\"Excel avanzado\",\"Docker\",\"Git\",\"Power BI\",\"Java\",\"Inglés avanzado\",\"AWS\"]}",
-  "input_tokens": 662,
-  "output_tokens": 793,
+  "text": "{\"name\":\"Patricio Jaimes\",\"email\":\"andreabarrientos@gmail.com\",\"phone\":\"427.849.8084\",\"location\":\"Nueva Ghana, Chihuahua\",\"summary\":\"Profesional con 14 años de trayectoria; último puesto: Diseñador UX en Benavides-Terrazas, con dominio de Kubernetes, SQL y Git.\",\"experience\":[{\"company\":\"Benavides-Terrazas\",\"title\":\"Diseñador UX\",\"start_date\":\"2019-09\",\"end_date\":null},{\"company\":\"Beltrán-Aguirre S.C.\",\"title\":\"Analista de Datos\",\"start_date\":\"2016-12\",\"end_date\":\"2019-06\"},{\"company\":\"Ceja, Macías y Reyna\",\"title\":\"Ingeniero de Software\",\"start_date\":\"2014-01\",\"end_date\":\"2016-10\"},{\"company\":\"Grupo Martínez, Griego y Jaimes\",\"title\":\"Ejecutivo de Ventas\",\"start_date\":\"2011-12\",\"end_date\":\"2013-12\"}],\"education\":[{\"institution\":\"Universidad Autónoma de Nuevo León\",\"degree\":\"Maestría en Ciencia de Datos\",\"graduation_year\":2010}],\"skills\":[\"Kubernetes\",\"SQL\",\"Git\",\"Liderazgo\",\"Docker\",\"Negociación\",\"Excel avanzado\"]}",
+  "input_tokens": 737,
+  "output_tokens": 1489,
   "fingerprint": "b4392b978a6e5576"
 }

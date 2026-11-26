@@ -1,6 +1,6 @@
 {
-  "text": "{\"issuer_name\":\"Grupo Martínez, Griego y Jaimes\",\"issuer_tax_id\":\"EVU641007JTK\",\"receiver_name\":\"Aguirre-Reynoso\",\"receiver_tax_id\":\"SDC950610YDW\",\"invoice_number\":\"C-36654\",\"issue_date\":\"2024-05-06\",\"due_date\":\"2024-06-20\",\"currency\":\"USD\",\"line_items\":[{\"description\":\"Auditoría de seguridad\",\"quantity\":3,\"unit_price\":2572.05,\"amount\":7716.15},{\"description\":\"Desarrollo de módulo\",\"quantity\":10,\"unit_price\":1753.39,\"amount\":17533.90},{\"description\":\"Hosting administrado\",\"quantity\":4,\"unit_price\":3411.05,\"amount\":13644.20},{\"description\":\"Diseño de interfaz\",\"quantity\":5,\"unit_price\":1400.69,\"amount\":7003.45},{\"description\":\"Auditoría de seguridad\",\"quantity\":7,\"unit_price\":4880.66,\"amount\":34164.62}],\"subtotal\":80062.32,\"tax\":12809.97,\"total\":92872.29}",
-  "input_tokens": 773,
-  "output_tokens": 1676,
+  "text": "{\"issuer_name\":\"Club Acosta-Irizarry\",\"issuer_tax_id\":\"RWG951016AQ7\",\"receiver_name\":\"Industrias Caraballo-Lugo\",\"receiver_tax_id\":\"BJU690712S81\",\"invoice_number\":\"F-66087\",\"issue_date\":\"2024-11-06\",\"due_date\":\"2024-11-21\",\"currency\":\"USD\",\"line_items\":[{\"description\":\"Mantenimiento preventivo\",\"quantity\":10,\"unit_price\":2716.96,\"amount\":27169.60},{\"description\":\"Hosting administrado\",\"quantity\":3,\"unit_price\":3857.05,\"amount\":11571.15},{\"description\":\"Auditoria de seguridad\",\"quantity\":2,\"unit_price\":4149.86,\"amount\":8299.72},{\"description\":\"Soporte técnico mensual\",\"quantity\":8,\"unit_price\":3879.17,\"amount\":31033.36}],\"subtotal\":78073.83,\"tax\":12491.81,\"total\":90565.64}",
+  "input_tokens": 748,
+  "output_tokens": 1103,
   "fingerprint": "6885825e0d325341"
 }

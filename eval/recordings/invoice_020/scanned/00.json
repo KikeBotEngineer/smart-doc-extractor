@@ -1,6 +1,6 @@
 {
-  "text": "{\n  \"issuer_name\": \"Corporacin Crespo y Cardenas\",\n  \"issuer_tax_id\": \"BPH621219CTM\",\n  \"receiver_name\": \"Proyectos Gil, Garica y Alva\",\n  \"receiver_tax_id\": \"GMK000924H4H\",\n  \"invoice_number\": \"C-87120\",\n  \"issue_date\": \"2024-10-01\",\n  \"due_date\": null,\n  \"currency\": \"MXN\",\n  \"line_items\": [\n    {\n      \"description\": \"Diseño de interfaz\",\n      \"quantity\": 2,\n      \"unit_price\": 2031.23,\n      \"amount\": 4062.46\n    },\n    {\n      \"description\": \"Hosting administrado\",\n      \"quantity\": 3,\n      \"unit_price\": 1208.28,\n      \"amount\": 3624.84\n    },\n    {\n      \"description\": \"Desarrollo de módulo\",\n      \"quantity\": 1,\n      \"unit_price\": 1056.10,\n      \"amount\": 1056.10\n    }\n  ],\n  \"subtotal\": 8743.40,\n  \"tax\": 1398.94,\n  \"total\": 10142.34\n}",
-  "input_tokens": 703,
-  "output_tokens": 1181,
+  "text": "{\"issuer_name\":\"Sierra y Razo A.C.\",\"issuer_tax_id\":\"VQM710730DZ4\",\"receiver_name\":\"Grupo Barela y Mireles\",\"receiver_tax_id\":\"TQM8306243YS\",\"invoice_number\":\"C-63602\",\"issue_date\":\"2024-08-03\",\"due_date\":\"2024-08-18\",\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Mantenimiento preventivo\",\"quantity\":3,\"unit_price\":4292.03,\"amount\":12876.09},{\"description\":\"Mantenimiento preventivo\",\"quantity\":9,\"unit_price\":840.40,\"amount\":7563.60},{\"description\":\"Licencia de software anual\",\"quantity\":9,\"unit_price\":267.66,\"amount\":2408.94},{\"description\":\"Capacitación en sitio\",\"quantity\":4,\"unit_price\":4471.71,\"amount\":17886.84},{\"description\":\"Diseño de interfaz\",\"quantity\":3,\"unit_price\":1280.89,\"amount\":3842.67},{\"description\":\"Auditoría de seguridad\",\"quantity\":8,\"unit_price\":708.27,\"amount\":5666.16}],\"subtotal\":50244.30,\"tax\":8039.09,\"total\":58283.39}",
+  "input_tokens": 792,
+  "output_tokens": 1270,
   "fingerprint": "6885825e0d325341"
 }
