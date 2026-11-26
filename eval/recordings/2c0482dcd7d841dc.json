@@ -1,5 +1,0 @@
-{
-  "text": "{\"name\":\"Eugenia Cortés Galván\",\"email\":\"felix16@gmail.com\",\"phone\":\"594.078.1618\",\"location\":\"San Rosario los altos, San Luis Potosí\",\"summary\":\"Diseñador UX con 4 años de experiencia. Especialista en SQL, Inglés avanzado y Docker.\",\"experience\":[{\"company\":\"Proyectos Aguayo, Crespo y Pichardo\",\"title\":\"Diseñador UX\",\"start_date\":\"2010-09\",\"end_date\":\"2012-06\"},{\"company\":\"Garay, Rangel y Villalpando\",\"title\":\"Analista de Datos\",\"start_date\":\"2008-11\",\"end_date\":\"2010-08\"}],\"education\":[{\"institution\":\"Tecnológico de Monterrey\",\"degree\":\"Licenciatura en Administración\",\"graduation_year\":2008},{\"institution\":\"Universidad Nacional Autónoma de México\",\"degree\":\"Ingeniería en Sistemas\",\"graduation_year\":2006}],\"skills\":[\"SQL\",\"Inglés avanzado\",\"Docker\",\"Liderazgo\"]}",
-  "input_tokens": 347,
-  "output_tokens": 1085
-}

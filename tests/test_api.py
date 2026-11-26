@@ -1,3 +1,4 @@
+import json
 from io import BytesIO
 from pathlib import Path
 
@@ -11,6 +12,12 @@ from app.llm.recorded import RecordedLLM
 from app.main import app, get_llm, get_settings
 
 SAMPLE = Path("eval/dataset/sample")
+TRUTH = json.loads((SAMPLE / "invoice_000" / "ground_truth.json").read_text(encoding="utf-8"))[
+    "fields"
+]
+# la factura de la muestra es invoice_000 del dataset: se usan sus grabaciones, que no
+# dependen del texto exacto que extraiga pypdf
+RECORDINGS = Path("eval/recordings/invoice_000/clean")
 
 
 class FailingLLM:
@@ -21,7 +28,7 @@ class FailingLLM:
 @pytest.fixture
 def client():
     app.dependency_overrides[get_settings] = lambda: Settings(llm_mode="recorded")
-    app.dependency_overrides[get_llm] = lambda: RecordedLLM(Path("eval/recordings"))
+    app.dependency_overrides[get_llm] = lambda: RecordedLLM(RECORDINGS, sequential=True)
     yield TestClient(app)
     app.dependency_overrides.clear()
 
@@ -60,16 +67,11 @@ def test_extract_clean_invoice(client):
     assert body["doc_type"] == {"value": "invoice", "method": "forced", "confidence": "high"}
     assert body["route"] == "fast"
     assert body["pages"] == [{"page": 1, "profile": "digital"}]
+    expected = TRUTH["invoice_number"]
     number = body["fields"]["invoice_number"]
-    assert number["value"] == "F-77336" and number["confidence"] == "high"
-    assert number["source"] == "text_layer" and "F-77336" in number["evidence"]["snippet"]
-    assert body["fields"]["due_date"] == {
-        "value": None,
-        "confidence": None,
-        "source": None,
-        "evidence": None,
-        "missing_reason": "not_present",
-    }
+    assert number["value"] == expected and number["confidence"] == "high"
+    assert number["source"] == "text_layer" and expected in number["evidence"]["snippet"]
+    assert body["fields"]["issue_date"]["value"] == TRUTH["issue_date"]
     assert body["validations"] and all(v["passed"] for v in body["validations"])
     assert body["usage"]["llm_calls"] == 1 and body["usage"]["input_tokens"] > 0
 
