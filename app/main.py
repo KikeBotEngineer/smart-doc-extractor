@@ -2,6 +2,7 @@ import logging
 import secrets
 import threading
 from collections.abc import Iterator
+from contextlib import asynccontextmanager
 from functools import lru_cache
 from typing import Annotated, Literal
 
@@ -15,7 +16,15 @@ from app.llm.client import LLMClient, LLMError
 from app.pipeline import RejectedInput, run
 from app.schemas import ExtractResponse
 
-app = FastAPI(title="smart-doc-extractor")
+
+@asynccontextmanager
+async def lifespan(_: FastAPI):
+    # sin GEMINI_API_KEY en live/record, el servidor no arranca: falla aquí, no en cada /extract
+    get_llm()
+    yield
+
+
+app = FastAPI(title="smart-doc-extractor", lifespan=lifespan)
 
 logger = logging.getLogger(__name__)
 

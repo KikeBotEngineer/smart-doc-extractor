@@ -155,3 +155,16 @@ def test_extract_without_doc_type_classifies_by_keywords(client):
     assert r.status_code == 200, r.text
     assert r.json()["doc_type"] == {"value": "invoice", "method": "keywords", "confidence": "high"}
     assert r.json()["usage"]["llm_calls"] == 1  # sin llamada de clasificación
+
+
+def test_missing_api_key_fails_at_startup(monkeypatch):
+    monkeypatch.setenv("LLM_MODE", "live")
+    monkeypatch.setenv("GEMINI_API_KEY", "")  # gana sobre la key de tu .env
+    get_settings.cache_clear()
+    get_llm.cache_clear()
+    try:
+        with pytest.raises(RuntimeError, match="GEMINI_API_KEY"), TestClient(app):
+            pass
+    finally:  # que las demás pruebas no hereden esta configuración
+        get_settings.cache_clear()
+        get_llm.cache_clear()
