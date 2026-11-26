@@ -174,3 +174,15 @@ def test_ocr_label_without_spaces_still_counts():
         Invoice(issue_date=date(2023, 6, 22)), [PageText(text)], "text_layer", IDENTIFIERS, LABELS
     )
     assert fields["issue_date"].confidence == "high"
+
+
+@pytest.mark.parametrize(
+    "text",
+    ["Descuento -$500.00", "Descuento $-500.00", "Descuento ($500.00)", "Descuento - $ 500.00"],
+)
+def test_negative_amount_matches_with_its_sign(text):
+    assert find_evidence(-500.0, False, [text])
+
+
+def test_negative_amount_without_sign_is_not_evidence():
+    assert find_evidence(-500.0, False, ["Descuento $500.00"]) is None

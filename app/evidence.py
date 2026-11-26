@@ -37,6 +37,8 @@ class PageText:
 Patterns = list[tuple[re.Pattern, Callable[[tuple], set]]]
 
 NUMBER = re.compile(r"\d[\d.,]*\d|\d")
+# Signo de un monto negativo justo antes del número: -500, -$500, $-500, - $ 500, ($500), −500
+NEGATIVE = re.compile(r"(?:[-−(]\s*\$?|\$\s*[-−])\s*$")
 YEAR_MONTH = re.compile(r"\d{4}-\d{2}")
 MONTHS = {
     "ene": 1, "jan": 1, "feb": 2, "mar": 3, "abr": 4, "apr": 4, "may": 5, "jun": 6,
@@ -98,8 +100,12 @@ def _find_patterns(patterns: Patterns, target: tuple, page: str) -> Iterator[Spa
 def find_number(value: float, page: str) -> Iterator[Span]:
     for m in NUMBER.finditer(page):
         n = parse_number(m.group())
-        if n is not None and abs(n - value) < 0.005:
-            yield m.span()
+        if n is None or abs(n - abs(value)) >= 0.005:
+            continue
+        # negativo: el número del texto debe traer su signo (NUMBER no lo captura)
+        if value < 0 and not NEGATIVE.search(page[max(0, m.start() - 4) : m.start()]):
+            continue
+        yield m.span()
 
 
 def find_date(value: date, page: str) -> Iterator[Span]:
