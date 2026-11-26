@@ -1,0 +1,6 @@
+{
+  "text": "{\"name\":\"Reynaldo Ávila Montez\",\"email\":\"susanabarrientos@hotmail.com\",\"phone\":\"+03(3)0923271937\",\"location\":\"San Barbara de la Montaña, Chihuahua\",\"summary\":\"Ingeniero de Software con 15 años de experiencia. Especialista en Python, Inglés avanzado y Negociación.\",\"experience\":[{\"company\":\"Hernádez, Bonilla y Rodrígez\",\"title\":\"Ingeniero de Software\",\"start_date\":\"2010-11\",\"end_date\":null}],\"education\":[{\"institution\":\"Universidad Autónoma de Nuevo León\",\"degree\":\"Maestría en Ciencia de Datos\",\"graduation_year\":2009}],\"skills\":[\"Python\",\"Inglés avanzado\",\"Negociación\",\"AWS\",\"Power BI\",\"Git\",\"Scrum\"]}",
+  "input_tokens": 313,
+  "output_tokens": 655,
+  "fingerprint": "b4392b978a6e5576"
+}

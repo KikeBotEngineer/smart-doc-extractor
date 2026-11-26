@@ -1,0 +1,6 @@
+{
+  "text": "{\n  \"issuer_name\": \"Aguayo y Mora S.A. de C.V.\",\n  \"issuer_tax_id\": \"MNR130613YEV\",\n  \"receiver_name\": \"Corporacin Pulido y Ruelas\",\n  \"receiver_tax_id\": \"MKV141107PAT\",\n  \"invoice_number\": \"B-93655\",\n  \"issue_date\": \"2024-08-13\",\n  \"due_date\": \"2024-08-28\",\n  \"currency\": \"USD\",\n  \"line_items\": [\n    {\n      \"description\": \"Capacitación en sitio\",\n      \"quantity\": 9,\n      \"unit_price\": 4488.14,\n      \"amount\": 40393.26\n    }\n  ],\n  \"subtotal\": 40393.26,\n  \"tax\": 6462.92,\n  \"total\": 46856.18\n}",
+  "input_tokens": 342,
+  "output_tokens": 891,
+  "fingerprint": "6885825e0d325341"
+}

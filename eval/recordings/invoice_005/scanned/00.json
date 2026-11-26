@@ -1,0 +1,6 @@
+{
+  "text": "{\"issuer_name\":\"Galarza-Valverde\",\"issuer_tax_id\":\"KGU080810VPT\",\"receiver_name\":\"Corporacin Chávez-Gurule\",\"receiver_tax_id\":\"RR1120417RPN\",\"invoice_number\":\"C-1072\",\"issue_date\":\"2024-02-20\",\"due_date\":\"2024-04-05\",\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Hosting administrado\",\"quantity\":1,\"unit_price\":1767.81,\"amount\":1767.81},{\"description\":\"Soporte técnico mensual\",\"quantity\":9,\"unit_price\":4299.59,\"amount\":38696.31},{\"description\":\"Hosting administrado\",\"quantity\":4,\"unit_price\":2529.48,\"amount\":10117.92},{\"description\":\"Licencia de software anual\",\"quantity\":4,\"unit_price\":3381.16,\"amount\":13524.64},{\"description\":\"Soporte técnico mensual\",\"quantity\":8,\"unit_price\":2346.85,\"amount\":18774.80},{\"description\":\"Licencia de software anual\",\"quantity\":2,\"unit_price\":4665.82,\"amount\":9331.64}],\"subtotal\":92213.12,\"tax\":14754.10,\"total\":106967.22}",
+  "input_tokens": 796,
+  "output_tokens": 1182,
+  "fingerprint": "6885825e0d325341"
+}

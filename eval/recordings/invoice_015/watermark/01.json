@@ -1,0 +1,6 @@
+{
+  "text": "{\"fields\": [{\"field\": \"line_items[0].quantity\", \"value\": \"3\"}, {\"field\": \"line_items[4].quantity\", \"value\": \"7\"}]}",
+  "input_tokens": 924,
+  "output_tokens": 524,
+  "fingerprint": "e1ce5c76f4d3baff"
+}

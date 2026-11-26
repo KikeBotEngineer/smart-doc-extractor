@@ -1,0 +1,6 @@
+{
+  "text": "{\"issuer_name\":\"Sáenz-Almaraz A.C.\",\"issuer_tax_id\":\"ZJH6004203F5\",\"receiver_name\":\"Ruelas-Barrientos\",\"receiver_tax_id\":\"RYE1406028UZ\",\"invoice_number\":\"F-95230\",\"issue_date\":\"2023-01-01\",\"due_date\":\"2023-01-31\",\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Hosting administrado\",\"quantity\":2,\"unit_price\":4242.81,\"amount\":8485.62},{\"description\":\"Hosting administrado\",\"quantity\":1,\"unit_price\":4427.97,\"amount\":4427.97},{\"description\":\"Servicio de consultoría\",\"quantity\":7,\"unit_price\":331.78,\"amount\":2322.46},{\"description\":\"Capacitación en sitio\",\"quantity\":5,\"unit_price\":3332.83,\"amount\":16664.15},{\"description\":\"Auditoría de seguridad\",\"quantity\":3,\"unit_price\":1351.64,\"amount\":4054.92}],\"subtotal\":35955.12,\"tax\":5752.82,\"total\":41707.94}",
+  "input_tokens": 765,
+  "output_tokens": 1270,
+  "fingerprint": "6885825e0d325341"
+}

@@ -1,0 +1,6 @@
+{
+  "text": "{\"issuer_name\":\"Corporacin Maya, Toledo y Blanco\",\"issuer_tax_id\":\"EHM2909259D4\",\"receiver_name\":\"Pantoja, Menéndez y Torres\",\"receiver_tax_id\":\"NBG740425Q01\",\"invoice_number\":\"C-60750\",\"issue_date\":\"2023-12-31\",\"due_date\":\"2024-01-15\",\"currency\":\"USD\",\"line_items\":[{\"description\":\"Auditoria de seguridad\",\"quantity\":7,\"unit_price\":1984.66,\"amount\":13892.62},{\"description\":\"Hosting administrado\",\"quantity\":1,\"unit_price\":3653.97,\"amount\":3653.97},{\"description\":\"Hosting administrado\",\"quantity\":6,\"unit_price\":2102.97,\"amount\":12617.82},{\"description\":\"Mantenimiento preventivo\",\"quantity\":10,\"unit_price\":1844.56,\"amount\":18445.60},{\"description\":\"Capacitación en sitio\",\"quantity\":1,\"unit_price\":3520.48,\"amount\":3520.48}],\"subtotal\":52130.49,\"tax\":8340.88,\"total\":60471.37}",
+  "input_tokens": 772,
+  "output_tokens": 1772,
+  "fingerprint": "6885825e0d325341"
+}

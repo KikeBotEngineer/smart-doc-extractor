@@ -1,0 +1,6 @@
+{
+  "text": "{\"name\":\"Hilda Guillermina Cantú\",\"email\":\"aliciapatino@hotmail.com\",\"phone\":\"468.071.5451x680\",\"location\":\"San Daniela de la Montaña, Hidalgo\",\"summary\":null,\"experience\":[{\"company\":\"Rodrígez-Montero\",\"title\":\"Analista de Datos\",\"start_date\":\"2013-10\",\"end_date\":null}],\"education\":[{\"institution\":\"Universidad Autónoma de Nuevo León\",\"degree\":\"Ingeniería en Sistemas\",\"graduation_year\":2011}],\"skills\":[\"Power BI\",\"Negociación\",\"Liderazgo\",\"Figma\",\"Java\",\"Git\",\"Scrum\",\"AWS\"]}",
+  "input_tokens": 278,
+  "output_tokens": 672,
+  "fingerprint": "b4392b978a6e5576"
+}

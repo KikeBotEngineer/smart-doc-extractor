@@ -1,0 +1,6 @@
+{
+  "text": "{\n  \"issuer_name\": \"Corporacin Zedillo, Gaitán y Montalvo\",\n  \"issuer_tax_id\": \"VUI380811WVG\",\n  \"receiver_name\": \"Caballero e Hijos\",\n  \"receiver_tax_id\": null,\n  \"invoice_number\": \"F-58463\",\n  \"issue_date\": \"2023-08-30\",\n  \"due_date\": null,\n  \"currency\": \"MXN\",\n  \"line_items\": [\n    {\n      \"description\": \"Licencia de software anual\",\n      \"quantity\": 6,\n      \"unit_price\": 1825.90,\n      \"amount\": 10955.40\n    }\n  ],\n  \"subtotal\": 10955.40,\n  \"tax\": 1752.86,\n  \"total\": 12708.26\n}",
+  "input_tokens": 312,
+  "output_tokens": 668,
+  "fingerprint": "6885825e0d325341"
+}

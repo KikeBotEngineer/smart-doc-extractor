@@ -1,0 +1,6 @@
+{
+  "text": "{\"issuer_name\":\"Santana y Polanco y Asociados\",\"issuer_tax_id\":\"OFX850619USG\",\"receiver_name\":\"Proyectos Lebrón y Soliz\",\"receiver_tax_id\":\"UHI761108S41\",\"invoice_number\":\"F-79947\",\"issue_date\":\"2024-05-07\",\"due_date\":null,\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Licencia de software anual\",\"quantity\":10,\"unit_price\":2997.55,\"amount\":29975.50},{\"description\":\"Desarrollo de módulo\",\"quantity\":2,\"unit_price\":4129.82,\"amount\":8259.64},{\"description\":\"Hosting administrado\",\"quantity\":2,\"unit_price\":4407.90,\"amount\":8815.80},{\"description\":\"Mantenimiento preventivo\",\"quantity\":3,\"unit_price\":1122.82,\"amount\":3368.46}],\"subtotal\":50419.40,\"tax\":8067.10,\"total\":58486.50}",
+  "input_tokens": 731,
+  "output_tokens": 1249,
+  "fingerprint": "6885825e0d325341"
+}

@@ -1,0 +1,6 @@
+{
+  "text": "{\"name\":\"Elvira María Ureña Colunga\",\"email\":\"mespino@hotmail.com\",\"phone\":\"214.658.4044x99727\",\"location\":\"San Ana María los bajos, Sinaloa\",\"summary\":\"Gerente de Proyectos enfocado en resultados, con 9 años de experiencia y conocimientos sólidos de SQL, Java y Python.\",\"experience\":[{\"company\":\"Industrias Laboy, Pelayo y Rosas\",\"title\":\"Gerente de Proyectos\",\"start_date\":\"2016-11\",\"end_date\":null}],\"education\":[{\"institution\":\"Universidad Nacional Autónoma de México\",\"degree\":\"Licenciatura en Informática\",\"graduation_year\":2015}],\"skills\":[\"SQL\",\"Java\",\"Python\"]}",
+  "input_tokens": 300,
+  "output_tokens": 616,
+  "fingerprint": "b4392b978a6e5576"
+}

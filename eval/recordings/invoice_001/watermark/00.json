@@ -1,0 +1,6 @@
+{
+  "text": "{\"issuer_name\": \"Club Villalpando y Ledesma\", \"issuer_tax_id\": \"AYZ210124ARL\", \"receiver_name\": \"Grupo Galván, Miramontes y Canales\", \"receiver_tax_id\": null, \"invoice_number\": \"B-54639\", \"issue_date\": \"2024-10-13\", \"due_date\": \"2024-11-27\", \"currency\": \"USD\", \"line_items\": [{\"description\": \"Licencia de software anual\", \"quantity\": 3, \"unit_price\": 881.02, \"amount\": 2643.06}], \"subtotal\": 2643.06, \"tax\": 422.89, \"total\": 3065.95}",
+  "input_tokens": 653,
+  "output_tokens": 1023,
+  "fingerprint": "6885825e0d325341"
+}

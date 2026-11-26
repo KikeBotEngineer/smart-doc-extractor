@@ -1,0 +1,6 @@
+{
+  "text": "{\"name\":\"Dr. Bernabé Puente\",\"email\":\"camarilloesperanza@gmail.com\",\"phone\":\"1-400-504-5562x38692\",\"location\":\"Nueva Benin, Sinaloa\",\"summary\":\"Profesional con 16 años de trayectoria; último puesto: Contador Senior en Barrientos S.A., con dominio de Figma, Liderazgo y SQL.\",\"experience\":[{\"company\":\"Barrientos S.A.\",\"title\":\"Contador Senior\",\"start_date\":\"2009-09\",\"end_date\":null}],\"education\":[{\"institution\":\"Universidad Autónoma de Nuevo León\",\"degree\":\"Maestría en Ciencia de Datos\",\"graduation_year\":2009}],\"skills\":[\"Figma\",\"Liderazgo\",\"SQL\",\"AWS\",\"Git\"]}",
+  "input_tokens": 651,
+  "output_tokens": 1206,
+  "fingerprint": "b4392b978a6e5576"
+}

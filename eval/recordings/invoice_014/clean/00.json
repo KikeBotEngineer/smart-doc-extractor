@@ -1,0 +1,6 @@
+{
+  "text": "{\"issuer_name\":\"Sauceda A.C.\",\"issuer_tax_id\":\"FCT2610084FP\",\"receiver_name\":\"Vargas-Gurule\",\"receiver_tax_id\":\"TBT8909105QX\",\"invoice_number\":\"B-76984\",\"issue_date\":\"2023-09-02\",\"due_date\":\"2023-09-17\",\"currency\":\"USD\",\"line_items\":[{\"description\":\"Soporte técnico mensual\",\"quantity\":6,\"unit_price\":2305.12,\"amount\":13830.72},{\"description\":\"Hosting administrado\",\"quantity\":5,\"unit_price\":1941.17,\"amount\":9705.85},{\"description\":\"Desarrollo de módulo\",\"quantity\":9,\"unit_price\":1981.84,\"amount\":17836.56}],\"subtotal\":41373.13,\"tax\":6619.70,\"total\":47992.83}",
+  "input_tokens": 391,
+  "output_tokens": 745,
+  "fingerprint": "6885825e0d325341"
+}

@@ -1,0 +1,6 @@
+{
+  "text": "{\"name\":\"Jacinto Velásquez Núñez\",\"email\":\"efarias@hotmail.com\",\"phone\":\"1-314-919-0586x51850\",\"location\":\"San Irene de la Montaña, Tamaulipas\",\"summary\":\"Diseñador UX con 9 años de experiencia. Especialista en Excel avanzado, Docker y Git.\",\"experience\":[{\"company\":\"Corporacin Cardenas-Véliz\",\"title\":\"Diseñador UX\",\"start_date\":\"2016-02\",\"end_date\":null}],\"education\":[{\"institution\":\"Instituto Politécnico Nacional\",\"degree\":\"Ingeniería en Sistemas\",\"graduation_year\":2015},{\"institution\":\"Tecnológico de Monterrey\",\"degree\":\"Licenciatura en Contaduría\",\"graduation_year\":2016}],\"skills\":[\"Excel avanzado\",\"Docker\",\"Git\",\"Power BI\",\"Java\",\"Inglés avanzado\",\"AWS\"]}",
+  "input_tokens": 323,
+  "output_tokens": 887,
+  "fingerprint": "b4392b978a6e5576"
+}

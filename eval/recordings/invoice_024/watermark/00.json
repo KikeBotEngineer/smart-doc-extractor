@@ -1,0 +1,6 @@
+{
+  "text": "{\n  \"issuer_name\": \"Industrias Rojas y de la O\",\n  \"issuer_tax_id\": \"CJQ000727L5F\",\n  \"receiver_name\": \"Grupo Farías, Contreras y Alvarado\",\n  \"receiver_tax_id\": \"HPT1703114TQ\",\n  \"invoice_number\": \"A-83353\",\n  \"issue_date\": \"2024-11-17\",\n  \"due_date\": \"2024-12-17\",\n  \"currency\": \"MXN\",\n  \"line_items\": [\n    {\n      \"description\": \"Capacitación en sitio\",\n      \"quantity\": 7,\n      \"unit_price\": 4855.40,\n      \"amount\": 33987.80\n    },\n    {\n      \"description\": \"Soporte técnico mensual\",\n      \"quantity\": 10,\n      \"unit_price\": 467.71,\n      \"amount\": 4677.10\n    },\n    {\n      \"description\": \"Soporte técnico mensual\",\n      \"quantity\": 7,\n      \"unit_price\": 1908.06,\n      \"amount\": 13356.42\n    }\n  ],\n  \"subtotal\": 52021.32,\n  \"tax\": 8323.41,\n  \"total\": 60344.73\n}",
+  "input_tokens": 721,
+  "output_tokens": 1365,
+  "fingerprint": "6885825e0d325341"
+}

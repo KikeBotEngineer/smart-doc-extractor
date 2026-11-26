@@ -1,0 +1,6 @@
+{
+  "text": "{\"name\":\"Luz Angélica Zamora Arenas\",\"email\":\"mmedrano@yahoo.com\",\"phone\":\"+13(9)9049027874\",\"location\":\"Vieja Sierra Leona, Zacatecas\",\"summary\":\"Analista de Datos enfocado en resultados, con 9 años de experiencia y conocimientos sólidos de Inglés avanzado, Figma y Docker.\",\"experience\":[{\"company\":\"Jurado, Sanches y Tirado\",\"title\":\"Analista de Datos\",\"start_date\":\"2016-04\",\"end_date\":\"2020-03\"},{\"company\":\"Rocha-Maestas\",\"title\":\"Gerente de Proyectos\",\"start_date\":\"2013-03\",\"end_date\":\"2016-03\"},{\"company\":\"Industrias Varela, Lomeli y Quiñones\",\"title\":\"Gerente de Proyectos\",\"start_date\":\"2011-11\",\"end_date\":\"2013-03\"}],\"education\":[{\"institution\":\"Instituto Politécnico Nacional\",\"degree\":\"Ingeniería Industrial\",\"graduation_year\":2011},{\"institution\":\"Universidad de Guadalajara\",\"degree\":\"Maestría en Ciencia de Datos\",\"graduation_year\":2011}],\"skills\":[\"Inglés avanzado\",\"Figma\",\"Docker\",\"AWS\",\"Kubernetes\",\"Power BI\",\"Scrum\"]}",
+  "input_tokens": 707,
+  "output_tokens": 1242,
+  "fingerprint": "b4392b978a6e5576"
+}

@@ -1,0 +1,6 @@
+{
+  "text": "{\"name\":\"Jacobo Casares\",\"email\":\"juan-carlosgalvez@hotmail.com\",\"phone\":\"498.941.3435x240\",\"location\":\"Vieja Austria, Campeche\",\"summary\":null,\"experience\":[{\"company\":\"Corporación Heredia, Godoy y Casárez\",\"title\":\"Diseñador UX\",\"start_date\":\"2016-07\",\"end_date\":\"2018-01\"}],\"education\":[{\"institution\":\"Instituto Politécnico Nacional\",\"degree\":\"Ingeniería Industrial\",\"graduation_year\":2015},{\"institution\":\"Instituto Politécnico Nacional\",\"degree\":\"Maestría en Ciencia de Datos\",\"graduation_year\":2016}],\"skills\":[\"Java\",\"Scrum\",\"AWS\",\"Excel avanzado\"]}",
+  "input_tokens": 632,
+  "output_tokens": 977,
+  "fingerprint": "b4392b978a6e5576"
+}

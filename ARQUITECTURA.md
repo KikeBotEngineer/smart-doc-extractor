@@ -182,7 +182,7 @@ Tamaño objetivo: 30 facturas y 20 CVs, por 3 variantes, para un total de 150 do
 
 La salida es `eval/report.md`; la tabla resumen va en el README.
 
-**Sin API key en CI**: el cliente LLM tiene una implementación grabada (`RecordedLLM`) que reproduce respuestas guardadas. CI corre la evaluación completa sin red; con una key real se regraban las respuestas.
+**Sin API key en CI**: el cliente LLM tiene una implementación grabada (`RecordedLLM`) que reproduce respuestas guardadas. CI corre la evaluación completa sin red; con una key real se regraban las respuestas (`LLM_MODE=record`, reanudable). En la evaluación, cada grabación se identifica por documento, variante y orden de llamada (`eval/recordings/<doc>/<variante>/00.json`), no por el prompt: el OCR y el render pueden variar entre plataformas. Una huella del esquema y de las plantillas de `prompts/` marca la grabación como obsoleta cuando cambian.
 
 ## 8. Diseño del código
 

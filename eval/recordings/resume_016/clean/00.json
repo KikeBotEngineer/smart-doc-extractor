@@ -1,0 +1,6 @@
+{
+  "text": "{\"name\":\"Modesto Alvarado\",\"email\":\"paulina31@hotmail.com\",\"phone\":\"1-461-200-4711x382\",\"location\":null,\"summary\":\"Profesional con 14 años de trayectoria; último puesto: Diseñador UX en Industrias Olivárez, Nieto y Cardenas, con dominio de AWS, Python y Power BI.\",\"experience\":[{\"company\":\"Industrias Olivárez, Nieto y Cardenas\",\"title\":\"Diseñador UX\",\"start_date\":\"2021-05\",\"end_date\":\"2023-05\"},{\"company\":\"Rentería-Negrete\",\"title\":\"Administrador de Sistemas\",\"start_date\":\"2017-11\",\"end_date\":\"2021-02\"},{\"company\":\"Alcaraz, Jaime y Terán\",\"title\":\"Administrador de Sistemas\",\"start_date\":\"2013-08\",\"end_date\":\"2017-07\"},{\"company\":\"Valdés, Navarrete y Bustamante\",\"title\":\"Gerente de Proyectos\",\"start_date\":\"2009-12\",\"end_date\":\"2013-05\"}],\"education\":[{\"institution\":\"Universidad de Guadalajara\",\"degree\":\"Licenciatura en Informática\",\"graduation_year\":2007},{\"institution\":\"Instituto Politécnico Nacional\",\"degree\":\"Ingeniería Industrial\",\"graduation_year\":2009}],\"skills\":[\"AWS\",\"Python\",\"Power BI\",\"Docker\"]}",
+  "input_tokens": 410,
+  "output_tokens": 1332,
+  "fingerprint": "b4392b978a6e5576"
+}

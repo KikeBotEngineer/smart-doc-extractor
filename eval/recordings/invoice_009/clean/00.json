@@ -1,0 +1,6 @@
+{
+  "text": "{\"issuer_name\":\"Industrias Zepeda, Piña y Galarza\",\"issuer_tax_id\":\"YXW840419CJP\",\"receiver_name\":\"Quezada-Sierra S.C.\",\"receiver_tax_id\":\"HHC270516L1Z\",\"invoice_number\":\"A-99408\",\"issue_date\":\"2023-09-14\",\"due_date\":null,\"currency\":\"USD\",\"line_items\":[{\"description\":\"Mantenimiento preventivo\",\"quantity\":3,\"unit_price\":1195.78,\"amount\":3587.34},{\"description\":\"Servicio de consultoría\",\"quantity\":6,\"unit_price\":1071.05,\"amount\":6426.30},{\"description\":\"Diseño de interfaz\",\"quantity\":7,\"unit_price\":3284.61,\"amount\":22992.27},{\"description\":\"Diseño de interfaz\",\"quantity\":9,\"unit_price\":4039.99,\"amount\":36359.91},{\"description\":\"Soporte técnico mensual\",\"quantity\":5,\"unit_price\":649.43,\"amount\":3247.15},{\"description\":\"Servicio de consultoría\",\"quantity\":3,\"unit_price\":1070.67,\"amount\":3212.01}],\"subtotal\":75824.98,\"tax\":12132.00,\"total\":87956.98}",
+  "input_tokens": 467,
+  "output_tokens": 919,
+  "fingerprint": "6885825e0d325341"
+}

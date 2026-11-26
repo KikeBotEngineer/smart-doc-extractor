@@ -1,0 +1,6 @@
+{
+  "text": "{\"issuer_name\":\"Despacho Calderón y Prado\",\"issuer_tax_id\":\"NNO590214363\",\"receiver_name\":\"Mojica, Cardona y Guzmán\",\"receiver_tax_id\":\"GR03612228RB\",\"invoice_number\":\"B-58630\",\"issue_date\":\"2024-09-24\",\"due_date\":\"2024-10-09\",\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Licencia de software anual\",\"quantity\":3,\"unit_price\":2164.63,\"amount\":6493.89}],\"subtotal\":6493.89,\"tax\":1039.02,\"total\":7532.91}",
+  "input_tokens": 664,
+  "output_tokens": 734,
+  "fingerprint": "6885825e0d325341"
+}

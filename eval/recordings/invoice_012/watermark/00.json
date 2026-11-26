@@ -1,0 +1,6 @@
+{
+  "text": "{\n  \"issuer_name\": \"Haro y Benítez S.C.\",\n  \"issuer_tax_id\": \"RDB201115Y05\",\n  \"receiver_name\": \"Grupo Palomo y Ruelas\",\n  \"receiver_tax_id\": \"GMB760531A00\",\n  \"invoice_number\": \"A-38902\",\n  \"issue_date\": \"2024-03-08\",\n  \"due_date\": null,\n  \"currency\": \"USD\",\n  \"line_items\": [\n    {\n      \"description\": \"Capacitación en sitio\",\n      \"quantity\": 7,\n      \"unit_price\": 4038.10,\n      \"amount\": 28266.70\n    },\n    {\n      \"description\": \"Mantenimiento preventivo\",\n      \"quantity\": 9,\n      \"unit_price\": 2865.11,\n      \"amount\": 25785.99\n    },\n    {\n      \"description\": \"Mantenimiento preventivo\",\n      \"quantity\": 10,\n      \"unit_price\": 1542.97,\n      \"amount\": 15429.70\n    }\n  ],\n  \"subtotal\": 69482.39,\n  \"tax\": 11117.18,\n  \"total\": 80599.57\n}",
+  "input_tokens": 710,
+  "output_tokens": 1573,
+  "fingerprint": "6885825e0d325341"
+}

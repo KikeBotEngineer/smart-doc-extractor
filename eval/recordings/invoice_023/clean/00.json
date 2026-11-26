@@ -1,0 +1,6 @@
+{
+  "text": "{\n  \"issuer_name\": \"Lucero, Urrutia y Cavazos\",\n  \"issuer_tax_id\": \"NVM370104BJP\",\n  \"receiver_name\": \"Maestas S.A. de C.V.\",\n  \"receiver_tax_id\": \"NZS390705KTS\",\n  \"invoice_number\": \"F-68356\",\n  \"issue_date\": \"2024-05-21\",\n  \"due_date\": \"2024-07-05\",\n  \"currency\": \"USD\",\n  \"line_items\": [\n    {\n      \"description\": \"Capacitación en sitio\",\n      \"quantity\": 4,\n      \"unit_price\": 400.87,\n      \"amount\": 1603.48\n    },\n    {\n      \"description\": \"Mantenimiento preventivo\",\n      \"quantity\": 1,\n      \"unit_price\": 2811.51,\n      \"amount\": 2811.51\n    },\n    {\n      \"description\": \"Auditoría de seguridad\",\n      \"quantity\": 4,\n      \"unit_price\": 2647.07,\n      \"amount\": 10588.28\n    },\n    {\n      \"description\": \"Diseño de interfaz\",\n      \"quantity\": 8,\n      \"unit_price\": 1926.04,\n      \"amount\": 15408.32\n    },\n    {\n      \"description\": \"Soporte técnico mensual\",\n      \"quantity\": 3,\n      \"unit_price\": 3117.22,\n      \"amount\": 9351.66\n    }\n  ],\n  \"subtotal\": 39763.25,\n  \"tax\": 6362.12,\n  \"total\": 46125.37\n}",
+  "input_tokens": 452,
+  "output_tokens": 1024,
+  "fingerprint": "6885825e0d325341"
+}

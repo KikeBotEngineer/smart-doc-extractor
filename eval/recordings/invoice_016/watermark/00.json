@@ -1,0 +1,6 @@
+{
+  "text": "{\n  \"issuer_name\": \"Corporacin Barrientos-Guevara\",\n  \"issuer_tax_id\": \"JFO610312YJX\",\n  \"receiver_name\": \"Urrutia S.A. de C.V.\",\n  \"receiver_tax_id\": \"DEI01031076Z\",\n  \"invoice_number\": \"A-30944\",\n  \"issue_date\": \"2024-02-16\",\n  \"due_date\": null,\n  \"currency\": \"MXN\",\n  \"line_items\": [\n    {\n      \"description\": \"Mantenimiento preventivo\",\n      \"quantity\": 6,\n      \"unit_price\": 3725.78,\n      \"amount\": 22354.68\n    },\n    {\n      \"description\": \"Soporte técnico mensual\",\n      \"quantity\": 1,\n      \"unit_price\": 4102.70,\n      \"amount\": 4102.70\n    },\n    {\n      \"description\": \"Soporte técnico mensual\",\n      \"quantity\": 7,\n      \"unit_price\": 2324.40,\n      \"amount\": 16270.80\n    },\n    {\n      \"description\": \"Diseño de interfaz\",\n      \"quantity\": 4,\n      \"unit_price\": 1017.70,\n      \"amount\": 4070.80\n    },\n    {\n      \"description\": \"Hosting administrado\",\n      \"quantity\": 5,\n      \"unit_price\": 2660.73,\n      \"amount\": 13303.65\n    }\n  ],\n  \"subtotal\": 60102.63,\n  \"tax\": 9616.42,\n  \"total\": 69719.05\n}",
+  "input_tokens": 760,
+  "output_tokens": 2117,
+  "fingerprint": "6885825e0d325341"
+}

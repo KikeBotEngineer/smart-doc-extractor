@@ -1,0 +1,6 @@
+{
+  "text": "{\"name\":\"Srita. Lorena Carrero\",\"email\":\"soniacordova@yahoo.com\",\"phone\":null,\"location\":\"Nueva Bangladesh, Guanajuato\",\"summary\":null,\"experience\":[{\"company\":\"Batista y González S.A. de C.V.\",\"title\":\"Diseñador UX\",\"start_date\":\"2015-02\",\"end_date\":null}],\"education\":[{\"institution\":\"Universidad de Guadalajara\",\"degree\":\"Licenciatura en Informática\",\"graduation_year\":2013}],\"skills\":[\"Inglés avanzado\",\"Negociación\",\"Git\",\"Liderazgo\",\"Java\"]}",
+  "input_tokens": 600,
+  "output_tokens": 1158,
+  "fingerprint": "b4392b978a6e5576"
+}

@@ -1,0 +1,6 @@
+{
+  "text": "{\"name\":\"Sra. Diana Galarza\",\"email\":\"veronica12@gmail.com\",\"phone\":\"(812)067-9740\",\"location\":\"Vieja Turkmenistán, Nuevo León\",\"summary\":\"Desarrollador Backend enfocado en resultados, con 11 años de experiencia y conocimientos sólidos de Kubernetes, Excel avanzado y Power BI.\",\"experience\":[{\"company\":\"Magaña, Varela y Balderas\",\"title\":\"Desarrollador Backend\",\"start_date\":\"2014-04\",\"end_date\":null}],\"education\":[{\"institution\":\"Tecnológico de Monterrey\",\"degree\":\"Licenciatura en Contaduría\",\"graduation_year\":2014},{\"institution\":\"Universidad de Guadalajara\",\"degree\":\"Maestría en Ciencia de Datos\",\"graduation_year\":2012}],\"skills\":[\"Kubernetes\",\"Excel avanzado\",\"Power BI\",\"Java\",\"Git\",\"Python\",\"Scrum\"]}",
+  "input_tokens": 644,
+  "output_tokens": 1854,
+  "fingerprint": "b4392b978a6e5576"
+}

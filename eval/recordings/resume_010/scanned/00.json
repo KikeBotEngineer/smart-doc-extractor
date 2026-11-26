@@ -1,0 +1,6 @@
+{
+  "text": "{\"name\":\"Caridad Loera\",\"email\":\"hrubio@gmail.com\",\"phone\":\"932-480-8613x17127\",\"location\":null,\"summary\":\"Contador Senior con 5 años de experiencia. Especialista en Python, Excel avanzado y Java.\",\"experience\":[{\"company\":\"Figueroa S.A. de C.V.\",\"title\":\"Contador Senior\",\"start_date\":\"2017-08\",\"end_date\":\"2018-09\"},{\"company\":\"Samaniego-Quintanilla y Asociados\",\"title\":\"Gerente de Proyectos\",\"start_date\":\"2013-06\",\"end_date\":\"2017-05\"}],\"education\":[{\"institution\":\"Universidad de Guadalajara\",\"degree\":\"Licenciatura en Contaduría\",\"graduation_year\":2012},{\"institution\":\"Universidad de Guadalajara\",\"degree\":\"Licenciatura en Administración\",\"graduation_year\":2013}],\"skills\":[\"Python\",\"Excel avanzado\",\"Java\",\"Liderazgo\",\"Power BI\",\"SQL\",\"AWS\"]}",
+  "input_tokens": 682,
+  "output_tokens": 1149,
+  "fingerprint": "b4392b978a6e5576"
+}

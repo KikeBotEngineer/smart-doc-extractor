@@ -1,0 +1,6 @@
+{
+  "text": "{\"fields\":[{\"field\":\"summary\",\"value\":\"Contador Senior con 5 años de experiencia. Especialista en Python, Excel avanzado y Java.\"},{\"field\":\"skills[1]\",\"value\":\"Excel avanzado\"},{\"field\":\"skills[2]\",\"value\":\"Java\"},{\"field\":\"skills[3]\",\"value\":\"Liderazgo\"},{\"field\":\"skills[4]\",\"value\":\"Power BI\"},{\"field\":\"skills[5]\",\"value\":\"SQL\"},{\"field\":\"skills[6]\",\"value\":\"AWS\"}]}",
+  "input_tokens": 781,
+  "output_tokens": 1124,
+  "fingerprint": "e1ce5c76f4d3baff"
+}

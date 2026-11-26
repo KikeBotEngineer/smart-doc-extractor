@@ -1,0 +1,6 @@
+{
+  "text": "{\"name\":\"Cristian Sandoval Villanueva\",\"email\":\"felipe71@hotmail.com\",\"phone\":\"1-026-217-4596x158\",\"location\":\"San Abril los altos, Zacatecas\",\"summary\":null,\"experience\":[{\"company\":\"Olvera, Coronado y Saldivar\",\"title\":\"Ingeniero de Software\",\"start_date\":\"2015-09\",\"end_date\":\"2019-06\"},{\"company\":\"Armas, Matías y Rojas\",\"title\":\"Administrador de Sistemas\",\"start_date\":\"2014-04\",\"end_date\":\"2015-07\"},{\"company\":\"Industrias Olivera y González\",\"title\":\"Analista de Datos\",\"start_date\":\"2012-06\",\"end_date\":\"2014-01\"},{\"company\":\"Medina y Esparza e Hijos\",\"title\":\"Desarrollador Backend\",\"start_date\":\"2011-03\",\"end_date\":\"2012-06\"}],\"education\":[{\"institution\":\"Instituto Politécnico Nacional\",\"degree\":\"Licenciatura en Administración\",\"graduation_year\":2010}],\"skills\":[\"Docker\",\"Figma\",\"Power BI\",\"Liderazgo\",\"SQL\",\"AWS\",\"Kubernetes\"]}",
+  "input_tokens": 369,
+  "output_tokens": 1424,
+  "fingerprint": "b4392b978a6e5576"
+}

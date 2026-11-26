@@ -46,3 +46,25 @@ def test_make_llm_modes(tmp_path):
     assert isinstance(recorder, RecordedLLM) and isinstance(recorder.live, GeminiLLM)
     with pytest.raises(RuntimeError, match="GEMINI_API_KEY"):
         make_llm(Settings(llm_mode="live", gemini_api_key=None))
+
+
+def test_sequential_keys_by_call_order_not_by_prompt(tmp_path):
+    live = CountingLLM()
+    recorder = RecordedLLM(tmp_path, live, sequential=True)
+    recorder.generate("prompt con OCR de Windows", Invoice)
+    recorder.generate("segunda llamada", Resume)
+    assert sorted(p.name for p in tmp_path.iterdir()) == ["00.json", "01.json"]
+    replay = RecordedLLM(tmp_path, sequential=True)  # otro OCR, misma grabación
+    assert replay.generate("prompt con OCR de Linux", Invoice).text == '{"total": 1.5}'
+    assert replay.generate("otra cosa", Resume).input_tokens == 10
+    assert live.calls == 2
+
+
+def test_sequential_recording_goes_stale_when_the_schema_changes(tmp_path):
+    RecordedLLM(tmp_path, CountingLLM(), sequential=True).generate("p", Invoice)
+    with pytest.raises(LLMError, match="obsoleta"):
+        RecordedLLM(tmp_path, sequential=True).generate("p", Resume)
+    live = CountingLLM()  # en modo record, lo obsoleto se regraba
+    RecordedLLM(tmp_path, live, sequential=True).generate("p", Resume)
+    assert live.calls == 1
+    assert RecordedLLM(tmp_path, sequential=True).generate("p", Resume).output_tokens == 2

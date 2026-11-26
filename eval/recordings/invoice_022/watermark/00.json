@@ -1,0 +1,6 @@
+{
+  "text": "{\n  \"issuer_name\": \"Solís y Asociados\",\n  \"issuer_tax_id\": \"VXX840308CNR\",\n  \"receiver_name\": \"Menéndez-Martínez\",\n  \"receiver_tax_id\": \"DXJ010310WJQ\",\n  \"invoice_number\": \"C-11348\",\n  \"issue_date\": \"2024-11-08\",\n  \"due_date\": \"2024-12-08\",\n  \"currency\": \"MXN\",\n  \"line_items\": [\n    {\n      \"description\": \"Servicio de consultoría\",\n      \"quantity\": 4,\n      \"unit_price\": 1941.31,\n      \"amount\": 7765.24\n    },\n    {\n      \"description\": \"Servicio de consultoría\",\n      \"quantity\": 7,\n      \"unit_price\": 3923.68,\n      \"amount\": 27465.76\n    },\n    {\n      \"description\": \"Servicio de consultoría\",\n      \"quantity\": 6,\n      \"unit_price\": 4726.07,\n      \"amount\": 28356.42\n    },\n    {\n      \"description\": \"Soporte técnico mensual\",\n      \"quantity\": 7,\n      \"unit_price\": 1085.88,\n      \"amount\": 7601.16\n    },\n    {\n      \"description\": \"Auditoría de seguridad\",\n      \"quantity\": 4,\n      \"unit_price\": 2412.99,\n      \"amount\": 9651.96\n    }\n  ],\n  \"subtotal\": 80840.54,\n  \"tax\": 12934.49,\n  \"total\": 93775.03\n}",
+  "input_tokens": 763,
+  "output_tokens": 1378,
+  "fingerprint": "6885825e0d325341"
+}

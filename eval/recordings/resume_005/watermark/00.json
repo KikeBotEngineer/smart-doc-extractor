@@ -1,0 +1,6 @@
+{
+  "text": "{\"name\":\"Amador Gilberto Romo Carrera\",\"email\":\"pachecoirma@gmail.com\",\"phone\":\"1-022-941-3186x9993\",\"location\":\"San Estela losbajos,Oaxaca\",\"summary\":\"Ingeniero de Software con 10 anos de experiencia. Especialista en SQL, Figma y Power Bl.\",\"experience\":[{\"company\":\"Roque y Quintana S.A. de C.V.\",\"title\":\"Ingeniero de Software\",\"start_date\":\"2022-07\",\"end_date\":null},{\"company\":\"Vela S.A. de C.V.\",\"title\":\"Ejecutivo de Ventas\",\"start_date\":\"2018-06\",\"end_date\":\"2022-04\"},{\"company\":\"Laboratorios Castro,Salas y Candelaria\",\"title\":\"Contador Senior\",\"start_date\":\"2015-09\",\"end_date\":\"2018-04\"}],\"education\":[{\"institution\":\"Universidad de Guadalajara\",\"degree\":\"Maestria en Ciencia de Datos\",\"graduation_year\":2015}],\"skills\":[\"SQL\",\"Figma\",\"Power Bl\",\"Excel avanzado\",\"Ingles avanzado\",\"Python\"]}",
+  "input_tokens": 709,
+  "output_tokens": 973,
+  "fingerprint": "b4392b978a6e5576"
+}

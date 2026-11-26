@@ -1,0 +1,6 @@
+{
+  "text": "{\n  \"issuer_name\": \"Sáenz-Almaraz A.C.\",\n  \"issuer_tax_id\": \"ZJH6004203F5\",\n  \"receiver_name\": \"Ruelas-Barrientos\",\n  \"receiver_tax_id\": \"RYE1406028UZ\",\n  \"invoice_number\": \"F-95230\",\n  \"issue_date\": \"2023-01-01\",\n  \"due_date\": \"2023-01-31\",\n  \"currency\": \"MXN\",\n  \"line_items\": [\n    {\n      \"description\": \"Hosting administrado\",\n      \"quantity\": 2,\n      \"unit_price\": 4242.81,\n      \"amount\": 8485.62\n    },\n    {\n      \"description\": \"Hosting administrado\",\n      \"quantity\": 1,\n      \"unit_price\": 4427.97,\n      \"amount\": 4427.97\n    },\n    {\n      \"description\": \"Servicio de consultoría\",\n      \"quantity\": 7,\n      \"unit_price\": 331.78,\n      \"amount\": 2322.46\n    },\n    {\n      \"description\": \"Capacitación en sitio\",\n      \"quantity\": 5,\n      \"unit_price\": 3332.83,\n      \"amount\": 16664.15\n    },\n    {\n      \"description\": \"Auditoría de seguridad\",\n      \"quantity\": 3,\n      \"unit_price\": 1351.64,\n      \"amount\": 4054.92\n    }\n  ],\n  \"subtotal\": 35955.12,\n  \"tax\": 5752.82,\n  \"total\": 41707.94\n}",
+  "input_tokens": 765,
+  "output_tokens": 2060,
+  "fingerprint": "6885825e0d325341"
+}

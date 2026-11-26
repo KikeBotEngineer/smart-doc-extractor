@@ -1,0 +1,6 @@
+{
+  "text": "{\"fields\": [{\"field\": \"issuer_tax_id\", \"value\": \"JFO610312YJX\"}, {\"field\": \"receiver_tax_id\", \"value\": \"DEI01031076Z\"}, {\"field\": \"line_items[1].quantity\", \"value\": \"1\"}, {\"field\": \"line_items[2].quantity\", \"value\": \"7\"}, {\"field\": \"line_items[3].quantity\", \"value\": \"4\"}, {\"field\": \"line_items[4].quantity\", \"value\": \"5\"}]}",
+  "input_tokens": 1054,
+  "output_tokens": 1223,
+  "fingerprint": "e1ce5c76f4d3baff"
+}

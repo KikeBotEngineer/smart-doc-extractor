@@ -1,0 +1,6 @@
+{
+  "text": "{\"issuer_name\":\"Corporacin Crespo y Cardenas\",\"issuer_tax_id\":\"BPH621219CTM\",\"receiver_name\":\"Proyectos Gil, Garica y Alva\",\"receiver_tax_id\":\"GMK000924H4H\",\"invoice_number\":\"C-87120\",\"issue_date\":\"2024-10-01\",\"due_date\":null,\"currency\":\"MXN\",\"line_items\":[{\"description\":\"Diseño de interfaz\",\"quantity\":2,\"unit_price\":2031.23,\"amount\":4062.46},{\"description\":\"Hosting administrado\",\"quantity\":3,\"unit_price\":1208.28,\"amount\":3624.84},{\"description\":\"Desarrollo de módulo\",\"quantity\":1,\"unit_price\":1056.10,\"amount\":1056.10}],\"subtotal\":8743.40,\"tax\":1398.94,\"total\":10142.34}",
+  "input_tokens": 377,
+  "output_tokens": 816,
+  "fingerprint": "6885825e0d325341"
+}

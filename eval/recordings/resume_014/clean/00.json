@@ -1,0 +1,6 @@
+{
+  "text": "{\"name\":\"Sr. Miguel Ángel Loera\",\"email\":\"diegoquintanilla@yahoo.com\",\"phone\":\"1-464-743-6713x6959\",\"location\":\"San Silvano de la Montaña, Sonora\",\"summary\":\"Contador Senior enfocado en resultados, con 4 años de experiencia y conocimientos sólidos de Figma, Python y Liderazgo.\",\"experience\":[{\"company\":\"Club Hernández y Rico\",\"title\":\"Contador Senior\",\"start_date\":\"2017-01\",\"end_date\":\"2018-05\"},{\"company\":\"Club Vergara y Collazo\",\"title\":\"Desarrollador Backend\",\"start_date\":\"2014-05\",\"end_date\":\"2016-12\"}],\"education\":[{\"institution\":\"Instituto Politécnico Nacional\",\"degree\":\"Licenciatura en Administración\",\"graduation_year\":2012}],\"skills\":[\"Figma\",\"Python\",\"Liderazgo\",\"Scrum\",\"Git\"]}",
+  "input_tokens": 333,
+  "output_tokens": 816,
+  "fingerprint": "b4392b978a6e5576"
+}

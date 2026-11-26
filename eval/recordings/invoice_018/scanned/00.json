@@ -1,0 +1,6 @@
+{
+  "text": "{\"issuer_name\":\"Despacho Acosta, Merino y Cedillo\",\"issuer_tax_id\":\"IFX970812SZR\",\"receiver_name\":\"Carrasco A.C.\",\"receiver_tax_id\":\"ERB041212NZ9\",\"invoice_number\":\"C-32907\",\"issue_date\":\"2024-10-20\",\"due_date\":\"2024-11-19\",\"currency\":\"USD\",\"line_items\":[{\"description\":\"Desarrollo de módulo\",\"quantity\":9,\"unit_price\":249.65,\"amount\":2246.85},{\"description\":\"Auditoría de seguridad\",\"quantity\":6,\"unit_price\":4602.42,\"amount\":27614.52},{\"description\":\"Servicio de consultoría\",\"quantity\":4,\"unit_price\":3474.54,\"amount\":13898.16},{\"description\":\"Mantenimiento preventivo\",\"quantity\":1,\"unit_price\":1116.16,\"amount\":1116.16},{\"description\":\"Diseño de interfaz\",\"quantity\":6,\"unit_price\":2909.27,\"amount\":17455.62},{\"description\":\"Hosting administrado\",\"quantity\":3,\"unit_price\":2544.73,\"amount\":7634.19}],\"subtotal\":69965.50,\"tax\":11194.48,\"total\":81159.98}",
+  "input_tokens": 793,
+  "output_tokens": 1451,
+  "fingerprint": "6885825e0d325341"
+}
