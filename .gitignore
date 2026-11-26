@@ -13,3 +13,5 @@ eval/dataset/*
 
 # Reporte que genera CI
 eval/report-ci.md
+pytest.log
+eval.log

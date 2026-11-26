@@ -25,12 +25,21 @@ jobs:
         run: |
           ruff check .
           ruff format --check .
+      # Las fallas se publican también como anotaciones: se leen sin descargar el log
       - name: Pruebas
-        run: pytest
+        run: |
+          set -o pipefail
+          pytest -rfE --tb=line 2>&1 | tee pytest.log || {
+            grep -E "^(FAILED|ERROR) " pytest.log | head -10 | sed 's/^/::error title=pytest::/'
+            exit 1
+          }
       - name: Dataset sintético
         run: python scripts/generate_dataset.py
       - name: Evaluación
-        run: python eval/run_eval.py --min-clean-accuracy 0.99 --out eval/report-ci.md
+        run: |
+          set -o pipefail
+          python eval/run_eval.py --min-clean-accuracy 0.99 --out eval/report-ci.md 2>&1 \
+            | tee eval.log || { tail -3 eval.log | sed 's/^/::error title=eval::/'; exit 1; }
       - name: Reporte
         if: always()
         uses: actions/upload-artifact@v7
