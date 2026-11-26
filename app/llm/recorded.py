@@ -59,9 +59,11 @@ class RecordedLLM:
             if data.pop("fingerprint", None) == expected:
                 return LLMResponse(**data)
             if self.live is None:
-                raise LLMError(f"grabación obsoleta {path}; regrabar con LLM_MODE=record")
+                raise LLMError(
+                    f"grabación obsoleta {path}; regrabar con LLM_MODE=record", retryable=False
+                )
         elif self.live is None:
-            raise LLMError(f"sin grabación {path}; regrabar con LLM_MODE=record")
+            raise LLMError(f"sin grabación {path}; regrabar con LLM_MODE=record", retryable=False)
         response = self.live.generate(prompt, schema, images)
         self.directory.mkdir(parents=True, exist_ok=True)
         record = asdict(response) | ({"fingerprint": expected} if expected else {})

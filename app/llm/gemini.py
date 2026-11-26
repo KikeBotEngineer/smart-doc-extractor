@@ -3,7 +3,7 @@
 from collections.abc import Sequence
 
 from google import genai
-from google.genai import types
+from google.genai import errors, types
 from pydantic import BaseModel
 
 from app.llm.client import LLMError, LLMResponse
@@ -36,7 +36,9 @@ class GeminiLLM:
             response = self._client.models.generate_content(
                 model=self._model, contents=contents, config=config
             )
-        except Exception as e:  # red, cuota, 5xx: todo es "Gemini falló"
+        except errors.ClientError as e:  # 4xx: key, permisos o petición; salvo 408 y 429
+            raise LLMError(f"Gemini falló: {e}", retryable=e.code in (408, 429)) from e
+        except Exception as e:  # red, timeout, 5xx: puede pasar al reintentar
             raise LLMError(f"Gemini falló: {e}") from e
         meta = response.usage_metadata
         return LLMResponse(

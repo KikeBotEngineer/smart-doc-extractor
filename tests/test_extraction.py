@@ -2,6 +2,7 @@ import json
 from types import SimpleNamespace
 
 import pytest
+from google.genai import errors
 
 from app.doc_types.invoice import Invoice
 from app.evidence import PageText
@@ -55,6 +56,13 @@ def test_call_error_is_retried_once():
     assert usage.llm_calls == 1  # la llamada fallida no reporta tokens
 
 
+def test_permanent_error_is_not_retried():
+    llm = ScriptedLLM(LLMError("key inválida", retryable=False), VALID)
+    with pytest.raises(LLMError, match="key inválida"):
+        extract(llm, "invoice", X, [], Usage())
+    assert len(llm.prompts) == 1
+
+
 def test_two_failures_raise():
     with pytest.raises(LLMError):
         extract(ScriptedLLM("no es json", "{}x"), "invoice", X, [], Usage())
@@ -84,7 +92,18 @@ def test_gemini_sends_schema_at_temperature_zero_and_reports_tokens():
     assert config.response_json_schema == Invoice.model_json_schema()
 
 
-def test_gemini_wraps_errors():
-    models = FakeModels(RuntimeError("503"))
-    with pytest.raises(LLMError):
+@pytest.mark.parametrize(
+    ("error", "retryable"),
+    [
+        (RuntimeError("conexión rechazada"), True),
+        (errors.ServerError(503, {"error": {"status": "UNAVAILABLE"}}), True),
+        (errors.ClientError(429, {"error": {"status": "RESOURCE_EXHAUSTED"}}), True),
+        (errors.ClientError(400, {"error": {"status": "INVALID_ARGUMENT"}}), False),
+        (errors.ClientError(403, {"error": {"status": "PERMISSION_DENIED"}}), False),
+    ],
+)
+def test_gemini_wraps_errors(error, retryable):
+    models = FakeModels(error)
+    with pytest.raises(LLMError) as raised:
         GeminiLLM("key", "m", client=SimpleNamespace(models=models)).generate("p", Invoice)
+    assert raised.value.retryable is retryable

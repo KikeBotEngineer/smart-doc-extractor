@@ -1,14 +1,24 @@
 """Protocolo del cliente LLM y llamada estructurada con validación y un reintento."""
 
+import time
 from collections.abc import Sequence
 from dataclasses import dataclass
 from typing import Protocol
 
 from pydantic import BaseModel, ValidationError
 
+RETRY_WAIT_S = 2  # antes de repetir una llamada fallida: un 429 o un 503 suele ser momentáneo
+
 
 class LLMError(Exception):
-    """El LLM falló o no devolvió una respuesta válida después del reintento."""
+    """El LLM falló o no devolvió una respuesta válida después del reintento.
+
+    `retryable=False`: repetir la llamada no cambia nada (key inválida, petición mal
+    formada, grabación faltante)."""
+
+    def __init__(self, message: str, retryable: bool = True):
+        super().__init__(message)
+        self.retryable = retryable
 
 
 @dataclass(frozen=True)
@@ -48,9 +58,10 @@ def generate_structured[M: BaseModel](
     for attempt in (1, 2):
         try:
             response = llm.generate(retry_prompt, schema, images)
-        except LLMError:
-            if attempt == 2:
+        except LLMError as e:
+            if attempt == 2 or not e.retryable:
                 raise
+            time.sleep(RETRY_WAIT_S)
             continue
         usage.add(response)
         try:
