@@ -84,7 +84,15 @@ def doc_types() -> dict:
     }
 
 
-@app.post("/extract", dependencies=[Depends(require_api_key), Depends(extraction_slot)])
+# boundary, encabezados de cada parte y el campo doc_type; el archivo en sí lo valida run()
+MULTIPART_OVERHEAD = 64 * 1024
+
+
+@app.post(
+    "/extract",
+    dependencies=[Depends(require_api_key), Depends(extraction_slot)],
+    max_body_size=get_settings().max_file_mb * 1024 * 1024 + MULTIPART_OVERHEAD,
+)
 def extract(
     file: Annotated[UploadFile, File(description="PDF de hasta 10 MB y 20 páginas")],
     settings: Annotated[Settings, Depends(get_settings)],

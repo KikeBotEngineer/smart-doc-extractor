@@ -81,6 +81,11 @@ def test_too_large_is_413(client):
     assert post(client, b"%PDF-" + b"0" * (10 * 1024 * 1024)).status_code == 413
 
 
+def test_body_over_limit_is_cut_before_parsing(client):
+    r = post(client, b"%PDF-" + b"0" * (11 * 1024 * 1024))
+    assert r.status_code == 413 and r.text == "Content Too Large"  # el de FastAPI, no el nuestro
+
+
 def test_not_a_pdf_is_415(client):
     assert post(client, b"hola, no soy un PDF").status_code == 415
 
