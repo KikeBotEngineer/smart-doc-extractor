@@ -8,12 +8,17 @@ from pydantic import BaseModel
 
 from app.llm.client import LLMError, LLMResponse
 
+# Una llamada con 20 imágenes y razonamiento puede tardar ~1 min; sin tope, una llamada
+# colgada retiene un hilo y un lugar de MAX_CONCURRENT para siempre.
+TIMEOUT_S = 90
+
 
 class GeminiLLM:
     def __init__(self, api_key: str, model: str, client: genai.Client | None = None):
         # google-genai 3.x usa v1 por defecto, que no soporta salida estructurada
         self._client = client or genai.Client(
-            api_key=api_key, http_options=types.HttpOptions(api_version="v1beta")
+            api_key=api_key,
+            http_options=types.HttpOptions(api_version="v1beta", timeout=TIMEOUT_S * 1000),
         )
         self._model = model
 
