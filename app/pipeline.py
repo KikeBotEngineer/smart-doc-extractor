@@ -16,7 +16,7 @@ from pypdf import PasswordType, PdfReader
 from app.classify import classify
 from app.config import Settings
 from app.doc_types import DOC_TYPES
-from app.evidence import PageText, verify_fields, verify_value
+from app.evidence import PageText, verify_fields
 from app.llm.client import LLMClient, LLMError, Usage, generate_structured
 from app.pdf.ocr import ocr_image, render_pages, to_jpeg
 from app.pdf.profile import PageProfile, profile_pages
@@ -137,17 +137,17 @@ def recover(
 ) -> tuple[BaseModel, dict[str, FieldResult]]:
     """Etapa 7: una sola llamada más, solo con los campos sin evidencia.
 
-    Valor nuevo con evidencia: se acepta. null: `insufficient_evidence`. Otro valor sin
-    evidencia: `conflicting_candidates`. El mismo valor: sigue `low`. Si la llamada falla,
-    se queda el resultado de la primera pasada."""
+    Valor nuevo con evidencia confiable: se acepta. null: `insufficient_evidence`. Otro
+    valor sin evidencia confiable: `conflicting_candidates`. El mismo valor: sigue `low`.
+    Si la llamada falla, se queda el resultado de la primera pasada."""
     pending = {path: f.value for path, f in fields.items() if f.confidence == "low"}
     if not pending:
         return doc, fields
     # ponytail: el contexto es el documento completo; acotarlo a la página del campo si el
     # costo en documentos largos lo pide.
+    data = doc.model_dump()
     listing = "\n".join(
-        f"- {path}: {json.dumps(value, ensure_ascii=False, default=str)}"
-        for path, value in pending.items()
+        f"- {path}: {as_json(value)}{item_context(data, path)}" for path, value in pending.items()
     )
     text = build_prompt("recover.md", kind, pages, images, fields=listing)
     try:
@@ -169,13 +169,31 @@ def recover(
         if candidate is None:  # el valor no tiene el tipo del campo
             continue
         value = get_field(candidate.model_dump(), path)
-        result = verify_value(path, value, pages, fallback, kind.IDENTIFIERS)
-        if result.confidence != "low":
+        # con las anclas de su partida: un "2" de otro renglón no cuenta
+        result = verify_fields(candidate, pages, fallback, kind.IDENTIFIERS)[path]
+        # un número o fecha en "medium" puede venir de otro renglón: no basta
+        trusted = result.confidence == "high" or (
+            result.confidence == "medium" and isinstance(value, str)
+        )
+        if trusted:
             doc, fields[path] = candidate, result
         elif value != pending[path]:
             doc = with_field(kind.MODEL, doc, path, None) or doc
             fields[path] = FieldResult(missing_reason="conflicting_candidates")
     return doc, fields
+
+
+def as_json(value: Any) -> str:
+    return json.dumps(value, ensure_ascii=False, default=str)
+
+
+def item_context(data: dict, path: str) -> str:
+    """Los otros valores de la partida, para que el LLM ubique el renglón correcto."""
+    if "." not in path:
+        return ""
+    item, leaf = path.rsplit(".", 1)
+    others = {k: v for k, v in get_field(data, item).items() if k != leaf and v is not None}
+    return f" (misma partida: {as_json(others)})" if others else ""
 
 
 def _keys(path: str) -> list[str | int]:

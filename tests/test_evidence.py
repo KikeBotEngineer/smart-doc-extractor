@@ -88,6 +88,19 @@ def test_repeated_number_without_anchors_is_partial():
     assert fields["line_items[0].quantity"].confidence == "medium"
 
 
+def test_single_match_outside_its_row_is_partial():
+    text = "Capacitacion en sitio 2 $173.80 $347.60\nLicencia desoftware anual $1,154.89 $4,619.56"
+    inv = Invoice(
+        line_items=[
+            LineItem(description="Capacitacion en sitio", quantity=2, amount=347.6),
+            LineItem(description="Licencia desoftware anual", quantity=2, amount=4619.56),
+        ]
+    )
+    fields = verify_fields(inv, [PageText(text)], "text_layer", IDENTIFIERS)
+    assert fields["line_items[0].quantity"].confidence == "high"
+    assert fields["line_items[1].quantity"].confidence == "medium"  # ese 2 es de otro renglón
+
+
 def test_flatten():
     data = {"a": 1, "items": [{"x": 1}, {"x": 2}], "tags": ["p"], "empty": []}
     expected = {"a": 1, "items[0].x": 1, "items[1].x": 2, "tags[0]": "p", "empty": None}

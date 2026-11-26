@@ -18,7 +18,7 @@ from app.schemas import Evidence, FieldResult, Source
 
 FUZZY_MIN = 80  # cobertura mínima para texto libre
 SNIPPET_PAD = 40  # caracteres de contexto a cada lado
-NEAR = 80  # distancia máxima, en caracteres, entre campos de un mismo renglón
+ROW_SLACK = 10  # caracteres alrededor de las anclas de una partida que aún son su renglón
 
 Span = tuple[int, int]
 Match = tuple[int, Span, bool]  # (página, posición, literal)
@@ -211,13 +211,22 @@ def verify_value(
     return _result(value, found[0], pages, texts)
 
 
-def _nearest(matches: list[Match], anchors: list[Match]) -> tuple[Match, float]:
-    """La coincidencia más cercana a un ancla de la misma página, y su distancia."""
-    options = [(abs(m[1][0] - a[1][0]), m) for m in matches for a in anchors if m[0] == a[0]]
-    if not options:
-        return matches[0], math.inf
-    distance, match = min(options, key=lambda o: o[0])
-    return match, distance
+def _place(matches: list[Match], anchors: list[Match]) -> tuple[Match, bool]:
+    """La coincidencia dentro del tramo que cubren las anclas de la partida (o la más
+    cercana a él), y si quedó dentro. Sin anclas, solo es segura si es única."""
+    if not anchors:
+        return matches[0], len(matches) == 1
+
+    def gap(match: Match) -> float:
+        same_page = [a[1] for a in anchors if a[0] == match[0]]
+        if not same_page:
+            return math.inf
+        start = min(s for s, _ in same_page) - ROW_SLACK
+        end = max(e for _, e in same_page) + ROW_SLACK
+        return max(start - match[1][1], match[1][0] - end, 0)  # distancia entre tramos
+
+    best = min(matches, key=gap)
+    return best, gap(best) == 0
 
 
 def verify_fields(
@@ -225,9 +234,10 @@ def verify_fields(
 ) -> dict[str, FieldResult]:
     """Un FieldResult por campo hoja.
 
-    Un valor que aparece varias veces (la cantidad 4 en dos partidas) toma la evidencia
-    más cercana a las anclas de su partida: los campos que aparecen una sola vez. Sin
-    anclas cerca, la evidencia es parcial."""
+    En una partida, la evidencia de cada campo debe caer en el tramo de texto que cubren
+    sus anclas: los otros campos de la partida que aparecen una sola vez. Así la cantidad 4
+    de la partida 5 no toma como evidencia el 4 de la partida 2. Fuera de ese tramo, la
+    evidencia es parcial."""
     texts = _collapse(pages)
     flat = flatten(doc.model_dump())
     found = {p: _matches(p, v, texts, identifiers) for p, v in flat.items() if v is not None}
@@ -241,7 +251,7 @@ def verify_fields(
             results[path] = FieldResult(value=value, confidence="low", source=fallback_source)
             continue
         item = path.rsplit(".", 1)[0] if "." in path else None  # "line_items[4]"
-        if len(matches) == 1 or item is None:
+        if item is None:
             results[path] = _result(value, matches[0], pages, texts)
             continue
         anchors = [
@@ -250,6 +260,6 @@ def verify_fields(
             if other != path and other.startswith(f"{item}.") and len(ms) == 1
             for m in ms
         ]
-        match, distance = _nearest(matches, anchors)
-        results[path] = _result(value, match, pages, texts, certain=distance <= NEAR)
+        match, certain = _place(matches, anchors)
+        results[path] = _result(value, match, pages, texts, certain)
     return results

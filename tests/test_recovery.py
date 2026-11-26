@@ -23,10 +23,10 @@ class RecoveryLLM:
         return LLMResponse(json.dumps({"fields": fields}), 50, 5)
 
 
-def run_recovery(doc: Invoice, answer):
+def run_recovery(doc: Invoice, answer, page=PAGE):
     llm, usage = RecoveryLLM(answer), Usage()
-    fields = verify_fields(doc, PAGE, "text_layer", invoice.IDENTIFIERS)
-    doc, fields = recover(llm, invoice, doc, fields, PAGE, [], "text_layer", usage)
+    fields = verify_fields(doc, page, "text_layer", invoice.IDENTIFIERS)
+    doc, fields = recover(llm, invoice, doc, fields, page, [], "text_layer", usage)
     return doc, fields, llm, usage
 
 
@@ -96,3 +96,30 @@ def test_failed_recovery_keeps_the_first_pass(failure):
 def test_with_field_validates():
     assert with_field(Invoice, Invoice(), "line_items", "no es lista") is None
     assert with_field(Invoice, Invoice(), "currency", "MXN").currency == "MXN"
+
+
+TWO_ROWS = [  # la cantidad de la segunda partida se perdió en el OCR
+    PageText(
+        "Capacitacion en sitio 2 $173.80 $347.60\nLicencia desoftware anual $1,154.89 $4,619.56"
+    )
+]
+ITEMS = [
+    LineItem(description="Capacitacion en sitio", quantity=2, amount=347.6),
+    LineItem(description="Licencia desoftware anual", quantity=4, amount=4619.56),
+]
+
+
+def test_prompt_gives_row_context_and_zero_based_indexes():
+    _, _, llm, _ = run_recovery(Invoice(line_items=ITEMS), {}, TWO_ROWS)
+    assert "empiezan en 0" in llm.prompts[0]
+    expected = '- line_items[1].quantity: 4.0 (misma partida: {"description": "Licencia'
+    assert expected in llm.prompts[0]
+
+
+def test_recovered_number_from_another_row_is_not_trusted():
+    # el LLM contó desde 1 y respondió el 2 de la partida 0
+    doc, fields, _, _ = run_recovery(
+        Invoice(line_items=ITEMS), {"line_items[1].quantity": "2"}, TWO_ROWS
+    )
+    assert fields["line_items[1].quantity"].missing_reason == "conflicting_candidates"
+    assert doc.line_items[1].quantity is None
