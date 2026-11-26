@@ -1,7 +1,10 @@
+import secrets
+import threading
+from collections.abc import Iterator
 from functools import lru_cache
 from typing import Annotated, Literal
 
-from fastapi import Depends, FastAPI, File, Form, Request, UploadFile
+from fastapi import Depends, FastAPI, File, Form, Header, HTTPException, Request, UploadFile
 from fastapi.responses import JSONResponse
 
 from app.config import Settings
@@ -24,6 +27,34 @@ def get_settings() -> Settings:
 @lru_cache
 def get_llm() -> LLMClient:
     return make_llm(get_settings())
+
+
+def require_api_key(
+    settings: Annotated[Settings, Depends(get_settings)],
+    x_api_key: Annotated[str | None, Header()] = None,
+) -> None:
+    if not settings.api_key:
+        return
+    if x_api_key is None or not secrets.compare_digest(
+        x_api_key.encode(), settings.api_key.encode()
+    ):
+        raise HTTPException(401, "API key inválida o ausente")
+
+
+@lru_cache
+def slots(size: int) -> threading.BoundedSemaphore:
+    return threading.BoundedSemaphore(size)
+
+
+def extraction_slot(settings: Annotated[Settings, Depends(get_settings)]) -> Iterator[None]:
+    """Sin lugar libre se responde 503 de inmediato: esperar solo acumula hilos y memoria."""
+    slot = slots(settings.max_concurrent)
+    if not slot.acquire(blocking=False):
+        raise HTTPException(503, "servicio ocupado; reintenta", headers={"Retry-After": "10"})
+    try:
+        yield
+    finally:
+        slot.release()
 
 
 @app.exception_handler(RejectedInput)
@@ -53,7 +84,7 @@ def doc_types() -> dict:
     }
 
 
-@app.post("/extract")
+@app.post("/extract", dependencies=[Depends(require_api_key), Depends(extraction_slot)])
 def extract(
     file: Annotated[UploadFile, File(description="PDF de hasta 10 MB y 20 páginas")],
     settings: Annotated[Settings, Depends(get_settings)],

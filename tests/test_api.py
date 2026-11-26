@@ -9,7 +9,7 @@ from pypdf import PdfWriter
 from app.config import Settings
 from app.llm.client import LLMError
 from app.llm.recorded import RecordedLLM
-from app.main import app, get_llm, get_settings
+from app.main import app, get_llm, get_settings, slots
 
 SAMPLE = Path("eval/dataset/sample")
 TRUTH = json.loads((SAMPLE / "invoice_000" / "ground_truth.json").read_text(encoding="utf-8"))[
@@ -27,7 +27,8 @@ class FailingLLM:
 
 @pytest.fixture
 def client():
-    app.dependency_overrides[get_settings] = lambda: Settings(llm_mode="recorded")
+    # api_key explícito: un API_KEY en el .env local no debe cambiar las pruebas
+    app.dependency_overrides[get_settings] = lambda: Settings(llm_mode="recorded", api_key=None)
     app.dependency_overrides[get_llm] = lambda: RecordedLLM(RECORDINGS, sequential=True)
     yield TestClient(app)
     app.dependency_overrides.clear()
@@ -100,6 +101,32 @@ def test_invalid_input_is_422(client, data, doc_type, detail):
 
 def test_unknown_doc_type_is_422(client):
     assert post(client, blank_pdf(), "contrato").status_code == 422
+
+
+def test_api_key_is_required_when_configured(client):
+    app.dependency_overrides[get_settings] = lambda: Settings(llm_mode="recorded", api_key="k1")
+    pdf = (SAMPLE / "invoice_000" / "clean.pdf").read_bytes()
+    files = {"file": ("doc.pdf", pdf, "application/pdf")}
+    assert client.post("/extract", files=files).status_code == 401
+    assert client.post("/extract", files=files, headers={"X-API-Key": "otra"}).status_code == 401
+    ok = client.post(
+        "/extract", files=files, data={"doc_type": "invoice"}, headers={"X-API-Key": "k1"}
+    )
+    assert ok.status_code == 200, ok.text
+    assert client.get("/health").status_code == 200  # el health check no pide key
+
+
+def test_busy_is_503(client):
+    slot = slots(Settings().max_concurrent)
+    held = 0
+    while slot.acquire(blocking=False):  # ocupa todos los lugares
+        held += 1
+    try:
+        r = post(client, (SAMPLE / "invoice_000" / "clean.pdf").read_bytes())
+        assert r.status_code == 503 and r.headers["Retry-After"]
+    finally:
+        for _ in range(held):
+            slot.release()
 
 
 def test_llm_failure_is_502(client):

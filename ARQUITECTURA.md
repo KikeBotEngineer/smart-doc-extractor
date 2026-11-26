@@ -116,7 +116,9 @@ Un campo derivado por regla (por ejemplo, `subtotal` calculado de las partidas) 
 | `413` | Más de 10 MB |
 | `415` | No es PDF |
 | `422` | Más de 20 páginas, PDF cifrado, dañado o sin contenido, `doc_type` desconocido o documento de un tipo no soportado |
+| `401` | Falta el header `X-API-Key` o no coincide (solo si `API_KEY` está definida) |
 | `502` | Gemini falló después del reintento |
+| `503` | Ya hay `MAX_CONCURRENT` extracciones en curso (`Retry-After`) |
 
 ### Otros
 
@@ -258,12 +260,14 @@ smart-doc-extractor/
 | `RECORDINGS_DIR` | `eval/recordings` | Respuestas grabadas |
 | `MAX_FILE_MB` | `10` | Límite de tamaño |
 | `MAX_PAGES` | `20` | Límite de páginas |
+| `API_KEY` | — | Si se define, `/extract` exige el header `X-API-Key` |
+| `MAX_CONCURRENT` | `4` | Extracciones simultáneas; las demás reciben `503` |
 
 ## 12. Pruebas
 
 - **Unitarias:** perfil de página, normalización de montos y fechas, verificación de evidencia por tipo y cada regla de negocio.
 - **Pipeline:** con `RecordedLLM`, un documento `clean` va por la ruta `fast` y uno `scanned` por la `visual`; un valor que no está en el documento sale con `confidence: low`.
-- **API:** `413`, `415` y `422` con archivos fabricados.
+- **API:** `401`, `413`, `415`, `422` y `503` con archivos fabricados.
 - **Evaluación:** CI falla si la exactitud global en `clean` baja de un umbral fijado tras la primera corrida.
 
 ## 13. Extensiones futuras (solo si hacen falta)

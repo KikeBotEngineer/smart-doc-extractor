@@ -1,6 +1,7 @@
 from pathlib import Path
 from typing import Literal
 
+from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -14,3 +15,7 @@ class Settings(BaseSettings):
     recordings_dir: Path = Path("eval/recordings")
     max_file_mb: int = 10
     max_pages: int = 20
+    # Clave que /extract exige en el header X-API-Key; vacía: sin autenticación (local)
+    api_key: str | None = None
+    # Extracciones simultáneas: cada una usa CPU (OCR), memoria y cuota de Gemini
+    max_concurrent: int = Field(4, ge=1)

@@ -36,6 +36,7 @@ cp .env.example .env                     # y pon tu GEMINI_API_KEY
 
 ```bash
 curl -F file=@factura.pdf http://localhost:8000/extract
+# con API_KEY definida: -H "X-API-Key: <tu clave>"
 curl -F file=@cv.pdf -F doc_type=resume http://localhost:8000/extract
 ```
 
@@ -78,7 +79,9 @@ Respuesta (abreviada):
 | `413` | Más de 10 MB |
 | `415` | No es PDF |
 | `422` | Más de 20 páginas; PDF cifrado, dañado o sin contenido; tipo no soportado |
+| `401` | Falta el header `X-API-Key` o no coincide (solo si `API_KEY` está definida) |
 | `502` | Gemini falló después del reintento |
+| `503` | Ya hay `MAX_CONCURRENT` extracciones en curso; reintentar tras `Retry-After` |
 
 ## Configuración
 
@@ -88,6 +91,8 @@ Respuesta (abreviada):
 | `GEMINI_MODEL` | `gemini-2.5-flash` | Modelo |
 | `LLM_MODE` | `live` | `live`, `recorded` (solo grabaciones, sin red) o `record` (Gemini y graba lo que falte) |
 | `MAX_FILE_MB` / `MAX_PAGES` | `10` / `20` | Límites de entrada |
+| `API_KEY` | — | Si se define, `/extract` exige el header `X-API-Key` con este valor |
+| `MAX_CONCURRENT` | `4` | Extracciones simultáneas; las demás reciben `503` |
 
 ## Desarrollo
 
@@ -104,10 +109,10 @@ Cambiar un prompt o un modelo de datos deja obsoletas las grabaciones; la evalua
 
 ```bash
 docker build -t smart-doc-extractor .
-docker run -p 8080:8080 -e GEMINI_API_KEY=... smart-doc-extractor
+docker run -p 8080:8080 -e GEMINI_API_KEY=... -e API_KEY=... smart-doc-extractor
 ```
 
-En Cloud Run se despliega privado y con la key desde Secret Manager (`--set-secrets GEMINI_API_KEY=<secreto>:latest`). El servicio no guarda documentos ni resultados.
+En Cloud Run se despliega privado y con la key desde Secret Manager (`--set-secrets GEMINI_API_KEY=<secreto>:latest`). El servicio no guarda documentos ni resultados. Expuesto fuera de una red privada, define `API_KEY`: cada extracción gasta cuota de Gemini.
 
 ## Límites conocidos
 
