@@ -205,19 +205,6 @@ def _result(
     )
 
 
-def verify_value(
-    path: str, value: Any, pages: list[PageText], fallback_source: Source, identifiers: set[str]
-) -> FieldResult:
-    """Un solo campo, sin el contexto de su partida. Sin evidencia, el valor queda con
-    confianza baja y `fallback_source` (de dónde lo leyó el LLM)."""
-    if value is None:
-        return FieldResult(missing_reason="not_present")
-    texts = _collapse(pages)
-    if not (found := _matches(path, value, texts, identifiers)):
-        return FieldResult(value=value, confidence="low", source=fallback_source)
-    return _result(value, found[0], pages, texts)
-
-
 def _place(matches: list[Match], anchors: list[Match]) -> tuple[Match, bool]:
     """La coincidencia dentro del tramo que cubren las anclas de la partida (o la más
     cercana a él), y si quedó dentro. Sin anclas, solo es segura si es única."""
