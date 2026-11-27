@@ -42,8 +42,8 @@ def test_key_changes_with_prompt_schema_and_images():
 def test_make_llm_modes(tmp_path):
     assert isinstance(make_llm(Settings(llm_mode="recorded")), RecordedLLM)
     assert isinstance(make_llm(Settings(llm_mode="live", gemini_api_key="k")), GeminiLLM)
-    recorder = make_llm(Settings(llm_mode="record", gemini_api_key="k"))
-    assert isinstance(recorder, RecordedLLM) and isinstance(recorder.live, GeminiLLM)
+    with pytest.raises(RuntimeError, match="solo para eval"):
+        make_llm(Settings(llm_mode="record", gemini_api_key="k"))
     with pytest.raises(RuntimeError, match="GEMINI_API_KEY"):
         make_llm(Settings(llm_mode="live", gemini_api_key=None))
 

@@ -256,7 +256,7 @@ smart-doc-extractor/
 |---|---|---|
 | `GEMINI_API_KEY` | — | Requerida en modo real |
 | `GEMINI_MODEL` | `gemini-2.5-flash` | Modelo de extracción |
-| `LLM_MODE` | `live` | `live`, `recorded` o `record` (llama a Gemini y graba lo que falte) |
+| `LLM_MODE` | `live` | `live`, `recorded` (solo grabaciones, sin red) o `record` (solo `eval/run_eval.py`: Gemini y graba lo que falte) |
 | `RECORDINGS_DIR` | `eval/recordings` | Respuestas grabadas |
 | `MAX_FILE_MB` | `10` | Límite de tamaño |
 | `MAX_PAGES` | `20` | Límite de páginas |

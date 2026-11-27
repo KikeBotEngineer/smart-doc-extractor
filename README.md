@@ -89,7 +89,7 @@ Respuesta (abreviada):
 |---|---|---|
 | `GEMINI_API_KEY` | — | Requerida en `live` y `record` |
 | `GEMINI_MODEL` | `gemini-2.5-flash` | Modelo |
-| `LLM_MODE` | `live` | `live`, `recorded` (solo grabaciones, sin red) o `record` (Gemini y graba lo que falte) |
+| `LLM_MODE` | `live` | `live`, `recorded` (solo grabaciones, sin red) o `record` (solo `eval/run_eval.py`: Gemini y graba lo que falte) |
 | `MAX_FILE_MB` / `MAX_PAGES` | `10` / `20` | Límites de entrada |
 | `API_KEY` | — | Si se define, `/extract` exige el header `X-API-Key` con este valor |
 | `MAX_CONCURRENT` | `4` | Extracciones simultáneas; las demás reciben `503` |
