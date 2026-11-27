@@ -29,7 +29,8 @@ Requiere Python 3.12 y una API key de Gemini.
 
 ```bash
 python -m venv .venv
-.venv/bin/pip install -e ".[dev]"        # Windows: .venv\Scripts\pip
+.venv/bin/pip install -r requirements-dev.txt   # Windows: .venv\Scripts\pip
+.venv/bin/pip install --no-deps -e .
 cp .env.example .env                     # y pon tu GEMINI_API_KEY
 .venv/bin/uvicorn app.main:app --reload
 ```
@@ -104,6 +105,13 @@ LLM_MODE=record python eval/run_eval.py       # tras cambiar prompts o modelos: 
 ```
 
 Cambiar un prompt o un modelo de datos deja obsoletas las grabaciones; la evaluación lo avisa y `LLM_MODE=record` las regraba (unas 200 llamadas). CI corre lint, pruebas y la evaluación completa sin red, y falla si la exactitud en `clean` baja de 99%.
+
+Las versiones de las dependencias están fijadas en `requirements.txt` (la imagen) y `requirements-dev.txt` (desarrollo y CI), generados desde los mínimos de `pyproject.toml` y válidos en Windows y Linux. Tras cambiar `pyproject.toml`, o para actualizar versiones (`--upgrade`):
+
+```bash
+uv pip compile pyproject.toml --universal --python-version 3.12 -o requirements.txt
+uv pip compile pyproject.toml --extra dev --universal --python-version 3.12 -o requirements-dev.txt
+```
 
 ## Despliegue
 

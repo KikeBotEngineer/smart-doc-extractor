@@ -24,6 +24,7 @@ dev = [
     "pytest>=8.3",
     "reportlab>=4.2",
     "ruff>=0.8",
+    "uv>=0.13",  # regenera requirements*.txt (ver README)
 ]
 
 [build-system]

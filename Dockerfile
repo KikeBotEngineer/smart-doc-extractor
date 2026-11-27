@@ -6,11 +6,13 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /srv
-COPY pyproject.toml ./
+COPY pyproject.toml requirements.txt ./
+# versiones fijadas: cada build instala lo mismo; capa aparte para no reinstalar si solo cambia el código
+RUN pip install --no-cache-dir -r requirements.txt
 COPY app ./app
 COPY prompts ./prompts
-# editable: el código lee prompts/ junto a app/
-RUN pip install --no-cache-dir -e .
+# editable: el código lee prompts/ junto a app/; --no-deps: ya vienen del lock
+RUN pip install --no-cache-dir --no-deps -e .
 
 RUN useradd --system --create-home appuser
 USER appuser
