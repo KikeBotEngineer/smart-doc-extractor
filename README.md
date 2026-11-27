@@ -119,3 +119,4 @@ En Cloud Run se despliega privado y con la key desde Secret Manager (`--set-secr
 - OCR en CPU: unos 4 s por página escaneada.
 - La recuperación dirigida envía el documento completo, no solo la zona del campo.
 - Las grabaciones de la evaluación se hicieron en Windows; en Linux el OCR puede diferir un poco, lo que mueve ligeramente las métricas de las variantes escaneadas (el umbral de CI es solo sobre `clean`).
+- **Prompt injection:** el texto del PDF va al prompt. La verificación de evidencia impide que una instrucción escondida invente valores, pero un documento puede incluir el valor falso junto a su etiqueta (p. ej. `Total: $1.00` en texto invisible) y saldría `high`. Las reglas de negocio marcan los montos que no cuadran; para documentos de origen no confiable, revisa las validaciones fallidas.

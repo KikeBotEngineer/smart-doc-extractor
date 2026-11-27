@@ -139,6 +139,8 @@ Depende del tipo de campo, porque un mismo método no sirve para todos:
 
 La búsqueda difusa **solo confirma o descarta** un valor propuesto; nunca genera valores.
 
+La verificación también acota el prompt injection: una instrucción escondida en el documento no puede producir un valor que no esté escrito en él. Sí puede elegir entre valores escritos, o escribir uno falso junto a su etiqueta; contra eso solo quedan las reglas de negocio.
+
 ## 6. Tipos de documento
 
 Cada tipo vive en su propio módulo con tres piezas: **modelo Pydantic**, **palabras clave** de clasificación y **reglas**.
