@@ -56,3 +56,13 @@ jobs:
       - uses: actions/checkout@v7
       - name: Imagen
         run: docker build -t smart-doc-extractor .
+      # Sin key ni grabaciones (eval/ no entra a la imagen): /extract llega hasta el LLM y da
+      # 502. Llegar ahí prueba que la imagen lee el PDF, lo renderiza y corre el OCR.
+      - name: Arranca y procesa un escaneo
+        run: |
+          docker run -d --name app -p 8080:8080 -e LLM_MODE=recorded smart-doc-extractor
+          trap 'docker logs app' EXIT
+          curl -fsS --retry 15 --retry-all-errors --retry-delay 2 http://localhost:8080/health
+          status=$(curl -s -o /dev/null -w '%{http_code}' -F doc_type=invoice \
+            -F file=@eval/dataset/sample/invoice_000/scanned.pdf http://localhost:8080/extract)
+          test "$status" = 502 || { echo "::error title=docker::/extract respondió $status"; exit 1; }
